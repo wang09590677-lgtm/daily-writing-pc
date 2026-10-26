@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24,
+    "winJR": 0.5
+  },
+  "fineFreq": [
+    {
+      "freq": 0.7,
+      "cycles": 21,
+      "reps": 21,
+      "ratio": 1,
+      "winOverPeriod": 0.35,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.725,
+      "cycles": 22,
+      "reps": 24,
+      "ratio": 1.09,
+      "winOverPeriod": 0.362,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.75,
+      "cycles": 23,
+      "reps": 25,
+      "ratio": 1.09,
+      "winOverPeriod": 0.375,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.775,
+      "cycles": 22,
+      "reps": 25,
+      "ratio": 1.14,
+      "winOverPeriod": 0.388,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.8,
+      "cycles": 24,
+      "reps": 25,
+      "ratio": 1.04,
+      "winOverPeriod": 0.4,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.825,
+      "cycles": 25,
+      "reps": 27,
+      "ratio": 1.08,
+      "winOverPeriod": 0.413,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.85,
+      "cycles": 26,
+      "reps": 28,
+      "ratio": 1.08,
+      "winOverPeriod": 0.425,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.875,
+      "cycles": 26,
+      "reps": 28,
+      "ratio": 1.08,
+      "winOverPeriod": 0.438,
+      "tag": "1×"
+    },
+    {
+      "freq": 0.9,
+      "cycles": 27,
+      "reps": 55,
+      "ratio": 2.04,
+      "winOverPeriod": 0.45,
+      "tag": "2×"
+    },
+    {
+      "freq": 0.925,
+      "cycles": 28,
+      "reps": 57,
+      "ratio": 2.04,
+      "winOverPeriod": 0.463,
+      "tag": "2×"
+    },
+    {
+      "freq": 0.95,
+      "cycles": 29,
+      "reps": 59,
+      "ratio": 2.03,
+      "winOverPeriod": 0.475,
+      "tag": "2×"
+    },
+    {
+      "freq": 0.975,
+      "cycles": 29,
+      "reps": 60,
+      "ratio": 2.07,
+      "winOverPeriod": 0.488,
+      "tag": "2×"
+    },
+    {
+      "freq": 1,
+      "cycles": 30,
+      "reps": 61,
+      "ratio": 2.03,
+      "winOverPeriod": 0.5,
+      "tag": "2×"
+    }
+  ],
+  "nonstat": [
+    {
+      "label": "基准 纯正弦（无抖动）",
+      "designedCycles": 36,
+      "reps": 86,
+      "ratio": 2.39,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期抖动 ±10%",
+      "designedCycles": 36,
+      "reps": 79,
+      "ratio": 2.19,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期抖动 ±20%",
+      "designedCycles": 36,
+      "reps": 79,
+      "ratio": 2.19,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期抖动 ±40%",
+      "designedCycles": 36,
+      "reps": 73,
+      "ratio": 2.03,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "幅度抖动 ±25%",
+      "designedCycles": 37,
+      "reps": 84,
+      "ratio": 2.27,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期±20% + 幅度±25%",
+      "designedCycles": 35,
+      "reps": 75,
+      "ratio": 2.14,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期±20% + 幅度±25% + 平台",
+      "designedCycles": 35,
+      "reps": 88,
+      "ratio": 2.51,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "偶发停一拍（8% 概率）",
+      "designedCycles": 33,
+      "reps": 73,
+      "ratio": 2.21,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "周期±20% + 停一拍 8%",
+      "designedCycles": 32,
+      "reps": 66,
+      "ratio": 2.06,
+      "tag": "★ 仍 2×"
+    }
+  ],
+  "spectrum": [
+    {
+      "freq": 0.75,
+      "ratio": 1.09,
+      "inputBin": 3,
+      "inputMag": 0.0024,
+      "dblBin": 6,
+      "dblMag": 0.0053,
+      "top": [
+        0.0026,
+        0.0016,
+        0.0024,
+        0.003,
+        0.0037,
+        0.0053,
+        0.0031,
+        0.0047
+      ]
+    },
+    {
+      "freq": 1,
+      "ratio": 2.03,
+      "inputBin": 4,
+      "inputMag": 0,
+      "dblBin": 9,
+      "dblMag": 0,
+      "top": [
+        0,
+        0.0049,
+        0,
+        0,
+        0,
+        0.0571,
+        0,
+        0
+      ]
+    },
+    {
+      "freq": 1.2,
+      "ratio": 2.39,
+      "inputBin": 5,
+      "inputMag": 0,
+      "dblBin": 10,
+      "dblMag": 0,
+      "top": [
+        0,
+        0,
+        0,
+        0.0718,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "freq": 1.5,
+      "ratio": 2,
+      "inputBin": 6,
+      "inputMag": 0,
+      "dblBin": 13,
+      "dblMag": 0,
+      "top": [
+        0,
+        0,
+        0.3633,
+        0,
+        0.0586,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "real": [
+    {
+      "cn": "开合跳",
+      "signal": "width",
+      "secs": 6,
+      "repsGateOn": 10,
+      "repsGateOff": 10,
+      "gateImpact": 0
+    },
+    {
+      "cn": "徒手深蹲",
+      "signal": "height",
+      "secs": 15,
+      "repsGateOn": 6,
+      "repsGateOff": 6,
+      "gateImpact": 0
+    },
+    {
+      "cn": "跳绳",
+      "signal": "height",
+      "secs": 6,
+      "repsGateOn": 12,
+      "repsGateOff": 13,
+      "gateImpact": 1
+    },
+    {
+      "cn": "波比跳",
+      "signal": "height",
+      "secs": 6,
+      "repsGateOn": 4,
+      "repsGateOff": 4,
+      "gateImpact": 0
+    }
+  ]
+}

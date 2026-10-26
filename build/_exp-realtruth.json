@@ -1,0 +1,37 @@
+{
+  "jumpingJacks": {
+    "cn": "开合跳",
+    "statusQuo": 10,
+    "peak": 7,
+    "singleShot": 6,
+    "geometric": 13
+  },
+  "squat": {
+    "cn": "徒手深蹲",
+    "statusQuo": 6,
+    "peak": 7,
+    "singleShot": 5,
+    "geometric": 4
+  },
+  "halfSquatWarm": {
+    "cn": "半蹲热身",
+    "statusQuo": 6,
+    "peak": 6,
+    "singleShot": 5,
+    "geometric": 5
+  },
+  "jumpRope": {
+    "cn": "跳绳",
+    "statusQuo": 12,
+    "peak": 9,
+    "singleShot": 8,
+    "geometric": 8
+  },
+  "burpee": {
+    "cn": "波比跳",
+    "statusQuo": 4,
+    "peak": 2,
+    "singleShot": 2,
+    "geometric": 2
+  }
+}

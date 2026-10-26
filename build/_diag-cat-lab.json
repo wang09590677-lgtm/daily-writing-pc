@@ -1,0 +1,424 @@
+{
+  "mode": "legup",
+  "baseChains": {
+    "restArm": 0.1684,
+    "restFore": 0.1383,
+    "restThigh": 0.1945,
+    "restShin": 0.1787,
+    "smooth": 0.45
+  },
+  "strChains": {
+    "restArm": 0.1684,
+    "restFore": 0.1383,
+    "restThigh": 0.2295,
+    "restShin": 0.2109,
+    "smooth": 0.45
+  },
+  "stretchScale": 1.18,
+  "ik": {
+    "base": {
+      "stand": {
+        "ankleL": 0.0928,
+        "ankleR": 0.0928,
+        "wristL": 0.1346,
+        "wristR": 0.1346,
+        "kneeL": 0.0431,
+        "kneeR": 0.0431,
+        "elbowL": 0.1259,
+        "elbowR": 0.1259
+      },
+      "up": {
+        "ankleL": 0.0928,
+        "ankleR": 0.0928,
+        "wristL": 0.101,
+        "wristR": 0.101,
+        "kneeL": 0.0431,
+        "kneeR": 0.0431,
+        "elbowL": 0.1436,
+        "elbowR": 0.1436
+      }
+    },
+    "stretched": {
+      "stand": {
+        "ankleL": 0.0256,
+        "ankleR": 0.0256,
+        "wristL": 0.1346,
+        "wristR": 0.1346,
+        "kneeL": 0.0261,
+        "kneeR": 0.0261,
+        "elbowL": 0.1259,
+        "elbowR": 0.1259
+      },
+      "up": {
+        "ankleL": 0.0256,
+        "ankleR": 0.0256,
+        "wristL": 0.101,
+        "wristR": 0.101,
+        "kneeL": 0.0261,
+        "kneeR": 0.0261,
+        "elbowL": 0.1436,
+        "elbowR": 0.1436
+      }
+    }
+  },
+  "smooth": {
+    "bigAmp": {
+      "t045": {
+        "1": 0.3008,
+        "2": 0.3282,
+        "4": 0.5751,
+        "8": 0.5753999999999999,
+        "16": 0.5753999999999999
+      },
+      "t100": {
+        "1": 0.5753999999999999,
+        "2": 0.5753999999999999,
+        "4": 0.5753999999999999,
+        "8": 0.5753999999999999,
+        "16": 0.5753999999999999
+      }
+    },
+    "smallAmp": {
+      "t045": {
+        "1": 0.2527,
+        "2": 0.258,
+        "4": 0.2592,
+        "8": 0.2592,
+        "16": 0.2592
+      },
+      "t100": {
+        "1": 0.2592,
+        "2": 0.2592,
+        "4": 0.2592,
+        "8": 0.2592,
+        "16": 0.2592
+      }
+    }
+  },
+  "meshBones": [
+    {
+      "mesh": "Body_BellyWhite",
+      "bones": [
+        "Chest×849"
+      ]
+    },
+    {
+      "mesh": "Body_Hips",
+      "bones": [
+        "Hips×849"
+      ]
+    },
+    {
+      "mesh": "Body_Torso",
+      "bones": [
+        "Chest×1105"
+      ]
+    },
+    {
+      "mesh": "Chin_White",
+      "bones": [
+        "Jaw×625"
+      ]
+    },
+    {
+      "mesh": "Headband_Blue",
+      "bones": [
+        "Headband×539"
+      ]
+    },
+    {
+      "mesh": "Headband_White",
+      "bones": [
+        "Headband×539"
+      ]
+    },
+    {
+      "mesh": "LeftEar",
+      "bones": [
+        "LeftEar_01×114"
+      ]
+    },
+    {
+      "mesh": "LeftEarInner",
+      "bones": [
+        "LeftEar_01×114"
+      ]
+    },
+    {
+      "mesh": "LeftElbowBall",
+      "bones": [
+        "LeftLowerArm×373"
+      ]
+    },
+    {
+      "mesh": "LeftEye",
+      "bones": [
+        "LeftEye_1×691"
+      ]
+    },
+    {
+      "mesh": "LeftFootMesh",
+      "bones": [
+        "LeftFoot×625"
+      ]
+    },
+    {
+      "mesh": "LeftForearmMesh",
+      "bones": [
+        "LeftLowerArm×491"
+      ]
+    },
+    {
+      "mesh": "LeftHipBall",
+      "bones": [
+        "LeftUpperLeg×373"
+      ]
+    },
+    {
+      "mesh": "LeftKneeBall",
+      "bones": [
+        "LeftLowerLeg×373"
+      ]
+    },
+    {
+      "mesh": "LeftPalmPad",
+      "bones": [
+        "LeftHand×271"
+      ]
+    },
+    {
+      "mesh": "LeftPaw",
+      "bones": [
+        "LeftHand×549"
+      ]
+    },
+    {
+      "mesh": "LeftPupil",
+      "bones": [
+        "LeftEye_1×373"
+      ]
+    },
+    {
+      "mesh": "LeftShinMesh",
+      "bones": [
+        "LeftLowerLeg×491"
+      ]
+    },
+    {
+      "mesh": "LeftShortsLeg",
+      "bones": [
+        "LeftUpperLeg×146"
+      ]
+    },
+    {
+      "mesh": "LeftShoulderBall",
+      "bones": [
+        "LeftUpperArm×373"
+      ]
+    },
+    {
+      "mesh": "LeftStripe_+0026",
+      "bones": [
+        "Shorts×271"
+      ]
+    },
+    {
+      "mesh": "LeftStripe_-0026",
+      "bones": [
+        "Shorts×271"
+      ]
+    },
+    {
+      "mesh": "LeftThighMesh",
+      "bones": [
+        "LeftUpperLeg×491"
+      ]
+    },
+    {
+      "mesh": "LeftUpperArmMesh",
+      "bones": [
+        "LeftUpperArm×491"
+      ]
+    },
+    {
+      "mesh": "Mouth",
+      "bones": [
+        "Jaw×323"
+      ]
+    },
+    {
+      "mesh": "Muzzle_L",
+      "bones": [
+        "Head_1×625"
+      ]
+    },
+    {
+      "mesh": "Muzzle_R",
+      "bones": [
+        "Head_1×625"
+      ]
+    },
+    {
+      "mesh": "Nose",
+      "bones": [
+        "Head_1×373"
+      ]
+    },
+    {
+      "mesh": "RightEar",
+      "bones": [
+        "RightEar_01×114"
+      ]
+    },
+    {
+      "mesh": "RightEarInner",
+      "bones": [
+        "RightEar_01×114"
+      ]
+    },
+    {
+      "mesh": "RightElbowBall",
+      "bones": [
+        "RightLowerArm×373"
+      ]
+    },
+    {
+      "mesh": "RightEye",
+      "bones": [
+        "RightEye_1×691"
+      ]
+    },
+    {
+      "mesh": "RightFootMesh",
+      "bones": [
+        "RightFoot×625"
+      ]
+    },
+    {
+      "mesh": "RightForearmMesh",
+      "bones": [
+        "RightLowerArm×491"
+      ]
+    },
+    {
+      "mesh": "RightHipBall",
+      "bones": [
+        "RightUpperLeg×373"
+      ]
+    },
+    {
+      "mesh": "RightKneeBall",
+      "bones": [
+        "RightLowerLeg×373"
+      ]
+    },
+    {
+      "mesh": "RightPalmPad",
+      "bones": [
+        "RightHand×271"
+      ]
+    },
+    {
+      "mesh": "RightPaw",
+      "bones": [
+        "RightHand×549"
+      ]
+    },
+    {
+      "mesh": "RightPupil",
+      "bones": [
+        "RightEye_1×373"
+      ]
+    },
+    {
+      "mesh": "RightShinMesh",
+      "bones": [
+        "RightLowerLeg×491"
+      ]
+    },
+    {
+      "mesh": "RightShortsLeg",
+      "bones": [
+        "RightUpperLeg×146"
+      ]
+    },
+    {
+      "mesh": "RightShoulderBall",
+      "bones": [
+        "RightUpperArm×373"
+      ]
+    },
+    {
+      "mesh": "RightStripe_+0026",
+      "bones": [
+        "Shorts×271"
+      ]
+    },
+    {
+      "mesh": "RightStripe_-0026",
+      "bones": [
+        "Shorts×271"
+      ]
+    },
+    {
+      "mesh": "RightThighMesh",
+      "bones": [
+        "RightUpperLeg×491"
+      ]
+    },
+    {
+      "mesh": "RightUpperArmMesh",
+      "bones": [
+        "RightUpperArm×491"
+      ]
+    },
+    {
+      "mesh": "Shorts_Main",
+      "bones": [
+        "Shorts×1023"
+      ]
+    },
+    {
+      "mesh": "TailMesh_01",
+      "bones": [
+        "Tail_01×491"
+      ]
+    },
+    {
+      "mesh": "TailMesh_02",
+      "bones": [
+        "Tail_02×491"
+      ]
+    },
+    {
+      "mesh": "TailMesh_03",
+      "bones": [
+        "Tail_03×491"
+      ]
+    },
+    {
+      "mesh": "TailMesh_04",
+      "bones": [
+        "Tail_04×491"
+      ]
+    },
+    {
+      "mesh": "TailMesh_05",
+      "bones": [
+        "Tail_05×491"
+      ]
+    },
+    {
+      "mesh": "TailMesh_06",
+      "bones": [
+        "Tail_06×491"
+      ]
+    },
+    {
+      "mesh": "Head",
+      "bones": [
+        "Head_1×1615"
+      ]
+    }
+  ]
+}

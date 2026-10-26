@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>probe</title></head><body>
+<script>
+window.__probeResult = { done: false };
+(async () => {
+  const r = { secureContext: window.isSecureContext, protocol: location.protocol, origin: location.origin };
+  r.hasMediaDevices = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+  // fetch 本地文件
+  try { const resp = await fetch('probe-data.json'); r.fetchLocal = resp.status; }
+  catch (e) { r.fetchLocal = 'ERROR: ' + e.message; }
+  // XHR 本地文件
+  r.xhrLocal = await new Promise(res => {
+    try { const x = new XMLHttpRequest(); x.open('GET','probe-data.json',true);
+      x.onload = () => res(x.status); x.onerror = () => res('ERROR'); x.send(); }
+    catch (e) { res('THROW: ' + e.message); }
+  });
+  // 摄像头
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 320, height: 240 } });
+    r.gum = 'OK';
+    r.tracks = stream.getVideoTracks().map(t => t.label);
+    const v = document.createElement('video');
+    v.srcObject = stream; v.muted = true; v.playsInline = true;
+    await v.play();
+    await new Promise(res => setTimeout(res, 900));
+    r.videoSize = v.videoWidth + 'x' + v.videoHeight;
+    r.readyState = v.readyState;
+    // 取帧到 canvas
+    const c = document.createElement('canvas'); c.width = 64; c.height = 48;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(v, 0, 0, 64, 48);
+    const d = ctx.getImageData(0, 0, 64, 48).data;
+    let sum = 0; for (let i = 0; i < d.length; i += 4) sum += d[i];
+    r.canvasMean = (sum / (d.length / 4)).toFixed(1);
+    r.canvasReadable = true;
+    stream.getTracks().forEach(t => t.stop());
+  } catch (e) { r.gum = 'ERROR: ' + (e && e.name) + ' ' + (e && e.message); }
+  window.__probeResult = { done: true, ...r };
+})();
+</script></body></html>

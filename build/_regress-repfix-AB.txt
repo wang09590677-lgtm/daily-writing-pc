@@ -1,0 +1,14 @@
+
+=== [1] 直测探针（现行引擎 168d6829）：合成人形的 repGate vs repSpread ===
+probe EXIT=124 engine=168d6829
+
+=== [2] A/B：换入【无门限】旧引擎，跑 motion-browser-test.js ===
+A/B 运行期引擎 md5 = 4d5da7a121de61d8d00b03e52870bc8f（应为 4d5da7a1…）
+old-engine run EXIT=124
+
+=== [3] 还原现行引擎 ===
+[restore] motion-engine.js 已还原 = 168d6829b0e965be95eb9a99865f5890 ✓
+
+=== [4] 复跑 fit-voice-prep（确认那条失败是否可复现）===
+fit-voice-prep rerun EXIT=124 engine=168d6829
+AB_ALL_DONE 最终引擎 md5=168d6829b0e965be95eb9a99865f5890

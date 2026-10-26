@@ -1,0 +1,161 @@
+{
+  "total": 31,
+  "failed": 0,
+  "results": [
+    {
+      "name": "载体是 burst 动作（不依赖计次精度，见文件头 A 条）",
+      "ok": true,
+      "detail": "highKnees mode=burst 目标=连续动 6 秒"
+    },
+    {
+      "name": "今天序列里确实有下一项（否则考不出「自动进下一项」）",
+      "ok": true,
+      "detail": "next=fastFeet block=thu:main:1"
+    },
+    {
+      "name": "休息秒数来自家长设置（不是写死的常量）",
+      "ok": true,
+      "detail": "10 秒"
+    },
+    {
+      "name": "走的是默认路径,没被测试捷径跳过口令",
+      "ok": true,
+      "detail": "prepDisabled=false"
+    },
+    {
+      "name": "自动推进默认是开的",
+      "ok": true,
+      "detail": "autoNextDisabled=false"
+    },
+    {
+      "name": "① 真的达标了（100% / setDone）",
+      "ok": true,
+      "detail": "pct 峰值 100 setDone=null"
+    },
+    {
+      "name": "① 达标后进入休息态",
+      "ok": true,
+      "detail": "resting 出现过 39 次采样"
+    },
+    {
+      "name": "① 休息从完整秒数起算",
+      "ok": true,
+      "detail": "起点 max=10 / 期望 10"
+    },
+    {
+      "name": "① 倒计时真的在刷新（不是冻在首值 —— 历史死锁就是这个症状）",
+      "ok": true,
+      "detail": "出现过的不同秒数 [10,9,8,7,6,5,4,3,2,1]"
+    },
+    {
+      "name": "① 倒计时单调不增",
+      "ok": true,
+      "detail": "10,10,10,10,9,9,9,9,8,8,8,8,7,7,7,7,6,6,6,5,5,5,5,4,4,4,4,3,3,3,3,2,2,2,2,1,1,1,1"
+    },
+    {
+      "name": "① 倒计时走到了末尾（不是冻在首值）",
+      "ok": true,
+      "detail": "min=1"
+    },
+    {
+      "name": "① 倒计时不会变成负数（历史死锁的第二个症状）",
+      "ok": true,
+      "detail": "无负数"
+    },
+    {
+      "name": "③ 休息期间全屏层（跟练角色）始终可见",
+      "ok": true,
+      "detail": "39 次采样"
+    },
+    {
+      "name": "③ 全屏层进度面板对孩子可见",
+      "ok": true,
+      "detail": "apVisibleToChild 出现过 39 次"
+    },
+    {
+      "name": "③ 全屏层文案就是「休息 N 秒」",
+      "ok": true,
+      "detail": "[\"休息 10 秒\",\"休息 9 秒\",\"休息 8 秒\",\"休息 7 秒\",\"休息 6 秒\",\"休息 5 秒\",\"休息 4 秒\",\"休息 3 秒\",\"休息 2 秒\",\"休息 1 秒\"]"
+    },
+    {
+      "name": "③ 页内小字也是「休息 N 秒」（双写,别只画一处）",
+      "ok": true,
+      "detail": "[\"休息 10 秒\",\"休息 9 秒\",\"休息 8 秒\",\"休息 7 秒\",\"休息 6 秒\",\"休息 5 秒\",\"休息 4 秒\",\"休息 3 秒\",\"休息 2 秒\",\"休息 1 秒\"]"
+    },
+    {
+      "name": "④ 已切换到下一项",
+      "ok": true,
+      "detail": "choice=fastFeet / 期望 fastFeet"
+    },
+    {
+      "name": "④ 新项在跑（不是停在预览态）",
+      "ok": true,
+      "detail": "running=true previewing=false"
+    },
+    {
+      "name": "④ 休息态已收干净",
+      "ok": true,
+      "detail": "resting=false restLeft=0"
+    },
+    {
+      "name": "⑤ 切项时确实亮了口令准备层",
+      "ok": true,
+      "detail": "\"准备开始进行原地小步跑\""
+    },
+    {
+      "name": "⑤ 口令层 z-index 高于猫咪层（否则孩子只看到猫,看不到「准备开始进行…」）",
+      "ok": true,
+      "detail": "prep=110 vs avatar=100"
+    },
+    {
+      "name": "⑤ 画面中心的元素命中的是口令层",
+      "ok": true,
+      "detail": "posePrep"
+    },
+    {
+      "name": "⑤ 倒计时数字也命中的是口令层",
+      "ok": true,
+      "detail": "posePrep"
+    },
+    {
+      "name": "⑤ 口令文案是下一项的名字",
+      "ok": true,
+      "detail": "\"准备开始进行原地小步跑\""
+    },
+    {
+      "name": "⑥ 最后一项达标后标记「整套练完」",
+      "ok": true,
+      "detail": "next=null autoNextDone=true (共 22 项)"
+    },
+    {
+      "name": "⑥ 末项不进入休息、不排队推进",
+      "ok": true,
+      "detail": "restLeft=0/0 pending=false/false"
+    },
+    {
+      "name": "⑥ 末项达标后仍停在原项（不会越界切）",
+      "ok": true,
+      "detail": "singleLegBalance / singleLegBalance"
+    },
+    {
+      "name": "⑥ ?motionAutoNext=0 被识别",
+      "ok": true,
+      "detail": "disabled=true next=dynamicKick"
+    },
+    {
+      "name": "⑥ 关掉后达标不进休息、不排队推进",
+      "ok": true,
+      "detail": "restLeft=0/0 pending=false/false"
+    },
+    {
+      "name": "⑥ 关掉后停在原项",
+      "ok": true,
+      "detail": "marchInPlace / marchInPlace"
+    },
+    {
+      "name": "全程没有 JS 报错",
+      "ok": true,
+      "detail": "无"
+    }
+  ]
+}

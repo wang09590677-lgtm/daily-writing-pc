@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "freq": 1.2,
+  "shapes": [
+    {
+      "label": "① 纯正弦",
+      "cycles": 36,
+      "reps": 86,
+      "ratio": 2.39,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "② +二次谐波 h2=0.5",
+      "cycles": 36,
+      "reps": 72,
+      "ratio": 2,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "③ +三次谐波 h3=0.4",
+      "cycles": 108,
+      "reps": 72,
+      "ratio": 0.67,
+      "tag": "✔ 2× 消失"
+    },
+    {
+      "label": "④ 梯形 顶停50%",
+      "cycles": 36,
+      "reps": 71,
+      "ratio": 1.97,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "④b 梯形 顶停20%",
+      "cycles": 36,
+      "reps": 71,
+      "ratio": 1.97,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑤ 削顶正弦 [0.3,0.7]",
+      "cycles": 36,
+      "reps": 91,
+      "ratio": 2.53,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑥ 硬削顶方波化 [0.15,0.85]",
+      "cycles": 36,
+      "reps": 82,
+      "ratio": 2.28,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑦ 半波整流",
+      "cycles": 36,
+      "reps": 72,
+      "ratio": 2,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑧ 锯齿",
+      "cycles": 36,
+      "reps": 71,
+      "ratio": 1.97,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑨ 非对称(快起慢落)",
+      "cycles": 36,
+      "reps": 72,
+      "ratio": 2,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑩ 脉冲(峰占25%)",
+      "cycles": 36,
+      "reps": 71,
+      "ratio": 1.97,
+      "tag": "★ 仍 2×"
+    }
+  ],
+  "freq17": [
+    {
+      "label": "① 纯正弦",
+      "cycles": 51,
+      "reps": 96,
+      "ratio": 1.88,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "② +二次谐波 h2=0.5",
+      "cycles": 51,
+      "reps": 95,
+      "ratio": 1.86,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "③ +三次谐波 h3=0.4",
+      "cycles": 146,
+      "reps": 96,
+      "ratio": 0.66,
+      "tag": "✔ 2× 消失"
+    },
+    {
+      "label": "④ 梯形 顶停50%",
+      "cycles": 51,
+      "reps": 93,
+      "ratio": 1.82,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "④b 梯形 顶停20%",
+      "cycles": 51,
+      "reps": 96,
+      "ratio": 1.88,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑤ 削顶正弦 [0.3,0.7]",
+      "cycles": 51,
+      "reps": 97,
+      "ratio": 1.9,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑥ 硬削顶方波化 [0.15,0.85]",
+      "cycles": 51,
+      "reps": 96,
+      "ratio": 1.88,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑦ 半波整流",
+      "cycles": 51,
+      "reps": 95,
+      "ratio": 1.86,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑧ 锯齿",
+      "cycles": 51,
+      "reps": 72,
+      "ratio": 1.41,
+      "tag": "偏高"
+    },
+    {
+      "label": "⑨ 非对称(快起慢落)",
+      "cycles": 51,
+      "reps": 96,
+      "ratio": 1.88,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑩ 脉冲(峰占25%)",
+      "cycles": 51,
+      "reps": 73,
+      "ratio": 1.43,
+      "tag": "偏高"
+    }
+  ],
+  "realRef": {
+    "cn": "跳绳",
+    "secs": 6.04,
+    "cycles": 10,
+    "reps": 13,
+    "ratio": 1.3
+  }
+}

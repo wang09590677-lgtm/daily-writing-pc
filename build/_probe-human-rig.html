@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>_probe-human-rig（新模型静止几何 / 朝向侦察 v2）</title>
+<style>html,body{margin:0;background:#0d1420;overflow:hidden}#c{display:block}</style>
+</head>
+<body>
+<script src="../assets/vendor/three.min.js?v=20261005a"></script>
+<script src="../assets/vendor/GLTFLoader.js?v=20261006catglb"></script>
+<script>
+window.__report = { ok: false };
+(function () {
+  const URL_ = "../体能训练动作演示/体感跟练模型.glb";
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0d1420);
+  const W = window.innerWidth, H = window.innerHeight;
+  const cam = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(1);
+  renderer.setSize(W, H);
+  renderer.domElement.id = "c";
+  document.body.appendChild(renderer.domElement);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+  const k = new THREE.DirectionalLight(0xffffff, 1.15); k.position.set(1.5, 3, 4); scene.add(k);
+  const f = new THREE.DirectionalLight(0xffffff, 0.45); f.position.set(-2, 1, 2); scene.add(f);
+  scene.add(new THREE.GridHelper(4, 8, 0x335, 0x223));
+
+  // 三个视角（绕 y 轴），用来判定朝向：正面(+Z 看向原点) / 侧面(+X) / 背面(-Z)
+  const VIEWS = {
+    front: [0, 1.0, 4.2], side: [4.2, 1.0, 0], back: [0, 1.0, -4.2], top: [0.001, 4.2, 0.001]
+  };
+  window.__setView = name => {
+    const p = VIEWS[name] || VIEWS.front;
+    cam.position.set(p[0], p[1], p[2]); cam.lookAt(0, 0.95, 0);
+    renderer.render(scene, cam);
+  };
+
+  const loader = new THREE.GLTFLoader();
+  loader.load(URL_, gltf => {
+    const root = gltf.scene;
+    scene.add(root);
+    root.updateMatrixWorld(true);
+
+    const rep = { ok: true, boneCount: 0, skinned: 0, names: [], bones: {}, anims: [], face: {} };
+    const bones = {};
+    root.traverse(o => {
+      if (o.isBone) { bones[o.name] = o; rep.boneCount++; rep.names.push(o.name); }
+      if (o.isSkinnedMesh) { o.frustumCulled = false; rep.skinned++; }
+    });
+    // 后缀匹配：GLTFLoader 会把 `mixamorig:Neck` 洗成 `mixamorigNeck`（冒号被去掉）
+    const bySuffix = s => {
+      const keys = Object.keys(bones);
+      return bones[s] || bones["mixamorig:" + s] || bones["mixamorig" + s] ||
+        keys.find(k => k.replace(/^.*[:]/, "") === s) || null;
+    };
+    const wp = n => { const b = bySuffix(n); if (!b) return null;
+      const p = new THREE.Vector3(); b.getWorldPosition(p);
+      return [+p.x.toFixed(4), +p.y.toFixed(4), +p.z.toFixed(4)]; };
+
+    ["Hips", "Spine", "Spine1", "Spine2", "Neck", "Head", "HeadTop_End",
+     "LeftShoulder", "LeftArm", "LeftForeArm", "LeftHand",
+     "RightShoulder", "RightArm", "RightForeArm", "RightHand",
+     "LeftUpLeg", "LeftLeg", "LeftFoot", "LeftToeBase", "LeftToe_End",
+     "RightUpLeg", "RightLeg", "RightFoot", "RightToeBase", "RightToe_End"
+    ].forEach(n => rep.bones[n] = wp(n));
+
+    // 骨轴检验
+    rep.axisGap = [];
+    Object.keys(bones).forEach(n => {
+      const b = bones[n];
+      const kid = (b.children || []).find(c => c.isBone);
+      if (!kid) return;
+      const p1 = new THREE.Vector3(), p2 = new THREE.Vector3(), wq = new THREE.Quaternion();
+      b.getWorldPosition(p1); kid.getWorldPosition(p2); b.getWorldQuaternion(wq);
+      const headDir = new THREE.Vector3(0, 1, 0).applyQuaternion(wq).normalize();
+      const d = p2.sub(p1); if (d.lengthSq() < 1e-9) return;
+      const ang = Math.acos(Math.min(1, Math.max(-1, headDir.dot(d.normalize())))) * 180 / Math.PI;
+      if (ang > 5) rep.axisGap.push(n + "(" + ang.toFixed(1) + "°)");
+    });
+
+    rep.anims = (gltf.animations || []).map(a => ({ name: a.name, duration: +a.duration.toFixed(3), tracks: a.tracks.length }));
+
+    const g = n => rep.bones[n];
+    rep.face = {
+      "脚趾z - 踝z (脚趾朝前 ⇒ >0 表示面朝 +Z)":
+        (g("LeftToe_End") && g("LeftFoot")) ? +(g("LeftToe_End")[2] - g("LeftFoot")[2]).toFixed(4) : null,
+      "脚趾x - 踝x": (g("LeftToe_End") && g("LeftFoot")) ? +(g("LeftToe_End")[0] - g("LeftFoot")[0]).toFixed(4) : null,
+      "头顶z - 胯z": (g("HeadTop_End") && g("Hips")) ? +(g("HeadTop_End")[2] - g("Hips")[2]).toFixed(4) : null,
+      "左肩x": g("LeftShoulder") ? g("LeftShoulder")[0] : null,
+      "右肩x": g("RightShoulder") ? g("RightShoulder")[0] : null,
+      "胯y (地面高度参考)": g("Hips") ? g("Hips")[1] : null,
+      "脚踝y": g("LeftFoot") ? g("LeftFoot")[1] : null,
+      "脚趾末端y": g("LeftToe_End") ? g("LeftToe_End")[1] : null
+    };
+
+    window.__report = rep;
+    window.__renderNow = () => renderer.render(scene, cam);
+    window.__setView("front");
+    window.__loaded = true;
+  }, undefined, err => {
+    window.__report = { ok: false, error: String(err && err.message || err) };
+    window.__loaded = true;
+  });
+})();
+</script>
+</body>
+</html>

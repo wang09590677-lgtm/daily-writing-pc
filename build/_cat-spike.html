@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- 可行性 spike：验证 (1) GLB 在 file:// 下能否加载 (2) 改骨骼旋转后蒙皮是否真的变形。
+     只用于验证，不是产品文件。 -->
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>cat glb spike</title></head>
+<body>
+<div id="out" style="font:13px monospace; white-space:pre; padding:8px;"></div>
+<script src="../assets/vendor/three.min.js"></script>
+<script src="../assets/vendor/GLTFLoader.js"></script>
+<script>
+const out = [];
+const log = (...a) => { out.push(a.map(x => typeof x === "string" ? x : JSON.stringify(x)).join(" ")); };
+window.__spike = { done: false, out, report: null };
+
+(async () => {
+  try {
+    log("THREE.REVISION =", THREE.REVISION);
+    log("THREE.GLTFLoader 存在 =", typeof THREE.GLTFLoader);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(400, 300);
+    document.body.appendChild(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 400 / 300, 0.1, 100);
+    camera.position.set(0, 1.5, 6);
+    camera.lookAt(0, 1.5, 0);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    const dl = new THREE.DirectionalLight(0xffffff, 0.8); dl.position.set(2, 4, 3); scene.add(dl);
+
+    // ---- 1. 加载 GLB ----
+    const t0 = performance.now();
+    const loader = new THREE.GLTFLoader();
+    const gltf = await new Promise((res, rej) => {
+      loader.load("../assets/models/cat_fitness_avatar.glb", res,
+        undefined, e => rej(new Error("加载失败: " + (e && e.message ? e.message : e))));
+    });
+    const tLoad = performance.now() - t0;
+    log("① 加载成功，耗时", tLoad.toFixed(0) + "ms");
+
+    const root = gltf.scene;
+    scene.add(root);
+
+    // ---- 2. 结构 ----
+    const bones = [], skinned = [];
+    let meshCount = 0, verts = 0, tris = 0;
+    root.traverse(o => {
+      if (o.isBone) bones.push(o);
+      if (o.isSkinnedMesh) skinned.push(o);
+      if (o.isMesh) {
+        meshCount++;
+        const pos = o.geometry.getAttribute("position");
+        if (pos) verts += pos.count;
+        if (o.geometry.index) tris += o.geometry.index.count / 3;
+      }
+    });
+    log("② 骨骼数 =", bones.length, "｜蒙皮网格 =", skinned.length, "｜网格总数 =", meshCount,
+      "｜顶点 =", verts, "｜三角面 =", Math.round(tris));
+
+    // ---- 3. 尺寸 ----
+    root.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(root);
+    const size = new THREE.Vector3(); box.getSize(size);
+    log("③ 模型包围盒 size =", size.toArray().map(v => v.toFixed(3)).join(", "),
+      "｜中心 y =", ((box.min.y + box.max.y) / 2).toFixed(3));
+
+    // ---- 4. 蒙皮是否真的会变形（关键）----
+    /* 手动做一遍 LBS（GPU 上跑的那套公式），正确形式是：
+     *   v_world = Σ_k  w_k · ( bone.matrixWorld · boneInverse_k ) · ( bindMatrix · v_local )
+     * 第一版我漏了 bindMatrix、又没确认网格真受该骨骼驱动，所以量到 0 位移
+     * （是脚本 bug，不是模型的毛病）。这里两处都修好。 */
+    const armBone = bones.find(b => /UpperArm/i.test(b.name)) || bones[2];
+    const armIdx = bones.indexOf(armBone);
+
+    function skinVertex(mesh, i) {
+      const pos = mesh.geometry.getAttribute("position");
+      const si = mesh.geometry.getAttribute("skinIndex");
+      const sw = mesh.geometry.getAttribute("skinWeight");
+      const v = new THREE.Vector3().fromBufferAttribute(pos, i).applyMatrix4(mesh.bindMatrix);
+      const out = new THREE.Vector3(0, 0, 0);
+      const idx = [si.getX(i), si.getY(i), si.getZ(i), si.getW(i)];
+      const w = [sw.getX(i), sw.getY(i), sw.getZ(i), sw.getW(i)];
+      for (let k = 0; k < 4; k++) {
+        const wk = w[k]; if (!wk) continue;
+        const bone = mesh.skeleton.bones[idx[k]];
+        if (!bone) continue;
+        const m = new THREE.Matrix4().multiplyMatrices(bone.matrixWorld, mesh.skeleton.boneInverses[idx[k]]);
+        out.addScaledVector(new THREE.Vector3().copy(v).applyMatrix4(m), wk);
+      }
+      return out;
+    }
+
+    // 找出真正被 LeftUpperArm 驱动的网格（skinIndex 里含该骨骼索引）
+    let target = null;
+    for (const m of skinned) {
+      const si = m.geometry.getAttribute("skinIndex");
+      const pos = m.geometry.getAttribute("position");
+      let hit = 0;
+      for (let i = 0; i < Math.min(pos.count, 400); i++) {
+        if (si.getX(i) === armIdx || si.getY(i) === armIdx || si.getZ(i) === armIdx || si.getW(i) === armIdx) hit++;
+      }
+      if (hit > 0) { target = m; log("   选中受 " + armBone.name + " 驱动的网格: " + JSON.stringify(m.name) + "（命中 " + hit + " 个顶点）"); break; }
+    }
+    if (!target) { target = skinned[0]; log("   ⚠ 没找到受该骨骼驱动的网格，退回 skinned[0]"); }
+
+    const N = Math.min(200, target.geometry.getAttribute("position").count);
+    const before = []; for (let i = 0; i < N; i++) before.push(skinVertex(target, i));
+    const restQuat = armBone.quaternion.clone();
+    armBone.rotation.z += 0.9;                 // 明显转一下
+    root.updateMatrixWorld(true);
+    const after = []; for (let i = 0; i < N; i++) after.push(skinVertex(target, i));
+    let maxDelta = 0, sumDelta = 0;
+    for (let i = 0; i < N; i++) {
+      const d = before[i].distanceTo(after[i]);
+      sumDelta += d; if (d > maxDelta) maxDelta = d;
+    }
+    log("④ 旋转骨骼 " + JSON.stringify(armBone.name) + " (z+0.9rad)，测 " + N + " 个顶点：");
+    log("   顶点最大位移 =", maxDelta.toFixed(4), "｜平均位移 =", (sumDelta / N).toFixed(4),
+      "→ 蒙皮" + (maxDelta > 0.01 ? "确实跟随变形 ✅" : "没反应 ❌"));
+    armBone.quaternion.copy(restQuat);
+    root.updateMatrixWorld(true);
+
+    // ---- 5. 骨骼名清单（供映射设计）----
+    log("⑤ 全部骨骼名:");
+    log("   " + bones.map(b => b.name).join(", "));
+
+    // ---- 6. 渲染一帧 + 帧耗时 ----
+    renderer.render(scene, camera);
+    const tf0 = performance.now();
+    for (let i = 0; i < 20; i++) {
+      for (const b of bones) b.rotation.z = (b.userData._t = (b.userData._t || 0) + 0.01);
+      root.updateMatrixWorld(true);
+      renderer.render(scene, camera);
+    }
+    const perFrame = (performance.now() - tf0) / 20;
+    log("⑥ 每帧（38 骨骼全动 + 渲染）=", perFrame.toFixed(2) + "ms");
+
+    window.__spike.report = {
+      revision: THREE.REVISION, loadMs: Math.round(tLoad),
+      bones: bones.length, skinned: skinned.length, meshes: meshCount, verts, tris: Math.round(tris),
+      size: size.toArray(), maxDelta, avgDelta: sumDelta / N,
+      boneNames: bones.map(b => b.name), perFrameMs: perFrame
+    };
+    window.__spike.done = true;
+    document.getElementById("out").textContent = out.join("\n");
+  } catch (e) {
+    log("!! 失败:", e && e.message ? e.message : String(e));
+    if (e && e.stack) log(e.stack);
+    window.__spike.error = String(e && e.message ? e.message : e);
+    window.__spike.done = true;
+    document.getElementById("out").textContent = out.join("\n");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "trigFreq": 1.2,
+  "variants": [
+    {
+      "label": "① 纯单音正弦 1.2Hz",
+      "cycles": 36,
+      "reps": 87,
+      "ratio": 2.42,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "② +不共度低音 0.37Hz(0.35)",
+      "cycles": 36,
+      "reps": 88,
+      "ratio": 2.44,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "③ +不共度高音 3.7Hz(0.35)",
+      "cycles": 36,
+      "reps": 88,
+      "ratio": 2.44,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "④ 慢速幅度调制 AM±35%",
+      "cycles": 36,
+      "reps": 85,
+      "ratio": 2.36,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑤ 双音拍频 1.2+1.35",
+      "cycles": 41,
+      "reps": 71,
+      "ratio": 1.73,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑥ 啁啾 1.0→1.4Hz",
+      "cycles": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑦ 周期抖动±40%(逐拍)",
+      "cycles": 35,
+      "reps": 71,
+      "ratio": 2.03,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑧ 真实跳绳 height(6s循环)",
+      "cycles": 7,
+      "reps": 49,
+      "ratio": 7,
+      "tag": "★ 仍 2×"
+    }
+  ]
+}

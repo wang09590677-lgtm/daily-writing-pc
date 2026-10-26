@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "key": "现状",
+      "stars": 15,
+      "floorMin": 0.67,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 0,
+      "real": "开合10/徒手6/半蹲6/跳绳12/波比4"
+    },
+    {
+      "key": "F  延迟0 k0.45",
+      "stars": 0,
+      "floorMin": 0.67,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 6,
+      "real": "开合5/徒手4/半蹲6/跳绳6/波比2"
+    },
+    {
+      "key": "F  延迟0 k0.35",
+      "stars": 0,
+      "floorMin": 0.67,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 6,
+      "real": "开合5/徒手5/半蹲6/跳绳6/波比2"
+    },
+    {
+      "key": "F′ 延迟half k0.45",
+      "stars": 0,
+      "floorMin": 0,
+      "floorMinInfo": "半蹲热身",
+      "fcBad": 0,
+      "realMax": 4,
+      "real": "开合7/徒手5/半蹲5/跳绳8/波比2"
+    },
+    {
+      "key": "F′ 延迟half k0.30",
+      "stars": 0,
+      "floorMin": 0,
+      "floorMinInfo": "徒手深蹲",
+      "fcBad": 0,
+      "realMax": 4,
+      "real": "开合7/徒手5/半蹲6/跳绳8/波比2"
+    },
+    {
+      "key": "F′ 延迟half k0.20",
+      "stars": 0,
+      "floorMin": 0,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 4,
+      "real": "开合7/徒手5/半蹲6/跳绳8/波比2"
+    },
+    {
+      "key": "F+win由band0",
+      "stars": 0,
+      "floorMin": 0.67,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 7,
+      "real": "开合5/徒手4/半蹲6/跳绳5/波比2"
+    },
+    {
+      "key": "F′+win由band0 k0.45",
+      "stars": 0,
+      "floorMin": 0,
+      "floorMinInfo": "半蹲热身",
+      "fcBad": 0,
+      "realMax": 4,
+      "real": "开合7/徒手5/半蹲5/跳绳8/波比2"
+    },
+    {
+      "key": "F′+win由band0 k0.20",
+      "stars": 0,
+      "floorMin": 0,
+      "floorMinInfo": "跪姿健腹轮",
+      "fcBad": 0,
+      "realMax": 4,
+      "real": "开合7/徒手5/半蹲6/跳绳8/波比2"
+    }
+  ],
+  "ref": "现状真实: 开合跳10/徒手深蹲6/半蹲热身6/跳绳12/波比跳4"
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>深度接入端到端自检</title>
+</head>
+<body>
+<canvas id="src" width="96" height="72"></canvas>
+<pre id="out">running…</pre>
+
+<script src="../motion-engine.js"></script>
+<script src="../depth-link.js"></script>
+<script>
+// 端到端自检：页面（file://）连本地桥接服务拿真实深度 → 引擎用深度算人形。
+// 彩色画面用一块合成画布代替（内容是静止的灰底），这样骨架只能来自深度，
+// 于是"骨架出来了"就等于"深度真的用上了"。
+window.RESULT = { done: false };
+
+(function () {
+  var src = document.getElementById("src");
+  var sctx = src.getContext("2d");
+
+  // 静止的灰底：灰度背景差永远分不出人，只有深度能
+  var img = sctx.createImageData(96, 72);
+  for (var i = 0, p = 0; i < 96 * 72; i++, p += 4) {
+    img.data[p] = img.data[p + 1] = img.data[p + 2] = 120;
+    img.data[p + 3] = 255;
+  }
+  sctx.putImageData(img, 0, 0);
+
+  var link = DepthLink.createLink({ width: 96, height: 72 });
+  link.connect();
+
+  var engine = MotionEngine.createEngine();
+  engine.attach(src);
+  engine.attachDepth(link);
+  engine.setProfile({ id: "squat", mode: "rep", signal: "centroidY", tempoBand: [20, 60] });
+  engine.preview();
+
+  var log = [];
+  var t0 = Date.now();
+  var timer = setInterval(function () {
+    var st = engine.getState();
+    var ds = engine.depthStats();
+    log.push({
+      t: Date.now() - t0,
+      depthOn: !!(st.live && st.live.depthOn),
+      depthNear: st.live ? Math.round(st.live.depthNear) : 0,
+      depthCoverage: st.live ? +(st.live.depthCoverage || 0).toFixed(3) : 0,
+      bodyHeightMM: st.live ? Math.round(st.live.bodyHeightMM || 0) : 0,
+      bodyWidthMM: st.live ? Math.round(st.live.bodyWidthMM || 0) : 0,
+      joints: st.skeleton ? st.skeleton.jointCount : 0,
+      area: st.skeleton ? st.skeleton.area : 0,
+      linkStatus: ds ? ds.status : "n/a",
+      linkFps: ds ? ds.fps : 0,
+      linkValid: ds ? +(ds.validRatio || 0).toFixed(3) : 0,
+      linkMin: ds ? ds.minMM : 0,
+      linkMax: ds ? ds.maxMM : 0
+    });
+    if (Date.now() - t0 > 6000) {
+      clearInterval(timer);
+      engine.stop();
+      window.RESULT = { done: true, log: log };
+      document.getElementById("out").textContent = JSON.stringify(window.RESULT, null, 1);
+    }
+  }, 500);
+})();
+</script>
+</body>
+</html>

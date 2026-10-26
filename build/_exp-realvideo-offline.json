@@ -1,0 +1,67 @@
+{
+  "jumpingJacks": {
+    "cn": "开合跳",
+    "reps": 0,
+    "signal": "width",
+    "signalRange": 0.1042,
+    "signalMean": 0.9992,
+    "winSpreadMed": 0,
+    "gate": 0.135,
+    "heightMean": 1,
+    "gatedFrames": 471,
+    "gateFrames": 471,
+    "secs": 20
+  },
+  "squat": {
+    "cn": "徒手深蹲",
+    "reps": 0,
+    "signal": "height",
+    "signalRange": 0,
+    "signalMean": 1,
+    "winSpreadMed": 0,
+    "gate": 0.09,
+    "heightMean": 1,
+    "gatedFrames": 471,
+    "gateFrames": 471,
+    "secs": 20
+  },
+  "jumpRope": {
+    "cn": "跳绳",
+    "reps": 0,
+    "signal": "width",
+    "signalRange": 0,
+    "signalMean": 1,
+    "winSpreadMed": 0,
+    "gate": 0.03375,
+    "heightMean": 1,
+    "gatedFrames": 471,
+    "gateFrames": 471,
+    "secs": 20
+  },
+  "highKnees": {
+    "cn": "原地高抬腿跑",
+    "reps": 4,
+    "signal": "width",
+    "signalRange": 0.6563,
+    "signalMean": 0.8032,
+    "winSpreadMed": 0.03125,
+    "gate": 0.15000000000000002,
+    "heightMean": 1,
+    "gatedFrames": 286,
+    "gateFrames": 471,
+    "secs": 20
+  },
+  "burpee": {
+    "cn": "波比跳",
+    "reps": 0,
+    "signal": "height",
+    "signalRange": 0,
+    "signalMean": 1,
+    "winSpreadMed": 0,
+    "gate": 0.12,
+    "heightMean": 1,
+    "gatedFrames": 471,
+    "gateFrames": 471,
+    "secs": 20
+  }
+}

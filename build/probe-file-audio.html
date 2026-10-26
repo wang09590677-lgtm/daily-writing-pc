@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>file:// 音频加载能力探测</title></head>
+<body>
+<pre id="out">running...</pre>
+<script>
+const log = [];
+const say = (k, v) => { log.push(k + ": " + v); document.getElementById("out").textContent = log.join("\n"); };
+
+async function main() {
+  // 1) fetch 本地文件（file:// 下通常被拦）
+  try {
+    const r = await fetch("../assets/audio/room.mp3");
+    say("fetch", "ok status=" + r.status);
+  } catch (e) { say("fetch", "FAIL " + e.name + " " + e.message); }
+
+  // 2) XHR 本地文件
+  try {
+    const x = await new Promise((res, rej) => {
+      const x = new XMLHttpRequest();
+      x.open("GET", "../assets/audio/room.mp3", true);
+      x.responseType = "arraybuffer";
+      x.onload = () => res(x.status);
+      x.onerror = () => rej(new Error("xhr error"));
+      x.send();
+    });
+    say("xhr", "ok status=" + x);
+  } catch (e) { say("xhr", "FAIL " + e.name + " " + e.message); }
+
+  // 3) <audio> 元素能否播放本地文件
+  const a = new Audio("../assets/audio/room.mp3");
+  a.loop = true;
+  const audioLoad = await new Promise(res => {
+    const t = setTimeout(() => res("timeout"), 8000);
+    a.oncanplaythrough = () => { clearTimeout(t); res("canplaythrough"); };
+    a.onerror = () => { clearTimeout(t); res("error code=" + (a.error && a.error.code)); };
+    a.load();
+  });
+  say("audio element", audioLoad);
+
+  // 4) 关键：MediaElementSource + AnalyserNode 在 file:// 下是否可用（还是被静音）
+  try {
+    const ctx = new AudioContext();
+    await ctx.resume();
+    const src = ctx.createMediaElementSource(a);
+    const an = ctx.createAnalyser();
+    an.fftSize = 256;
+    src.connect(an); an.connect(ctx.destination);
+    await a.play().catch(e => say("audio play", "FAIL " + e.name));
+    await new Promise(r => setTimeout(r, 2500));
+    const d = new Uint8Array(an.frequencyBinCount);
+    an.getByteFrequencyData(d);
+    let peak = 0; for (const v of d) peak = Math.max(peak, v);
+    say("MediaElementSource", "created OK, ctx=" + ctx.state);
+    say("analyser peak", peak + (peak === 0 ? "  <-- 被静音/CORS 污染" : "  <-- 有真实信号"));
+  } catch (e) { say("MediaElementSource", "FAIL " + e.name + " " + e.message); }
+
+  say("DONE", "1");
+}
+main();
+</script>
+</body>
+</html>

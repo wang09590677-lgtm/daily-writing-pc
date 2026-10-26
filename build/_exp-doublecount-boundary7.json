@@ -1,0 +1,517 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "actions": [
+    {
+      "cn": "开合跳",
+      "key": "width",
+      "band": [
+        40,
+        90
+      ],
+      "minRepGap": 0.45,
+      "winSec": 0.667,
+      "srcPeriod": 0.958,
+      "predicted2xLo": 0.66,
+      "predicted2xHiI": 1.11,
+      "rows": [
+        {
+          "f": 0.2,
+          "truePeriods": 6,
+          "reps": 17,
+          "ratio": 2.83,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.3,
+          "truePeriods": 9,
+          "reps": 33,
+          "ratio": 3.67,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.4,
+          "truePeriods": 12,
+          "reps": 42,
+          "ratio": 3.5,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.5,
+          "truePeriods": 15,
+          "reps": 46,
+          "ratio": 3.07,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.6,
+          "truePeriods": 18,
+          "reps": 51,
+          "ratio": 2.83,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.75,
+          "truePeriods": 22.5,
+          "reps": 53,
+          "ratio": 2.36,
+          "inBand": true,
+          "tag": "★ 2× (带内)"
+        },
+        {
+          "f": 0.9,
+          "truePeriods": 27,
+          "reps": 55,
+          "ratio": 2.04,
+          "inBand": true,
+          "tag": "★ 2× (带内)"
+        },
+        {
+          "f": 1,
+          "truePeriods": 30,
+          "reps": 57,
+          "ratio": 1.9,
+          "inBand": true,
+          "tag": "★ 2× (带内)"
+        },
+        {
+          "f": 1.2,
+          "truePeriods": 36,
+          "reps": 57,
+          "ratio": 1.58,
+          "inBand": true,
+          "tag": "偏高 (带内)"
+        },
+        {
+          "f": 1.5,
+          "truePeriods": 45,
+          "reps": 58,
+          "ratio": 1.29,
+          "inBand": true,
+          "tag": "偏高 (带内)"
+        },
+        {
+          "f": 1.71,
+          "truePeriods": 51.3,
+          "reps": 58,
+          "ratio": 1.13,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2,
+          "truePeriods": 60,
+          "reps": 59,
+          "ratio": 0.98,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2.5,
+          "truePeriods": 75,
+          "reps": 60,
+          "ratio": 0.8,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 3,
+          "truePeriods": 90,
+          "reps": 64,
+          "ratio": 0.71,
+          "inBand": false,
+          "tag": "1×"
+        }
+      ]
+    },
+    {
+      "cn": "徒手深蹲",
+      "key": "height",
+      "band": [
+        15,
+        45
+      ],
+      "minRepGap": 0.9,
+      "winSec": 1.333,
+      "srcPeriod": 0.208,
+      "predicted2xLo": 0.33,
+      "predicted2xHiI": 0.56,
+      "rows": [
+        {
+          "f": 0.2,
+          "truePeriods": 6,
+          "reps": 5,
+          "ratio": 0.83,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 0.3,
+          "truePeriods": 9,
+          "reps": 6,
+          "ratio": 0.67,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.4,
+          "truePeriods": 12,
+          "reps": 6,
+          "ratio": 0.5,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.5,
+          "truePeriods": 15,
+          "reps": 5,
+          "ratio": 0.33,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.6,
+          "truePeriods": 18,
+          "reps": 6,
+          "ratio": 0.33,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.75,
+          "truePeriods": 22.5,
+          "reps": 4,
+          "ratio": 0.18,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.9,
+          "truePeriods": 27,
+          "reps": 4,
+          "ratio": 0.15,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1,
+          "truePeriods": 30,
+          "reps": 5,
+          "ratio": 0.17,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.2,
+          "truePeriods": 36,
+          "reps": 5,
+          "ratio": 0.14,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.5,
+          "truePeriods": 45,
+          "reps": 7,
+          "ratio": 0.16,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.71,
+          "truePeriods": 51.3,
+          "reps": 6,
+          "ratio": 0.12,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2,
+          "truePeriods": 60,
+          "reps": 8,
+          "ratio": 0.13,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2.5,
+          "truePeriods": 75,
+          "reps": 9,
+          "ratio": 0.12,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 3,
+          "truePeriods": 90,
+          "reps": 10,
+          "ratio": 0.11,
+          "inBand": false,
+          "tag": "1×"
+        }
+      ]
+    },
+    {
+      "cn": "跳绳",
+      "key": "height",
+      "band": [
+        60,
+        120
+      ],
+      "minRepGap": 0.3,
+      "winSec": 0.5,
+      "srcPeriod": 0.583,
+      "predicted2xLo": 0.88,
+      "predicted2xHiI": 1.67,
+      "rows": [
+        {
+          "f": 0.2,
+          "truePeriods": 6,
+          "reps": 7,
+          "ratio": 1.17,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 0.3,
+          "truePeriods": 9,
+          "reps": 13,
+          "ratio": 1.44,
+          "inBand": false,
+          "tag": "偏高"
+        },
+        {
+          "f": 0.4,
+          "truePeriods": 12,
+          "reps": 21,
+          "ratio": 1.75,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.5,
+          "truePeriods": 15,
+          "reps": 28,
+          "ratio": 1.87,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.6,
+          "truePeriods": 18,
+          "reps": 40,
+          "ratio": 2.22,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.75,
+          "truePeriods": 22.5,
+          "reps": 53,
+          "ratio": 2.36,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 0.9,
+          "truePeriods": 27,
+          "reps": 66,
+          "ratio": 2.44,
+          "inBand": false,
+          "tag": "★ 2×"
+        },
+        {
+          "f": 1,
+          "truePeriods": 30,
+          "reps": 69,
+          "ratio": 2.3,
+          "inBand": true,
+          "tag": "★ 2× (带内)"
+        },
+        {
+          "f": 1.2,
+          "truePeriods": 36,
+          "reps": 69,
+          "ratio": 1.92,
+          "inBand": true,
+          "tag": "★ 2× (带内)"
+        },
+        {
+          "f": 1.5,
+          "truePeriods": 45,
+          "reps": 61,
+          "ratio": 1.36,
+          "inBand": true,
+          "tag": "偏高 (带内)"
+        },
+        {
+          "f": 1.71,
+          "truePeriods": 51.3,
+          "reps": 69,
+          "ratio": 1.35,
+          "inBand": true,
+          "tag": "偏高 (带内)"
+        },
+        {
+          "f": 2,
+          "truePeriods": 60,
+          "reps": 79,
+          "ratio": 1.32,
+          "inBand": true,
+          "tag": "偏高 (带内)"
+        },
+        {
+          "f": 2.5,
+          "truePeriods": 75,
+          "reps": 80,
+          "ratio": 1.07,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 3,
+          "truePeriods": 90,
+          "reps": 81,
+          "ratio": 0.9,
+          "inBand": false,
+          "tag": "1×"
+        }
+      ]
+    },
+    {
+      "cn": "波比跳",
+      "key": "height",
+      "band": [
+        12,
+        35
+      ],
+      "minRepGap": 1.4,
+      "winSec": 1.5,
+      "srcPeriod": 0.208,
+      "predicted2xLo": 0.29,
+      "predicted2xHiI": 0.36,
+      "rows": [
+        {
+          "f": 0.2,
+          "truePeriods": 6,
+          "reps": 6,
+          "ratio": 1,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.3,
+          "truePeriods": 9,
+          "reps": 7,
+          "ratio": 0.78,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.4,
+          "truePeriods": 12,
+          "reps": 7,
+          "ratio": 0.58,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.5,
+          "truePeriods": 15,
+          "reps": 11,
+          "ratio": 0.73,
+          "inBand": true,
+          "tag": "1× (带内)"
+        },
+        {
+          "f": 0.6,
+          "truePeriods": 18,
+          "reps": 9,
+          "ratio": 0.5,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 0.75,
+          "truePeriods": 22.5,
+          "reps": 8,
+          "ratio": 0.36,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 0.9,
+          "truePeriods": 27,
+          "reps": 8,
+          "ratio": 0.3,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1,
+          "truePeriods": 30,
+          "reps": 8,
+          "ratio": 0.27,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.2,
+          "truePeriods": 36,
+          "reps": 10,
+          "ratio": 0.28,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.5,
+          "truePeriods": 45,
+          "reps": 9,
+          "ratio": 0.2,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 1.71,
+          "truePeriods": 51.3,
+          "reps": 10,
+          "ratio": 0.19,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2,
+          "truePeriods": 60,
+          "reps": 8,
+          "ratio": 0.13,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 2.5,
+          "truePeriods": 75,
+          "reps": 11,
+          "ratio": 0.15,
+          "inBand": false,
+          "tag": "1×"
+        },
+        {
+          "f": 3,
+          "truePeriods": 90,
+          "reps": 8,
+          "ratio": 0.09,
+          "inBand": false,
+          "tag": "1×"
+        }
+      ]
+    }
+  ]
+}

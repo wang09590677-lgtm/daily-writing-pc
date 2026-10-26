@@ -1,0 +1,31 @@
+[SETUP] {"exId":"jumpingJacks","target":20,"blockId":"thu:main:0","next":"highKnees","ampBefore":0.18,"ampNow":0.005,"prepDisabled":false,"restSeconds":10}
+[poll] {"pct":0,"resting":false,"restLeft":0,"prepping":true,"choice":"jumpingJacks","running":true,"avatarVisible":false,"apNum":null,"repGate":null,"repSpread":null}
+[poll] {"pct":0,"resting":false,"restLeft":0,"prepping":true,"choice":"jumpingJacks","running":true,"avatarVisible":false,"apNum":null,"repGate":null,"repSpread":null}
+[poll] {"pct":0,"resting":false,"restLeft":0,"prepping":true,"choice":"jumpingJacks","running":true,"avatarVisible":false,"apNum":null,"repGate":null,"repSpread":null}
+[poll] {"pct":0,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"0 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[poll] {"pct":5,"resting":false,"restLeft":0,"prepping":false,"choice":"jumpingJacks","running":true,"avatarVisible":true,"apNum":"1 / 20 次","repGate":null,"repSpread":null}
+[=== VERDICT ===] {"① restLeft 序列":"","① restLeft 最小/最大":"n/a","① 是否出现过负数":false,"② 页内倒计时文本(去重)":[],"② 全屏倒计时文本(去重)":[],"③ 休息期间 MotionAvatar.isVisible 全为 true":false,"③ 休息期间全屏进度面板对孩子可见":false,"④ 休息结束切换到":"jumpingJacks","④ 是否真的切换":false,"④ 切换后 running/previewing":"true / false","⑤ 自动进下一项时见过 prep 窗口":false,"⑤ 层级实测":null}
+[控制台错误] 无

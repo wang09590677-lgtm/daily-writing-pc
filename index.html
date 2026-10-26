@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>每日一写 - PC单机版</title>
+  <link rel="stylesheet" href="styles.css?v=20261023home" />
+</head>
+<body>
+  <!-- ============ 模块选择：写作 / 体能训练 ============ -->
+  <div class="module-chooser" id="moduleChooser">
+    <div class="chooser-inner">
+      <header class="chooser-head">
+        <span class="eyebrow">每日一练 · PC 单机版</span>
+        <h1>今天想先做哪一件事？</h1>
+        <p>写作和体能训练是两个独立的部分，各自打卡、各自拿奖牌，金币都进同一个奖金池。</p>
+      </header>
+
+      <div class="chooser-cards">
+        <button class="chooser-card is-write" type="button" data-module="write">
+          <div class="chooser-art">
+            <img src="assets/img/cat-study.jpg" alt="一只穿校服的猫咪坐在课桌前认真写字" />
+          </div>
+          <div class="chooser-body">
+            <span class="chooser-tag">写作</span>
+            <h2>每日一写</h2>
+            <p>先完成「每日必写」打卡，再去做每日任务、范文临摹、文章补写，每篇都由 AI 老师打分。</p>
+            <ul class="chooser-points">
+              <li>每日必写完成后解锁拓展写作</li>
+              <li>当日总分达标换奖牌，奖牌换金币</li>
+            </ul>
+            <span class="chooser-go">进入写作 →</span>
+          </div>
+        </button>
+
+        <button class="chooser-card is-fitness" type="button" data-module="fitness">
+          <div class="chooser-art">
+            <img src="assets/img/cat-run.jpg" alt="一只穿运动服的猫咪在跑步" />
+          </div>
+          <div class="chooser-body">
+            <span class="chooser-tag">体能训练</span>
+            <h2>每日一练</h2>
+            <p>室内就能做的跑步提升计划：心肺、腿力、核心、爆发分天轮换，跟着计时器一块一块做完。</p>
+            <ul class="chooser-points">
+              <li>8 周 4 阶段，每周 6 个主题日</li>
+              <li>完成度达标换奖牌，奖牌换金币</li>
+              <li>摄像头体感跟练，自动数次数、给动作打分</li>
+            </ul>
+            <span class="chooser-go">进入体能训练 →</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- 首页奖励区：游戏卡（每周能不能玩）+ 共用奖金池 + 兑换记录。
+           老李 10-23：「游戏卡牌……放在首页的'每日一写''每日一练'下方正中央；
+           再把'金币奖金池'也挪到首页，放到游戏卡下面」。 -->
+      <div class="chooser-extras">
+        <article class="card">
+          <div class="card-title-row">
+            <h3>游戏卡</h3>
+            <span class="game-week-range" id="gameWeekRange"></span>
+          </div>
+          <p class="hint">三张猫咪游戏卡看守这周的游戏机会：本周（周六 → 周五）完成当天「今日训练」并提交，计 1 次训练；作文得分超过 70 分，计 1 篇。达到条件，对应的卡就从灰色变成彩色——<strong>每张彩卡就是一次游戏机会，三张全彩这周就能玩三次</strong>。鼠标移到卡牌上，卡牌会翻起来看进度。</p>
+          <div class="game-cards" id="gameCards"></div>
+        </article>
+
+        <article class="card">
+          <h3>金币奖金池</h3>
+          <div id="coinPool"></div>
+        </article>
+
+        <article class="card">
+          <h3>兑换记录</h3>
+          <div id="redeemHistory" class="redeem-list"></div>
+        </article>
+      </div>
+
+      <p class="chooser-foot">写作和体能训练是两个独立的部分，各自打卡、各自拿奖牌，金币都进上面这个共用的奖金池；家长可以在任意一侧的「家长管理」里统一设置奖励规则与兑换。</p>
+    </div>
+  </div>
+
+  <div class="app-shell hidden" id="appShell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon" id="brandIcon">写</div>
+        <div>
+          <h1 id="brandTitle">每日一写</h1>
+          <p id="brandSub">儿童写作长期训练</p>
+        </div>
+      </div>
+      <button class="module-switch" type="button" id="moduleSwitchBtn">⇄ 切换模块</button>
+      <nav class="nav" aria-label="主导航">
+        <button class="nav-item active" data-module="write" data-view="dashboard">首页</button>
+        <button class="nav-item" data-module="write" data-view="write">每日必写</button>
+        <button class="nav-item" data-module="write" data-view="dailyTask">每日任务</button>
+        <button class="nav-item" data-module="write" data-view="imitate">范文临摹</button>
+        <button class="nav-item" data-module="write" data-view="fillgap">文章补写</button>
+        <button class="nav-item" data-module="write" data-view="result">作文结果</button>
+        <button class="nav-item" data-module="write" data-view="history">历史作文</button>
+        <button class="nav-item" data-module="write" data-view="growth">成长分析</button>
+        <button class="nav-item" data-module="write" data-view="scoreboard">积分榜</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessToday">今日训练</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessMotion">体感跟练</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessTest">体能自测</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessHistory">训练记录</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessReport">体感报告</button>
+        <button class="nav-item" data-module="fitness" data-view="fitnessBoard">体能积分</button>
+        <button class="nav-item" data-module="both" data-view="parent">家长报告</button>
+        <button class="nav-item" data-module="both" data-view="admin">家长管理</button>
+        <button class="nav-item" data-module="both" data-view="settings">本机设置</button>
+      </nav>
+      <div class="sidebar-card" id="sidebarCard">
+        <span class="eyebrow">PC单机版</span>
+        <p>每日必写是每天必须完成的固定打卡；完成后才能进入每日任务、范文临摹、文章补写，这三个模块写几次都可以。当日总分是所有单次写作得分之和，达到家长设定的分数线即可拿金币。</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="today" id="todayText"></p>
+          <h2 id="pageTitle">首页</h2>
+        </div>
+        <div class="topbar-right">
+          <button class="stat-widget" id="statWidget" type="button" title="点击查看积分榜"></button>
+          <div class="profile-pill">
+            <span id="childAvatar">童</span>
+            <div>
+              <strong id="childNameText">小作家</strong>
+              <small id="childMetaText">五年级 · 10岁</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="view active" id="dashboard">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="eyebrow">今天先完成固定打开项目</span>
+            <h3 id="todayGoal">每日必写：自由表达 10-20 分钟</h3>
+            <p>每日必写是每天必须完成的打卡。完成之后，每日任务、范文临摹、文章补写才会解锁，这三个模块写几次都可以，每次都会单独打分。</p>
+            <div class="hero-actions">
+              <button class="primary" id="startFreeBtn" data-action="start-free">开始每日必写</button>
+              <button class="ghost" data-view-target="dailyTask">去做每日任务</button>
+              <button class="ghost" data-view-target="imitate">范文临摹</button>
+              <button class="ghost" data-view-target="fillgap">文章补写</button>
+            </div>
+            <div class="gate-hint" id="gateHint"></div>
+          </div>
+          <div class="streak-card">
+            <span>连续打卡</span>
+            <strong id="streakDays">0</strong>
+            <small>天</small>
+          </div>
+        </div>
+
+        <div class="grid three metric-grid">
+          <article class="metric-card"><span>累计作文</span><strong id="metricEssayCount">0</strong><small>篇</small></article>
+          <article class="metric-card"><span>平均得分</span><strong id="metricAvgScore">--</strong><small>分</small></article>
+          <article class="metric-card"><span>本周完成</span><strong id="metricWeekCount">0</strong><small>次</small></article>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>今日训练组合</h3>
+            <ol class="flow-list">
+              <li><span>1</span>每日必写：必须完成，完成后解锁下面的模块</li>
+              <li><span>2</span>每日任务：AI按薄弱能力出不同形式题，可多次</li>
+              <li><span>3</span>范文临摹：读短文，受启发再写，可多次</li>
+              <li><span>4</span>文章补写：补上文章被挖掉的核心段落，比原文写得好还能加分</li>
+              <li><span>5</span>当日总分 = 以上所有单次得分之和，按分数线拿金币</li>
+            </ol>
+          </article>
+          <article class="card">
+            <div class="card-title-row">
+              <h3>下一步推荐</h3>
+              <button class="link-btn" data-action="generate-smart-task">智能生成任务</button>
+            </div>
+            <div class="topic-box" id="dashboardRecommendBox"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="write">
+        <div class="write-layout">
+          <article class="card writing-panel">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow" id="writeModeLabel">每日必写</span>
+                <h3 id="writeTopicTitle">今天我想写：</h3>
+              </div>
+              <button class="ghost small" data-action="show-scaffold">写作脚手架</button>
+            </div>
+            <p class="hint" id="writeTopicHint">这是每天必须打开的基础项目：不用等题目，先把今天想说的事情写下来。</p>
+            <div class="material-card hidden" id="activeMaterialCard"></div>
+            <textarea id="essayInput" placeholder="从这里开始写。先把事情讲出来，不用一开始就追求完美……"></textarea>
+            <div class="grading-bar hidden" id="gradingBar">
+              <span class="grading-spinner" aria-hidden="true"></span>
+              <span>AI 老师正在认真读你的作文，评一评写得怎么样，还要和之前几篇比一比有没有进步……（一般 10~30 秒）</span>
+            </div>
+            <div class="editor-footer">
+              <span><strong id="wordCount">0</strong> 字</span>
+              <span id="saveState">已自动保存草稿</span>
+              <div class="editor-actions">
+                <button class="primary" data-action="submit-essay">提交给AI老师</button>
+                <!-- AI 范文参考：和「提交给AI老师」并排的大按钮。
+                     门禁 = 先拿到评分才生效，未生效时 disabled（灰）。
+                     灰掉的原因写在下面那行 model-gate-hint 里，别让孩子猜。 -->
+                <button class="primary cta-lg" id="genModelTopBtn" type="button" disabled>AI 范文参考</button>
+              </div>
+            </div>
+            <p class="model-gate-hint" id="genModelGateHint">先写完作文、点「提交给AI老师」拿到评分，这里就能生成范文。</p>
+          </article>
+
+          <aside class="coach-panel">
+            <article class="card">
+              <h3>启发问题</h3>
+              <ul class="prompt-list" id="promptList"></ul>
+            </article>
+            <article class="card">
+              <h3>今天不要做</h3>
+              <p class="warning-text">不要让 AI 直接替你写完整作文。你先写，AI 只帮你发现可以变好的地方。</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="dailyTask">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">AI自动出题</span>
+            <h3>每日任务</h3>
+            <p>结合年龄、历史题目和薄弱能力，轮换不同任务形式。题库已内置 1700+ 条素材，覆盖故事补全、看图编故事、文字扩写、词语编文、热点感想、文章补写六类。</p>
+          </div>
+          <button class="primary" data-action="generate-smart-task">生成适合今天的任务</button>
+        </div>
+
+        <div class="task-tabs" id="taskTypeTabs"></div>
+        <p class="hint task-count-hint" id="taskCountHint"></p>
+        <div class="task-stage">
+          <article class="card task-main">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow" id="taskTypeLabel">故事补全</span>
+                <h3 id="taskTitle">把片段补成完整故事</h3>
+              </div>
+              <button class="ghost small" data-action="reroll-task">换一个素材</button>
+            </div>
+            <div class="material-card" id="taskMaterial"></div>
+            <div class="task-actions">
+              <button class="primary" data-action="start-task-writing">用这个任务开始写</button>
+              <button class="ghost" data-action="pin-task">收藏素材</button>
+            </div>
+          </article>
+
+          <aside class="coach-panel">
+            <article class="card">
+              <h3>为什么给这个任务</h3>
+              <div class="advice-box" id="taskReason"></div>
+            </article>
+            <article class="card">
+              <h3>联网素材设计</h3>
+              <p class="hint">正式版每天自动抓取儿童友好的科技、自然、体育、文化、生活新闻，经安全过滤后改写成写作题。</p>
+              <button class="ghost small" data-action="simulate-news-refresh">模拟刷新热点素材</button>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="imitate">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">阅读后再写</span>
+            <h3>范文临摹</h3>
+            <p>范文控制在 1000 字以内，来自古今中外名著、知名散文、议论文、科普文、当代短文、网络短文与新闻稿。重点是接触不同写法，再写自己的内容，不追求相似度。</p>
+          </div>
+          <button class="primary" data-action="reroll-model">换一篇范文</button>
+        </div>
+        <div class="filter-bar">
+          <label>范文分类
+            <select id="modelCategorySelect"></select>
+          </label>
+          <span class="hint" id="modelLibraryMeta"></span>
+        </div>
+        <div class="imitate-layout">
+          <article class="card model-article-card">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow" id="modelTypeLabel">生活随笔</span>
+                <h3 id="modelTitle">外婆家的石榴树</h3>
+                <p class="model-meta" id="modelMeta"></p>
+              </div>
+              <button class="ghost small" data-action="start-imitate-writing">受启发开始写</button>
+            </div>
+            <div class="model-text" id="modelText"></div>
+          </article>
+          <aside class="coach-panel">
+            <article class="card">
+              <h3>临摹提示</h3>
+              <ul class="prompt-list" id="imitateTips"></ul>
+            </article>
+            <article class="card">
+              <h3>临摹原则</h3>
+              <p class="warning-text">不要照抄句子。可以学它的观察顺序、情感变化、开头方式或结尾方式，然后写自己的经历。</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="fillgap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">读完再补，补完对照</span>
+            <h3>文章补写</h3>
+            <p>给孩子一篇完整的文章，把中间最关键的几段挖掉，让他照着上下文补出来；提交后把「他补的」和「原文的」并排摆出来，由 AI 老师对照批改。如果某一段确实比原文写得好，会单独表扬并给额外加分。</p>
+          </div>
+          <button class="primary" data-action="reroll-fill">换一篇</button>
+        </div>
+
+        <!-- 来源切换：文库 / AI 生成。这是两个入口，不是一个下拉框 -->
+        <div class="fill-source-row">
+          <button class="fill-source-btn active" type="button" data-fill-source="library">
+            <strong>从素材库选</strong>
+            <small id="fillLibraryCountHint">80 篇现成文章，离线可用</small>
+          </button>
+          <button class="fill-source-btn" type="button" data-fill-source="ai">
+            <strong>AI 生成一篇</strong>
+            <small>现场写一篇新文章再挖空</small>
+          </button>
+        </div>
+
+        <div class="filter-bar" id="fillLibRow">
+          <label>文章题材
+            <select id="fillCategorySelect"></select>
+          </label>
+          <span class="hint" id="fillLibraryMeta"></span>
+        </div>
+
+        <div class="fill-ai-row hidden" id="fillAiRow">
+          <button class="primary" id="fillAiBtn" type="button" data-action="generate-fill-ai">AI 生成一篇</button>
+          <p class="hint">每点一次都会现场写一篇全新的文章（约十几秒），写完自动挖掉中间的 300 字以上。这一步需要家长在「家长管理」里配置好 AI。</p>
+        </div>
+
+        <div class="fill-layout">
+          <article class="card fill-card">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow" id="fillCategoryTag">记事</span>
+                <h3 id="fillTitle">正在读取素材库…</h3>
+                <p class="model-meta" id="fillMeta"></p>
+              </div>
+              <span class="tag green" id="fillSourceTag"></span>
+            </div>
+            <div class="fill-body" id="fillBody"></div>
+            <div class="task-actions">
+              <button class="primary" id="fillStartBtn" type="button" data-action="start-fill-writing">开始补写</button>
+            </div>
+          </article>
+
+          <aside class="coach-panel">
+            <article class="card">
+              <h3>补写五步</h3>
+              <ol class="flow-list">
+                <li><span>1</span>先从头读一遍，弄明白这篇文章在讲什么</li>
+                <li><span>2</span>盯着空缺前面那一段：作者刚说完什么？</li>
+                <li><span>3</span>再看空缺后面那一段：它要接上什么？</li>
+                <li><span>4</span>中间必须有哪一件事、哪一处细节，后面才说得通？</li>
+                <li><span>5</span>用自己的话写出来，不必和原文一样</li>
+              </ol>
+            </article>
+            <article class="card">
+              <h3>比原文写得好会加分</h3>
+              <p class="warning-text">补写不是"猜原文"。你写出一个原文没有、但更动人的细节，或者衔接得更自然，AI 老师会单独挑出来表扬，并给额外加分（最高 +10 分，计入本次得分）。</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+      <section class="view" id="result">
+        <div class="empty-state" id="emptyResult">
+          <h3>还没有本次反馈</h3>
+          <p>完成一篇作文并提交后，这里会显示评分、优点、问题和下一次训练目标。</p>
+          <button class="primary" data-view-target="write">去写一篇</button>
+        </div>
+        <div class="result-layout hidden" id="resultContent">
+          <article class="score-card">
+            <span>本次得分</span>
+            <strong id="scoreValue">0</strong>
+            <small id="scoreDelta">比历史平均 +0</small>
+            <span class="score-source" id="scoreSource"></span>
+          </article>
+
+          <article class="card" id="aiFeedbackCard">
+            <h3>AI老师短反馈</h3>
+            <p class="ai-narrative" id="aiNarrative"></p>
+            <div class="feedback-columns">
+              <div>
+                <h4>值得肯定</h4>
+                <ul id="strengthList"></ul>
+              </div>
+              <div>
+                <h4>下次改进</h4>
+                <ul id="improveList"></ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="card wide hidden" id="progressCard">
+            <span class="eyebrow">和上一篇比</span>
+            <h3 id="progressTitle">进步情况</h3>
+            <p class="progress-detail" id="progressDetail"></p>
+          </article>
+
+          <!-- 文章补写专属：孩子补的 vs 原文的。位置放在"待肯定/下次改进"之后、
+               逐句点评之前 —— 孩子最想看的是"我写的和原文差在哪"，得先给他看到。 -->
+          <article class="card wide hidden fill-compare-card" id="fillCompareCard">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow">你补的 vs 原文</span>
+                <h3 id="fillCompareTitle">《》</h3>
+                <p class="model-meta" id="fillCompareSource"></p>
+              </div>
+            </div>
+            <div class="fill-bonus hidden" id="fillBonusBox"></div>
+            <p class="hint">左边是你补写的那几段，右边是原文被挖掉的段落。写法不一样是正常的，看的是：接得上吗？有没有具体的东西？</p>
+            <div class="fill-compare-list" id="fillCompareList"></div>
+          </article>
+
+          <article class="card wide hidden" id="evidenceCard">
+            <h3>原文对照点评</h3>
+            <p class="hint">老师从你的文章里挑出了几句话，逐句说说好在哪里、哪里可以改。</p>
+            <div class="evidence-list" id="evidenceList"></div>
+          </article>
+
+          <article class="card wide">
+            <h3>评分拆解</h3>
+            <div class="score-bars" id="scoreBars"></div>
+          </article>
+          <article class="card wide next-goal-card">
+            <span class="eyebrow">下一篇核心训练目标</span>
+            <h3 id="nextGoalText">补充两个看得见、听得到的细节。</h3>
+          </article>
+
+          <!-- AI 范文参考：在孩子原文的基础上扩写一篇，给他"原来可以这样写"的示范。
+               刻意做成**点按钮才生成**：范文比评分长、也更慢，而且不是每次都想看；
+               自动生成会让孩子白等几秒、也白花一次钱。生成过就存在记录里，再打开直接显示。 -->
+          <article class="card wide model-card" id="aiModelCard">
+            <div class="card-title-row">
+              <div>
+                <span class="eyebrow">读写结合</span>
+                <h3>AI 范文参考</h3>
+              </div>
+              <button class="primary cta-lg" id="genModelBtn" type="button">生成范文</button>
+            </div>
+            <p class="hint" id="aiModelHint">让 AI 老师在你写的事情上，把细节写得更具体一点，给你做个参考。</p>
+            <p class="model-status hidden" id="aiModelStatus"></p>
+            <div class="model-body hidden" id="aiModelBody">
+              <h4 id="aiModelTitle"></h4>
+              <div class="model-text" id="aiModelText"></div>
+              <div class="model-highlights hidden" id="aiModelHighlights"></div>
+              <p class="hint model-note">这是参考写法，不是标准答案。学它「怎么写具体」就行，
+                事情还是用你自己的。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="history">
+        <div class="card">
+          <div class="card-title-row">
+            <h3>历史作文</h3>
+            <button class="danger ghost small" data-action="clear-demo">清空本机数据</button>
+          </div>
+          <!-- 历史作文改造成日历：上面是月历网格，下面 #historyList 显示所选那天的详情。
+               日历本身也是 JS 渲染，这里只留容器。 -->
+          <div class="history-calendar" id="historyCalendar"></div>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </section>
+
+      <section class="view" id="growth">
+        <div class="grid two">
+          <article class="card">
+            <h3>能力画像</h3>
+            <canvas id="radarCanvas" width="420" height="320" aria-label="写作能力雷达图"></canvas>
+          </article>
+          <article class="card">
+            <h3>长期训练建议</h3>
+            <div id="growthAdvice" class="advice-box"></div>
+          </article>
+        </div>
+        <article class="card">
+          <h3>趋势记录</h3>
+          <div class="trend-chart" id="trendChart"></div>
+        </article>
+      </section>
+
+      <section class="view" id="scoreboard">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">写作积分与奖励</span>
+            <h3>积分榜</h3>
+            <p>当日总分 = 当天所有单次写作的 AI 得分之和（每日必写 + 每日任务 + 范文临摹 + 文章补写，文章补写里"比原文写得好"的额外加分已计入单次得分）。没完成当日「每日必写」，当天记 0 分。达到家长设定的分数线即可获得金币，<strong>同一天只发一个牌（按当日总分取最高那一档），三档不叠加</strong>，金币进入两个模块共用的奖金池（在模块选择页查看总额与兑换）。</p>
+          </div>
+          <button class="ghost" data-view-target="admin">家长管理</button>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>写作金币</h3>
+            <div id="writeCoinPool"></div>
+          </article>
+          <article class="card">
+            <h3>本周榜单</h3>
+            <p class="hint">按每日总分排名，同分按日期先后。</p>
+            <div id="weekRank" class="rank-list"></div>
+          </article>
+        </div>
+
+        <article class="card">
+          <div class="card-title-row">
+            <h3>本月分数走势</h3>
+            <div class="chart-legend" id="monthLegend"></div>
+          </div>
+          <canvas id="monthChart" width="980" height="320" aria-label="本月每日总分走势曲线"></canvas>
+        </article>
+      </section>
+
+      <section class="view" id="admin">
+        <div class="card admin-lock" id="adminLock">
+          <div class="lock-icon">🔒</div>
+          <h3>家长管理</h3>
+          <p class="hint">这里可以设置金币奖励规则与兑换比例，请家长输入密码进入。初始密码为 <strong>09590677</strong>，进入后请及时修改。<strong>密码不会自己变化</strong>；如果在「家长管理」里改过密码，可以在下面的「家长密码」卡片里看到当前密码和改动时间。</p>
+          <div class="lock-form">
+            <input id="adminPasswordInput" type="password" inputmode="numeric" placeholder="请输入家长密码" autocomplete="off" />
+            <button class="primary" data-action="admin-login">进入</button>
+          </div>
+          <p class="hint" id="adminLockState"></p>
+          <p class="hint admin-escape">
+            忘记密码了？<button class="link-btn" data-action="disable-password">直接关闭密码保护</button>，就能立刻进来重新设一个。
+            这台电脑上的家长管理本来就是家长自己的面板，不会把你锁在外面。
+          </p>
+        </div>
+
+        <div class="hidden" id="adminPanel">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">家长设置</span>
+              <h3>金币奖励与兑换规则</h3>
+              <p>修改后立即生效。金币按"当日总分达到哪条分数线"逐日结算，当天写得多、写得久，总分就更高。</p>
+            </div>
+            <button class="ghost" data-action="admin-logout">退出家长管理</button>
+          </div>
+
+          <div class="grid two">
+            <article class="card wide">
+              <h3>✍️ 作文 AI 评分（推荐开启）</h3>
+              <p class="hint">
+                开启后，孩子提交作文会由大模型真正读一遍再打分：能指出具体句子好在哪里、哪里要改，
+                还会<b>和之前的作文对比</b>，看出是进步还是退步。没配置时只能用本地关键词规则估分，
+                分数比较随意。<br>
+                <b>作文内容只从这台电脑直接发给模型服务，不经过任何其他服务器。</b>
+                费用由你自己的账号承担，一篇作文通常不到 1 分钱。
+              </p>
+              <div class="admin-grid">
+                <label>模型服务
+                  <select id="aiProvider">
+                    <option value="deepseek">DeepSeek（深度求索）</option>
+                    <option value="qwen">通义千问（阿里云）</option>
+                    <option value="zhipu">智谱 GLM</option>
+                  </select>
+                </label>
+                <label>模型名（留空用默认）
+                  <input id="aiModel" type="text" placeholder="留空即可" autocomplete="off" />
+                </label>
+                <label class="wide-field">API Key
+                  <input id="aiApiKey" type="password" placeholder="粘贴你的 API Key（界面上不会显示完整内容）" autocomplete="off" />
+                </label>
+                <label>当前状态
+                  <input id="aiStatus" type="text" readonly />
+                </label>
+              </div>
+              <p class="hint" id="aiKeyHelp">申请地址会随所选服务商变化。</p>
+              <div class="admin-actions">
+                <button class="primary" data-action="save-ai-grader">保存 AI 评分设置</button>
+                <button class="ghost" data-action="test-ai-grader">测试连接</button>
+                <button class="ghost" data-action="clear-ai-key">清除 Key</button>
+                <button class="ghost" data-action="toggle-ai-grader">暂停 AI 评分</button>
+              </div>
+              <p class="ai-test-result" id="aiTestResult"></p>
+            </article>
+
+            <article class="card">
+              <h3>每日分数线与金币</h3>
+              <p class="hint">分数线要满足：金牌 ≥ 银牌 ≥ 铜牌。没达到铜牌线则当天没有金币。<strong>同一天只发一个牌：按当日总分取最高那一档，三档不叠加</strong>（做到金牌线只拿金牌那一档的金币）。</p>
+              <div class="admin-grid">
+                <label>🥇 金牌分数线<input id="adminGoldScore" type="number" min="1" max="2000" /></label>
+                <label>🥇 金牌金币<input id="adminGoldCoin" type="number" min="0" max="999" /></label>
+                <label>🥈 银牌分数线<input id="adminSilverScore" type="number" min="1" max="2000" /></label>
+                <label>🥈 银牌金币<input id="adminSilverCoin" type="number" min="0" max="999" /></label>
+                <label>🥉 铜牌分数线<input id="adminBronzeScore" type="number" min="1" max="2000" /></label>
+                <label>🥉 铜牌金币<input id="adminBronzeCoin" type="number" min="0" max="999" /></label>
+              </div>
+              <button class="primary" data-action="save-rewards">保存奖励规则</button>
+            </article>
+
+            <article class="card">
+              <h3>金币兑换比例</h3>
+              <p class="hint">设置 1 个金币能换多少游戏时间、多少零钱。</p>
+              <div class="admin-grid">
+                <label>1 金币 = 多少分钟游戏时间<input id="adminMinutes" type="number" min="0" max="600" /></label>
+                <label>1 金币 = 多少元零钱<input id="adminYuan" type="number" min="0" max="1000" step="0.1" /></label>
+              </div>
+              <button class="primary" data-action="save-rewards">保存兑换比例</button>
+
+              <div class="redeem-box">
+                <h4>为孩子兑换</h4>
+                <p class="hint">当前可用金币：<strong id="adminBalance">0</strong> 个</p>
+                <label>使用金币数量<input id="adminSpend" type="number" min="0" step="1" value="0" /></label>
+                <div class="redeem-preview" id="adminPreview"></div>
+                <div class="task-actions">
+                  <button class="primary" data-redeem="game">兑换游戏时间</button>
+                  <button class="ghost" data-redeem="cash">兑换零钱</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <article class="card">
+            <h3>写作奖牌权重与资格设置</h3>
+            <p class="hint">设置每日必写和其他任务的权重，以及完成所有项目后的奖牌资格分数线。权重之和应为 1.0（100%）。</p>
+            <div class="admin-grid">
+              <label>每日必写 AI 打分权重<input id="weightDailyRequired" type="number" min="0" max="1" step="0.1" /></label>
+              <label>其他每日任务权重<input id="weightOtherTasks" type="number" min="0" max="1" step="0.1" /></label>
+            </div>
+            <p class="hint">奖牌资格：完成所有项目后的最终总分达到以下分数线才能获得对应奖牌。</p>
+            <div class="admin-grid">
+              <label>🥇 金牌资格分数线<input id="qualifyGoldScore" type="number" min="1" max="500" /></label>
+              <label>🥈 银牌资格分数线<input id="qualifySilverScore" type="number" min="1" max="500" /></label>
+              <label>🥉 铜牌资格分数线<input id="qualifyBronzeScore" type="number" min="1" max="500" /></label>
+            </div>
+            <button class="primary" data-action="save-writing-weights">保存写作权重与资格</button>
+          </article>
+
+          <article class="card">
+            <h3>体能训练奖励规则</h3>
+            <p class="hint">体能按「当日完成度」结算奖牌，每天只结算一次（取当天完成度最高的那次训练）。
+              <strong>同一天只发一个牌：按完成度取最高那一档，三档不叠加</strong>——做到 100% 就是金牌，只拿金牌那一档的金币，不会再把银牌、铜牌的也加上。完成度要满足：金牌 ≥ 银牌 ≥ 铜牌。</p>
+            <div class="admin-grid">
+              <label>🥇 金牌完成度（%）<input id="fitGoldScore" type="number" min="1" max="100" /></label>
+              <label>🥇 金牌金币<input id="fitGoldCoin" type="number" min="0" max="999" /></label>
+              <label>🥈 银牌完成度（%）<input id="fitSilverScore" type="number" min="1" max="100" /></label>
+              <label>🥈 银牌金币<input id="fitSilverCoin" type="number" min="0" max="999" /></label>
+              <label>🥉 铜牌完成度（%）<input id="fitBronzeScore" type="number" min="1" max="100" /></label>
+              <label>🥉 铜牌金币<input id="fitBronzeCoin" type="number" min="0" max="999" /></label>
+            </div>
+            <button class="primary" data-action="save-fitness-rewards">保存体能奖励规则</button>
+          </article>
+
+          <article class="card">
+            <h3>每日一练时间设置</h3>
+            <p class="hint">这两个值是孩子点「计时 / 开始循环」时真正使用的时长。<strong>默认覆盖教案里的建议值</strong>，因为家长更清楚孩子当下的体能；想严格按教案走，取消下面那个勾选即可。</p>
+            <div class="admin-grid">
+              <label>每个动作做多久（秒）<input id="defaultWorkTime" type="number" min="5" max="300" /></label>
+              <label>组间/轮间休息（秒）<input id="defaultRestTime" type="number" min="3" max="120" /></label>
+            </div>
+            <label class="admin-switch">
+              <input type="checkbox" id="defaultTimeOverride" />
+              <span>用我设的时长覆盖教案建议（推荐勾选；取消则按教案里每个动作自带的时间走）</span>
+            </label>
+            <div class="timing-preview" id="timingPreview"></div>
+            <button class="primary" data-action="save-timing">保存时间设置</button>
+          </article>
+
+          <article class="card">
+            <h3>体感动作评分与奖励</h3>
+            <p class="hint">体感跟练会给每一组动作打一个 0-100 的动作分（看次数、节奏、幅度、左右均衡、连续性）。达到下面分数线即可拿金币，每天只结算一次，取当天最高的一次。<strong>同一天只发一个牌：按最高动作分取最高那一档，三档不叠加</strong>。体感金币同样进共用奖金池。</p>
+            <label class="motion-switch">
+              <input type="checkbox" id="motionEnabled" />
+              <span>允许孩子使用摄像头体感跟练（画面只在本机分析，不上传）</span>
+            </label>
+            <div class="admin-grid">
+              <label>🥇 金牌动作分<input id="motionGoldScore" type="number" min="1" max="100" /></label>
+              <label>🥇 金牌金币<input id="motionGoldCoin" type="number" min="0" max="999" /></label>
+              <label>🥈 银牌动作分<input id="motionSilverScore" type="number" min="1" max="100" /></label>
+              <label>🥈 银牌金币<input id="motionSilverCoin" type="number" min="0" max="999" /></label>
+              <label>🥉 铜牌动作分<input id="motionBronzeScore" type="number" min="1" max="100" /></label>
+              <label>🥉 铜牌金币<input id="motionBronzeCoin" type="number" min="0" max="999" /></label>
+            </div>
+            <button class="primary" data-action="save-motion-rewards">保存体感规则</button>
+          </article>
+
+          <article class="card">
+            <h3>家长密码</h3>
+            <p class="hint" id="adminPassState"></p>
+            <label class="admin-switch">
+              <input type="checkbox" id="adminPasswordEnabled" />
+              <span>进入家长管理需要输入密码</span>
+            </label>
+            <p class="hint">关掉上面这个开关（或点下面的按钮），家长管理就直接能进，不需要密码 —— 忘记密码时用这个办法进来重新设。设完新密码会自动重新启用。</p>
+            <div class="admin-grid">
+              <label>当前密码
+                <input id="adminCurrentPassword" type="password" placeholder="先输入当前密码确认身份" autocomplete="off" />
+              </label>
+              <label>新密码
+                <input id="adminNewPassword" type="password" placeholder="新密码（至少 4 位）" autocomplete="off" />
+              </label>
+              <label>再输一遍新密码
+                <input id="adminNewPassword2" type="password" placeholder="再输一遍，防止打错把自己锁在外面" autocomplete="off" />
+              </label>
+            </div>
+            <button class="ghost" data-action="change-password">修改密码（并启用密码）</button>
+            <button class="ghost" data-action="disable-password">忘记密码？立即关闭密码</button>
+            <p class="hint" id="adminPasswordInfo"></p>
+            <p class="hint">密码只保存在本机浏览器里，用于防止孩子自行修改奖励规则。它不是高强度安全措施，请勿使用与其他账号相同的密码。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="parent">
+        <article class="card parent-banner">
+          <div>
+            <span class="eyebrow">家长报告</span>
+            <h3>孩子这段时间的写作和体能情况</h3>
+            <p>这里只做客观汇总，不需要密码。要设置金币奖励分数线（写作按分数、体能按完成度、体感按动作分）、兑换比例或修改家长密码，请前往「家长管理」（需密码）。</p>
+          </div>
+          <button class="primary" data-view-target="admin">进入家长管理 →</button>
+        </article>
+        <div class="grid two">
+          <article class="card parent-summary">
+            <h3>给家长看的结论</h3>
+            <p id="parentSummary">还没有足够记录。建议先让孩子完成 3 篇以上作文。</p>
+          </article>
+          <article class="card">
+            <h3>本周关注</h3>
+            <ul class="parent-list" id="parentFocusList"></ul>
+          </article>
+        </div>
+        <article class="card">
+          <h3>体能训练情况</h3>
+          <div id="parentFitness"></div>
+        </article>
+        <article class="card">
+          <h3>产品设计原则</h3>
+          <div class="principle-grid">
+            <div><strong>每日必写</strong><span>固定打开项目，解决“持续写”的问题。</span></div>
+            <div><strong>多样任务</strong><span>故事补全、看图、扩写、词语编文、热点感想、文章补写。</span></div>
+            <div><strong>范文启发</strong><span>读 1000 字内短文，学写法不照抄。</span></div>
+            <div><strong>文章补写</strong><span>读一篇完整文章，补回被挖掉的核心段落，补完与原文并排对照。</span></div>
+            <div><strong>体能训练</strong><span>室内跑步提升计划，8 周 4 阶段，完成度换奖牌。</span></div>
+            <div><strong>体感跟练</strong><span>摄像头在本地分析动作，数次数、看节奏幅度，动作分换金币。</span></div>
+            <div><strong>儿童保护</strong><span>AI提问和反馈，不代写成品作文。</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="view" id="settings">
+        <div class="card settings-card">
+          <h3>孩子档案</h3>
+          <div class="form-grid">
+            <label>昵称<input id="childNameInput" type="text" /></label>
+            <label>年龄<input id="childAgeInput" type="number" min="6" max="15" /></label>
+            <label>年级<select id="childGradeInput"><option>三年级</option><option>四年级</option><option selected>五年级</option><option>六年级</option></select></label>
+            <label>每日目标字数<input id="targetWordsInput" type="number" min="100" step="50" /></label>
+          </div>
+          <button class="primary" data-action="save-profile">保存设置</button>
+          <p class="hint">单机版说明：所有数据仅存放在本机浏览器 localStorage。文章补写的素材库共 80 篇，由 AI 按人教版 5、6 年级课标编写（每篇都过了句长、篇幅、文言词、繁体字四道闸），全部随程序存放在本机，不需要联网；点「AI 生成」才会走网络调用大模型。</p>
+        </div>
+      </section>
+
+      <!-- ============ 体能训练模块 ============ -->
+      <section class="view" id="fitnessToday">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" id="fitPhaseLabel">第 1 周 · 适应期</span>
+            <h3 id="fitDayTitle">心肺耐力日</h3>
+            <p id="fitDayWhy"></p>
+          </div>
+          <div class="fit-head-side">
+            <div class="fit-ring" id="fitRing"></div>
+            <div class="fit-head-actions">
+              <button class="primary" data-action="submit-fitness" id="fitSubmitBtn">完成训练，结算奖牌</button>
+              <button class="ghost small" data-action="reset-today-checklist" id="fitResetBtn">重做今天的清单</button>
+              <!-- 「依次进行」：勾完项目后点一次，就按 热身→主训练→放松 的顺序自动一项项开跑 -->
+              <button class="primary" data-action="time-picked-seq" id="fitTimeSeqBtn">依次进行</button>
+              <span class="hint" id="fitSeqStatus"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fit-layout">
+          <div class="fit-plan">
+            <article class="card fit-group">
+              <div class="fit-group-head">
+                <h3>热身</h3>
+                <small id="fitWarmupMeta">约 5 分钟</small>
+              </div>
+              <div class="fit-blocks" id="fitWarmup"></div>
+            </article>
+            <article class="card fit-group">
+              <div class="fit-group-head">
+                <h3>主训练</h3>
+                <small id="fitMainMeta">15-20 分钟</small>
+              </div>
+              <div class="fit-blocks" id="fitMain"></div>
+            </article>
+            <article class="card fit-group">
+              <div class="fit-group-head">
+                <h3>放松拉伸</h3>
+                <small id="fitCooldownMeta">约 5 分钟</small>
+              </div>
+              <div class="fit-blocks" id="fitCooldown"></div>
+            </article>
+          </div>
+
+          <aside class="coach-panel">
+            <!-- 独立的「训练计时器」已停用：现在直接在动作块上点「计时」，
+                 由教练浮层按"运动 → 组间歇 → 运动 …"自动跑完整个项目。
+                 这里只保留 hidden 的旧结构，方便以后要恢复时改回来。 -->
+            <article class="card fit-timer-card hidden" aria-hidden="true">
+              <h3>训练计时器</h3>
+              <div class="fit-timer-display" id="fitTimerDisplay">00:00</div>
+              <p class="fit-timer-state" id="fitTimerState">先勾选动作，再点「计时」就直接开始</p>
+              <div class="fit-timer-quick">
+                <button class="ghost small" data-timer="30" data-timer-kind="train">30 秒</button>
+                <button class="ghost small" data-timer="45" data-timer-kind="train">45 秒</button>
+                <button class="ghost small" data-timer="60" data-timer-kind="train">60 秒</button>
+                <button class="ghost small" data-timer="90" data-timer-kind="train">90 秒</button>
+              </div>
+              <div class="fit-timer-quick">
+                <button class="ghost small" data-timer="20" data-timer-kind="rest">休 20 秒</button>
+                <button class="ghost small" data-timer="30" data-timer-kind="rest">休 30 秒</button>
+                <button class="ghost small" data-timer="45" data-timer-kind="rest">休 45 秒</button>
+                <button class="ghost small" data-timer="60" data-timer-kind="rest">休 60 秒</button>
+              </div>
+              <div class="fit-timer-actions">
+                <button class="primary" data-action="timer-toggle" id="fitTimerToggle">开始</button>
+                <button class="ghost small" data-action="timer-reset">归零</button>
+              </div>
+            </article>
+
+            <article class="card fit-timer-help">
+              <h3>怎么开始计时</h3>
+              <p>① 先在动作块前面<strong>打钩选中</strong>这个项目；<br>
+                 ② 再点这个项目右边的<strong>「计时」</strong>就直接开始。<br>
+                 没勾选的时候「计时」是灰的，点不动。</p>
+              <p>多组的动作会自动帮你串上组间歇：
+                <strong>运动 → 休息 → 运动 → 休息 → 运动</strong>，
+                每一段运动都有自己的倒计时。</p>
+              <p class="fit-timer-eg">例：原地小步跑 3 组 × 30 秒、组间歇 30 秒
+                = 30+30+30+30+30，一共 150 秒。</p>
+              <p>跟着教练把计时<strong>跑完，这个项目才算完成</strong>（块上会出现「✓ 已完成」）。
+                完成度、奖牌和金币都只看已完成的项目。</p>
+            </article>
+
+            <article class="card">
+              <h3>今天的训练提示</h3>
+              <ul class="prompt-list" id="fitTips"></ul>
+            </article>
+
+            <article class="card">
+              <h3>安全第一</h3>
+              <p class="warning-text" id="fitSafety"></p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ---- 体感跟练（摄像头动作分析）---- -->
+      <section class="view" id="fitnessMotion">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">摄像头体感分析</span>
+            <h3>体感跟练</h3>
+            <p>打开摄像头后会显示人形轮廓的<strong>估计关节</strong>（不是精确人体姿态识别）；深度已连接时显示深度剪影与骨架，未连接时仅从彩色画面估计。深度与彩色相机尚未配准，不能将深度骨架直接叠在彩色视频上。手臂贴近身体或身体被遮挡时无法可靠识别腕、肘，系统会隐藏不可信的关节。画面只在本机分析，不上传、不录制。</p>
+          </div>
+          <div class="fit-head-side">
+            <div class="fit-ring" id="motionRing"></div>
+            <div class="fit-head-actions">
+              <button class="ghost small" data-view-target="fitnessReport">看体感报告</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="motion-layout">
+          <article class="card motion-stage">
+            <p class="hint" id="motionSourceStatus">相机来源：尚未开启。只有连接本机深度桥并找到可靠人形时，才显示深度剪影；彩色与深度画面不混叠。</p>
+            <div class="motion-picker">
+              <label>这一组练什么
+                <select id="motionExSelect"></select>
+              </label>
+              <span class="hint" id="motionGoalHint"></span>
+            </div>
+
+            <div class="motion-screen" id="motionScreen">
+              <video id="motionVideo" playsinline autoplay muted></video>
+              <canvas id="motionOverlay" width="640" height="480" aria-hidden="true"></canvas>
+              <div class="motion-placeholder" id="motionPlaceholder">
+                <div class="motion-placeholder-icon">📷</div>
+                <p>点下面的「开启摄像头」开始</p>
+                <small>画面只在本机分析，不上传、不保存</small>
+              </div>
+              <div class="pose-target hidden" id="poseTarget" aria-hidden="true">
+                <span class="pose-target-tip">站到框里，双臂张开可以伸到框外</span>
+              </div>
+              <div class="motion-badge" id="motionBadge"></div>
+              <!-- ★★ 大字进度浮层（2026-10-21，老李要求"默认显示真实关节点画面、
+                   不要默认用 3D 模型人"）。
+                   既然不再默认铺满 3D 全屏层，孩子站两三米外就读不到页面小字了，
+                   所以把"当前 / 目标"做成叠在摄像头画面上的**大字号**读数。
+                   与 #motionGoalProgress 同源（都走 renderMotionProgress），
+                   这里只负责"远处看得见"，不另算一套。 -->
+              <div class="motion-big hidden" id="motionBig" aria-live="polite">
+                <div class="motion-big-num" id="motionBigNum">—</div>
+                <div class="motion-big-name" id="motionBigName"></div>
+                <div class="motion-big-bar"><i id="motionBigFill"></i></div>
+              </div>
+              <div class="motion-legend" id="motionLegend"><i></i><span>正在感应你的人形</span></div>
+              <div class="motion-unsupported hidden" id="motionUnsupported"></div>
+            </div>
+
+            <div class="motion-readouts" id="motionReadouts"></div>
+
+            <!-- 达标进度（本项还差多少 / 今天练到第几项）。
+                 ⚠️ 故意放在 #motionReadouts **外面**，不要挪进去：
+                 既有的回归断言锁死了读数区的 tile 数量（计次类 5 项），
+                 加进去会挂 motion-browser-test.js 的那条断言。 -->
+            <div class="motion-goal-progress" id="motionGoalProgress">
+              <div class="mgp-head">
+                <strong id="motionGoalName">本项目标</strong>
+                <span id="motionGoalSeq"></span>
+              </div>
+              <div class="mgp-num" id="motionGoalNum">—</div>
+              <div class="mgp-bar"><i id="motionGoalFill"></i></div>
+            </div>
+
+            <div class="motion-hint info" id="motionHint">站到画面中间，让全身都能看到</div>
+
+            <div class="motion-cam-bar">
+              <label>用哪个摄像头
+                <select id="motionCamSelect"></select>
+              </label>
+              <button class="ghost small" data-action="motion-cam-refresh" id="motionCamRefreshBtn" title="重新检测电脑上插着的摄像头">重新检测</button>
+              <span class="motion-cam-info" id="motionCamInfo"></span>
+              <span class="motion-depth-chip" id="motionDepthChip" title="深度测距是可选项，不开启也能正常跟练；要开启需先运行 tools/orbbec/start-depth-bridge.bat">深度：未开启</span>
+            </div>
+
+            <div class="motion-actions">
+              <button class="primary" data-action="motion-camera" id="motionCameraBtn">开启摄像头</button>
+              <button class="ghost" data-action="motion-start" id="motionStartBtn" disabled>开始这一组</button>
+              <button class="ghost" data-action="motion-finish" id="motionFinishBtn" disabled>结束并评分</button>
+              <button class="ghost small" data-action="motion-reset">重来</button>
+              <!-- ★ 3D 模型人是可选项（2026-10-21）：默认关，用真实关节点画面。
+                   想换成 3D 角色跟练时点一下即可，选择记在 localStorage。 -->
+              <button class="ghost small" data-action="motion-avatar-toggle" id="motionAvatarToggleBtn"
+                      title="默认在摄像头画面上显示你真实的关节点。点这里可以换成 3D 模型人跟练。">3D 模型人：关</button>
+            </div>
+          </article>
+
+          <aside class="coach-panel">
+            <article class="card">
+              <h3>这一组的动作分</h3>
+              <div id="motionResult">
+                <p class="hint">还没有成绩。做完一组并点「结束并评分」，这里会显示总分、分项和一句反馈。</p>
+              </div>
+            </article>
+            <article class="card">
+              <h3>体感能测什么</h3>
+              <ul class="prompt-list" id="motionCanDo"></ul>
+            </article>
+            <article class="card">
+              <h3>测不了什么</h3>
+              <ul class="prompt-list" id="motionCannotDo"></ul>
+            </article>
+            <article class="card">
+              <h3>怎么站、怎么摆电脑</h3>
+              <ul class="prompt-list" id="motionSetup"></ul>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="fitnessTest">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">看看有没有变强</span>
+            <h3>体能自测</h3>
+            <p>每两周测一次，只跟自己比，不要跟同学比。跑步成绩的提升，会先反映在这四个数字上——其中「30 秒高抬腿」直接对应步频，是 50 米成绩最关键的一项。</p>
+          </div>
+        </div>
+        <div class="grid two" id="fitTestCards"></div>
+        <article class="card">
+          <h3>自测记录</h3>
+          <p class="hint">每一次测量都会留在这里，最新的在最上面。</p>
+          <div id="fitTestHistory"></div>
+        </article>
+      </section>
+
+      <section class="view" id="fitnessHistory">
+        <div class="card">
+          <div class="card-title-row">
+            <h3>训练记录</h3>
+            <button class="danger ghost small" data-action="clear-fitness">清空体能记录</button>
+          </div>
+          <div id="fitHistoryList" class="history-list"></div>
+        </div>
+      </section>
+
+      <section class="view" id="fitnessReport">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">体感运动分析</span>
+            <h3>体感报告</h3>
+            <p>每次体感跟练都会留一条记录：次数、节奏、幅度、对称、连续。动作分达到家长设定的分数线就能拿金币，每天只结算一次，取当天最高的一次。体感金币和写作、体能的金币一起进同一个奖金池。</p>
+          </div>
+          <button class="ghost" data-view-target="admin">家长管理</button>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>体感金币</h3>
+            <div id="motionCoinPool"></div>
+          </article>
+          <article class="card">
+            <h3>最近一次的分项</h3>
+            <div id="motionLastParts"></div>
+          </article>
+        </div>
+
+        <article class="card">
+          <div class="card-title-row">
+            <h3>体感记录</h3>
+            <button class="danger ghost small" data-action="clear-motion">清空体感记录</button>
+          </div>
+          <div id="motionScoreList" class="history-list"></div>
+        </article>
+      </section>
+
+      <section class="view" id="fitnessBoard">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">体能积分与奖励</span>
+            <h3>体能积分</h3>
+            <p>每天只结算一次，取当天完成度最高的那一次训练，避免反复刷分。完成度达到家长设定的分数线即可获得金币，<strong>同一天只发一个牌（按完成度取最高那一档），金牌、银牌、铜牌三档不叠加</strong>，金币进入与写作共用的奖金池。</p>
+          </div>
+          <button class="ghost" data-view-target="admin">家长管理</button>
+        </div>
+
+        <div class="grid two">
+          <article class="card">
+            <h3>体能金币</h3>
+            <div id="fitCoinPool"></div>
+          </article>
+          <article class="card">
+            <h3>本周榜单</h3>
+            <p class="hint">按每日完成度排名，同分按日期先后。</p>
+            <div id="fitWeekRank" class="rank-list"></div>
+          </article>
+        </div>
+
+        <article class="card">
+          <div class="card-title-row">
+            <h3>本月完成度走势</h3>
+            <div class="chart-legend" id="fitMonthLegend"></div>
+          </div>
+          <canvas id="fitMonthChart" width="980" height="320" aria-label="本月每日训练完成度走势曲线"></canvas>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="scaffoldModal" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="card-title-row">
+        <h3>写作脚手架</h3>
+        <button class="icon-btn" data-action="close-scaffold">×</button>
+      </div>
+      <div id="scaffoldContent"></div>
+    </div>
+  </div>
+
+  <!-- 开场骨骼校准：开摄像头后先进这里，站到位了才放行去训练。
+       画面本体是 #motionScreen（会被放大成全屏），这里只盖一层 HUD。 -->
+  <div class="pose-calib hidden" id="poseCalib" role="dialog" aria-modal="true" aria-label="骨骼识别校准">
+    <div class="pose-calib-head">
+      <div>
+        <span class="eyebrow" id="poseCalibStep">第 1 步 · 让我看清你</span>
+        <h2 id="poseCalibTitle">站到摄像头前面</h2>
+      </div>
+      <button class="ghost small" type="button" data-action="pose-calib-skip" id="poseCalibSkip">先跳过，直接练</button>
+    </div>
+
+    <!-- 空房扫描：只有接了深度摄像头（Astra）才走这一步。
+         引擎要先在"没人的时候"量一遍房间（墙/地板/家具的深度），之后才能用
+         "和空房不一样的地方"来认人 —— 这是真实房间里能认出张开双臂的关键。
+         纯彩色 / 合成模式没有深度，这一步自动跳过，不影响原有流程。 -->
+    <div class="room-scan hidden" id="roomScan">
+      <div class="room-scan-card">
+        <div class="room-scan-icon" aria-hidden="true">🏠</div>
+        <h3 id="roomScanTitle">我先记一下房间的样子</h3>
+        <p class="room-scan-tip" id="roomScanTip">
+          请你先退到画面外面，或者站到摄像头拍不到的地方。<br>
+          这几秒钟不要出现在画面里。
+        </p>
+        <div class="room-scan-progress"><i id="roomScanBar"></i></div>
+        <p class="room-scan-count" id="roomScanCount">正在记录… 0 / 12</p>
+        <button class="ghost small" type="button" id="roomScanSkip">跳过（用默认判断）</button>
+      </div>
+    </div>
+
+    <aside class="pose-calib-panel">
+      <div class="pose-score">
+        <div class="pose-score-ring" id="poseScoreRing">
+          <span id="poseScoreNum">0</span>
+        </div>
+        <p class="pose-score-label" id="poseScoreLabel">还没看到你</p>
+      </div>
+
+      <ul class="pose-checks" id="poseChecks"></ul>
+
+      <div class="pose-guide" id="poseGuide">正在打开摄像头…</div>
+
+      <div class="pose-holdbar" title="站位达标并稳住 1.5 秒就能通过">
+        <i id="poseHoldBar"></i>
+      </div>
+
+      <button class="primary big" type="button" id="poseCalibGo" disabled>开始跟练</button>
+      <p class="hint">位置对了会语音提示「很好，保持不动」，锁定成功后这个按钮才会亮。<br>也可以直接点上面的「先跳过」。</p>
+    </aside>
+
+    <div class="pose-calib-foot">
+      <span class="motion-depth-chip" id="poseCalibDepth" title="深度测距是可选项，不开启也能正常跟练；要开启需先运行 tools/orbbec/start-depth-bridge.bat">深度：未开启</span>
+      <span class="pose-cam-chip" id="poseCalibCam"></span>
+    </div>
+  </div>
+
+  <!-- 站位锁定后的「准备开练」大字层。
+       孩子站在离电脑两三米的地方，不可能跑过来点「开始这一组」——
+       所以锁定成功之后这里先念一句「准备开始进行XX，请就位」，
+       再人声数 3、2、1，数到"开始"就自动开练。
+       字必须够大：这是"远处能看见"的唯一通道。
+
+       注意它**故意放在 #poseCalib 外面**：校准浮层收起时会给 #poseCalib
+       加 hidden（display:none），作为它的子节点会被一起藏掉 —— 而这个层
+       恰恰要在校准收起之后才显示，放里面就会永远看不见。 -->
+  <div class="pose-prep hidden" id="posePrep">
+    <p class="pose-prep-name" id="posePrepName">准备开始</p>
+    <div class="pose-prep-count" id="posePrepCount"></div>
+    <p class="pose-prep-sub" id="posePrepSub">站好位置，马上开始</p>
+    <button class="ghost small" type="button" id="posePrepSkip">我准备好了，直接开始</button>
+  </div>
+
+  <!-- 教练计时浮层：占屏幕 80%，左半演示 / 右半计时 -->
+  <div class="coach-timer hidden" id="coachTimer" role="dialog" aria-modal="true" aria-label="训练计时">
+    <div class="coach-stage">
+      <section class="coach-left">
+        <header class="coach-demo-head">
+          <span class="coach-emoji" id="coachEmoji">🏃</span>
+          <div class="coach-demo-title">
+            <h3 id="coachExName">训练</h3>
+            <p id="coachCaption"></p>
+          </div>
+          <span class="coach-tag" id="coachTag">教练示范</span>
+        </header>
+        <div class="coach-canvas-wrap">
+          <video id="coachVideo" loop playsinline muted class="hidden"></video>
+          <canvas id="coachCanvas"></canvas>
+          <!-- 开练前：先说「准备开始进行XX，请就位」，再人声数 3、2、1，然后才真正开始 -->
+          <div class="coach-prep hidden" id="coachPrep">
+            <p class="coach-prep-name" id="coachPrepName"></p>
+            <div class="coach-prep-count" id="coachPrepCount"></div>
+            <p class="coach-prep-sub" id="coachPrepSub"></p>
+            <button class="ghost coach-prep-skip" type="button" id="coachPrepSkip">跳过准备，直接开始</button>
+          </div>
+        </div>
+        <p class="coach-how" id="coachExHow"></p>
+      </section>
+      <section class="coach-right">
+        <p class="coach-right-label" id="coachPhaseLabel">剩余时间</p>
+        <div class="coach-count" id="coachCount">00:00</div>
+        <p class="coach-setline" id="coachSetLine"></p>
+        <div class="coach-phases" id="coachPhases"></div>
+        <div class="coach-progress"><i id="coachBar"></i></div>
+        <p class="coach-hint" id="coachHint"></p>
+        <div class="coach-actions">
+          <button class="primary" type="button" id="coachPauseBtn">暂停</button>
+          <button class="ghost" type="button" id="coachCloseBtn">结束</button>
+        </div>
+        <p class="coach-tip">按空格暂停 · 按 Esc 结束</p>
+      </section>
+
+      <!-- 休息段：整块浮层盖住左右两栏，只留一个大倒计时。
+           直接放在 .coach-stage 下，才能在休息时把演示与计时栏一起遮住。 -->
+      <div class="coach-rest hidden" id="coachRest">
+        <p class="coach-rest-label">组间休息</p>
+        <div class="coach-rest-count" id="coachRestCount">00:10</div>
+        <p class="coach-rest-next" id="coachRestNext"></p>
+        <p class="coach-rest-hint" id="coachRestHint">慢慢呼吸，喝两口水</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/tasks.js?v=20261003d"></script>
+  <script src="data/models-classics.js?v=20261003d"></script>
+  <script src="data/models-authored-1.js?v=20261003d"></script>
+  <script src="data/models-authored-2.js?v=20261003d"></script>
+  <script src="data/models-authored-3.js?v=20261003d"></script>
+  <script src="data/models-authored-4.js?v=20261003d"></script>
+  <script src="data/models-authored-5.js?v=20261003d"></script>
+  <script src="data/models-authored-6.js?v=20261003d"></script>
+  <script src="data/fill-articles.js?v=20261018ai80"></script>
+  <script src="data/fitness-plan.js?v=20261021armsig"></script>
+  <script src="assets/vendor/three.min.js?v=20261005a"></script>
+  <!-- GLTFLoader：three r150 官方已移除 UMD 版，这里是单独补的 r147 官方 UMD 版
+       （挂 THREE.GLTFLoader，与 r150 核心 API 兼容）。必须在 three.min.js 之后、
+       motion-avatar.js 之前加载，否则后面拿不到 THREE.GLTFLoader。 -->
+  <script src="assets/vendor/GLTFLoader.js?v=20261006catglb"></script>
+  <script src="vendor/mediapipe/pose.js?v=20261005a"></script>
+  <script src="pose-vision.js?v=20261021armsig"></script>
+  <script src="motion-engine.js?v=20261021armsig"></script>
+  <script src="depth-link.js?v=20261010sample"></script>
+  <script src="video-store.js?v=20261005a"></script>
+  <script src="voice-guide.js?v=20261008voice"></script>
+  <script src="coach-timer.js?v=20261005a"></script>
+  <script src="ai-grader.js?v=20261018layout"></script>
+  <script src="motion-avatar.js?v=20261019ikmin"></script>
+  <script src="app.js?v=20261023home"></script>
+</body>
+</html>

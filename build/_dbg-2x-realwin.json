@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "rows": [
+    {
+      "cn": "开合跳",
+      "signal": "width",
+      "secs": 6,
+      "win": 40,
+      "winSec": 0.667,
+      "dominantPeriod": 0.95,
+      "winOverPeriod": 0.702,
+      "rawUpCross": 11,
+      "engineReps": 10,
+      "replicaReps": 10,
+      "tag": "1×"
+    },
+    {
+      "cn": "徒手深蹲",
+      "signal": "height",
+      "secs": 15,
+      "win": 80,
+      "winSec": 1.333,
+      "dominantPeriod": 0.15,
+      "winOverPeriod": 8.889,
+      "rawUpCross": 4,
+      "engineReps": 6,
+      "replicaReps": 6,
+      "tag": "1×"
+    },
+    {
+      "cn": "跳绳",
+      "signal": "height",
+      "secs": 6,
+      "win": 30,
+      "winSec": 0.5,
+      "dominantPeriod": 0.583,
+      "winOverPeriod": 0.857,
+      "rawUpCross": 10,
+      "engineReps": 13,
+      "replicaReps": 13,
+      "tag": "1×"
+    },
+    {
+      "cn": "波比跳",
+      "signal": "height",
+      "secs": 6,
+      "win": 90,
+      "winSec": 1.5,
+      "dominantPeriod": 0.15,
+      "winOverPeriod": 10,
+      "rawUpCross": 3,
+      "engineReps": 4,
+      "replicaReps": 4,
+      "tag": "1×"
+    }
+  ],
+  "jumpRopePlot": {
+    "k": 0.549,
+    "win": 30,
+    "smoothK": 4,
+    "engineReps": 13,
+    "cycles": 10
+  }
+}

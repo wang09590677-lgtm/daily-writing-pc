@@ -1,0 +1,95 @@
+# ============================================================
+#  AI 儿童每日写作训练 · 仓库忽略规则
+#  目标：只保留「源码 + 数据 + 运行时素材 + 回归测试」，
+#        剔除临时产物、日志、截图、厂商二进制包。
+# ============================================================
+
+# ---------- 系统与编辑器 ----------
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+*.log
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+python/
+
+# ---------- Node ----------
+node_modules/
+package-lock.json
+
+# ============================================================
+#  运行时产物（不是源码）
+# ============================================================
+
+# Chrome 调试用户目录 / 截图 / 视频帧
+build/_chrome-dbg/
+build/shots/
+build/_tmp/
+build/_frames*/
+build/_vidframes/
+build/raw/
+build/raw-img/
+build/_rollback/
+build/_bak-*/
+
+# 回归用的原始视频流（几十 MB 的二进制，可重新生成）
+*.y4m
+
+# 生成过程中缓存的中间语料
+build/_articles-cache*/
+build/_articles-picked*.bak.json
+build/_fill-articles.*.bak.js
+build/_fill-articles.before-*.js
+build/_fill-articles.classic-clean.js
+build/models-classics.backup.js
+
+# A/B 备份与临时回退副本
+build/_ab-backup-*.js
+build/_verify-current-*.js
+build/_lkg/
+build/_probe/
+
+# 测试/调试留下的数据快照
+build/*.json.bak
+build/_*.png
+build/_*.webm
+build/*-log.txt
+build/*.log
+build/*.y4m
+
+# ============================================================
+#  第三方二进制：不随仓库分发（体积大 + 再分发授权不明）
+#  需要深度功能时按 README「可选：Astra Pro 深度」自行下载
+# ============================================================
+tools/openni/OpenNI_2.3.0.86_202210111950_4c8f5aa4_beta6_windows/
+tools/orbbec/OpenNI_inner.zip
+tools/orbbec/Orbbec_OpenNI_v2.3.0.86-beta6_windows_release.zip
+tools/orbbec/astra-win32-driver-4.3.0.22.zip
+tools/orbbec/astra-win32-driver-4.3.0.22/
+tools/orbbec/driver-extracted/
+tools/7z/
+tools/orbbec/install-log.txt
+tools/orbbec/verify-log.txt
+tools/orbbec/real-depth-*.json
+tools/orbbec/real-depth-*.png
+
+# ============================================================
+#  个人数据：绝不上传
+# ============================================================
+*.key
+*.pem
+secrets.json
+.env
+.env.*
+
+# 本地打包产物
+release/
+release-work/
+*.zip

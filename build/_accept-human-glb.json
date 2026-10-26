@@ -1,0 +1,332 @@
+{
+  "total": 56,
+  "failed": 0,
+  "results": [
+    {
+      "name": "GLTFLoader 已就位（three r150 官方无 UMD 版，靠单独补的 r147 版）",
+      "ok": true,
+      "detail": "THREE.GLTFLoader=true"
+    },
+    {
+      "name": "模型加载成功（没退回兜底人形）",
+      "ok": true,
+      "detail": "reason=无"
+    },
+    {
+      "name": "骨骼数 = 65（Mixamo 标准人形）",
+      "ok": true,
+      "detail": "boneCount=65"
+    },
+    {
+      "name": "蒙皮网格数 = 2（Beta_Joints / Beta_Surface）",
+      "ok": true,
+      "detail": "skinnedCount=2"
+    },
+    {
+      "name": "模型骨名里没有尾巴骨骼（按**真实骨名**查；sk.tail 恒 0，不作判据）",
+      "ok": true,
+      "detail": "无 tail 骨名（sk.tail=0 是配置项）"
+    },
+    {
+      "name": "自顶向下顺序覆盖全部骨骼（aim 依赖它）",
+      "ok": true,
+      "detail": "65 vs 65"
+    },
+    {
+      "name": "没用到兜底模型",
+      "ok": true,
+      "detail": "usingFallback=false"
+    },
+    {
+      "name": "模型来自用户指定的文件（体能训练动作演示/体感跟练模型.glb）",
+      "ok": true,
+      "detail": "体能训练动作演示/体感跟练模型.glb"
+    },
+    {
+      "name": "身高实测 ≈ 1.809（真人尺度；错 100 倍说明用了 Box3.setFromObject 量蒙皮网格）",
+      "ok": true,
+      "detail": "height=1.8092"
+    },
+    {
+      "name": "最低关节是 Toe_End 且贴在网格底（REST_LOWEST ≈ 0）",
+      "ok": true,
+      "detail": "最低关节=mixamorigRightToe_End restLowest=0.0004"
+    },
+    {
+      "name": "腿骨不拉伸（Mixamo 人形已是真人比例，LEG_STRETCH = 1.0）",
+      "ok": true,
+      "detail": "LEG_STRETCH=1"
+    },
+    {
+      "name": "② 跟随有效：喂抬臂数据后手部确实抬高（不是僵在原地）",
+      "ok": true,
+      "detail": "引擎左→模型右手 Δy=0.378，引擎右→模型左手 Δy=0.378"
+    },
+    {
+      "name": "③ 引擎 wristL（屏幕左）驱动的是**模型右手**（交叉映射，方向没反）",
+      "ok": true,
+      "detail": "Δy(RightHand)=0.378 应显著为正"
+    },
+    {
+      "name": "③ 引擎 wristR（屏幕右）驱动的是**模型左手**",
+      "ok": true,
+      "detail": "Δy(LeftHand)=0.378 应显著为正"
+    },
+    {
+      "name": "③ 抬一侧时另一侧不该跟着动（没有串扰）",
+      "ok": true,
+      "detail": "引擎左抬时模型左 Δy=0.0000；引擎右抬时模型右 Δy=0.0000"
+    },
+    {
+      "name": "③ 站姿时手在髋以下（T-pose 会远高于髋）",
+      "ok": true,
+      "detail": "手-髋 高度差=-0.077（负 = 手在髋下方）"
+    },
+    {
+      "name": "③ 站姿时双手对称",
+      "ok": true,
+      "detail": "左手y=-0.2265 右手y=-0.2265"
+    },
+    {
+      "name": "③ 站姿腿是直的（大腿/小腿偏离竖直都 < 8°；旧表实测 43.6° / 39°）",
+      "ok": true,
+      "detail": "大腿 1.5°  小腿 1.5°"
+    },
+    {
+      "name": "③ 站姿膝几乎伸直（大腿向量与小腿向量夹角 < 20°；旧表实测 82.6° = 微蹲）",
+      "ok": true,
+      "detail": "0.0°（伸直 ≈ 0°）"
+    },
+    {
+      "name": "③ 站姿脚掌是平的（踝比趾高 0.03~0.07；踮脚会到 0.12）",
+      "ok": true,
+      "detail": "0.0336"
+    },
+    {
+      "name": "④ 蹲下时 Hips 跟着下降",
+      "ok": true,
+      "detail": "Hips Δy=-0.052（应为负=下降）"
+    },
+    {
+      "name": "④ 驱动表里没有解析失败的骨骼",
+      "ok": true,
+      "detail": "全部解析成功"
+    },
+    {
+      "name": "④ 存在的别名映射被显式记录（mixamorig 前缀这类）",
+      "ok": true,
+      "detail": "[\"Spine→mixamorigSpine\",\"Spine1→mixamorigSpine1\",\"Spine2→mixamorigSpine2\",\"Neck→mixamorigNeck\"] 共 17 条"
+    },
+    {
+      "name": "④ 驱动表每一项都可见（length 合法）",
+      "ok": true,
+      "detail": "17 项全部有实长"
+    },
+    {
+      "name": "④ 头骨被真的驱动（喂'头偏左'→ 头骨跟着偏）",
+      "ok": true,
+      "detail": "Head=[-0.0981,0.1065,0.0131]（x 应为负=偏左）"
+    },
+    {
+      "name": "④c 骨链留在关节所在平面内（|z| < 0.05，防「四肢甩到身后」）",
+      "ok": true,
+      "detail": "最大 |z| = 0.0147"
+    },
+    {
+      "name": "④c 平举时手真的外展到身体外侧（|x| 明显大于站姿）",
+      "ok": true,
+      "detail": "平举 |x|=0.331 站姿 |x|=0.098"
+    },
+    {
+      "name": "④c 平举时手高于肩（举手的方向没反）",
+      "ok": true,
+      "detail": "手 y=0.151 肩 y=0.049"
+    },
+    {
+      "name": "⑤ 每帧（骨骼驱动 + 渲染）< 8ms",
+      "ok": true,
+      "detail": "0.22ms/帧"
+    },
+    {
+      "name": "⑥ 角色在画面里可见（实体像素数 > 400，不是黑屏）",
+      "ok": true,
+      "detail": "实体像素=658/32000"
+    },
+    {
+      "name": "⑥ 渲染剪影高度与**布局高度**吻合（±8%，自锚定；别写死 50%）",
+      "ok": true,
+      "detail": "渲染 48.8% vs 布局 49.5%（H=0.8914）"
+    },
+    {
+      "name": "⑥ 角色剪影不是一条线/一个小点（纵向 ≥ 布局高度的 85%、横向 ≥ 5%）",
+      "ok": true,
+      "detail": "bbox={\"x\":0.465,\"w\":0.065,\"y\":0.375,\"h\":0.4875}"
+    },
+    {
+      "name": "⑥ 渲染曝光正常（实体像素 < 90%，不是一片白）",
+      "ok": true,
+      "detail": "占比=2.1%"
+    },
+    {
+      "name": "⑥ 角色水平居中（剪影中心在 0.35~0.65）",
+      "ok": true,
+      "detail": "中心=0.498"
+    },
+    {
+      "name": "⑦ 站姿腕误差 < 0.01（钉住 IK 真的会弯肘；clamp 写反时 0.1393）",
+      "ok": true,
+      "detail": "腕误差=0.003"
+    },
+    {
+      "name": "⑦ 站姿踝误差 < 0.01（钉住末端真的落到目标点；旧猫未拉腿 0.1106）",
+      "ok": true,
+      "detail": "踝误差=0.0023"
+    },
+    {
+      "name": "⑦ 膝/肘极杆误差 < 0.30（保骨长驱动的固有偏差，末端才是验收项）",
+      "ok": true,
+      "detail": "膝=0.0057 肘=0.0091"
+    },
+    {
+      "name": "⑦ 腿幅度（并腿→分开）≥ 指令值的 90%（阈值随布局自动缩放，不写死）",
+      "ok": true,
+      "detail": "脚幅度=0.1377 ≥ 0.1164（指令 0.1293）  膝幅度=0.0691"
+    },
+    {
+      "name": "⑦ 深蹲时膝盖真的弯了（大腿向量与小腿向量夹角 > 60°；腿伸直时 ≈ 0°）",
+      "ok": true,
+      "detail": "弯角=82.7°（腿伸直 ≈ 0°）"
+    },
+    {
+      "name": "⑧ 站姿头顶不压顶部面板",
+      "ok": true,
+      "detail": "头顶 298.3px > 面板下沿 197.6px"
+    },
+    {
+      "name": "⑧ 站姿脚底不沉进底部控制栏",
+      "ok": true,
+      "detail": "脚底 690.4px < 控制栏上沿 709.0px"
+    },
+    {
+      "name": "⑧ 张臂时脚底也不沉进控制栏",
+      "ok": true,
+      "detail": "脚底 690.4px < 709.0px"
+    },
+    {
+      "name": "⑧ 举手过顶时**真·指尖**也不压顶部面板（用 armsOverhead + Fingertip；腕≠指尖）",
+      "ok": true,
+      "detail": "指尖(RightFingertip) 214.4px > 面板下沿 197.6px"
+    },
+    {
+      "name": "⑧ 过顶姿势的最高点确实是**指尖**（不是头顶、不是腕）—— 防 Fingertip 取不到时静默退回头顶",
+      "ok": true,
+      "detail": "最高点=RightFingertip（应为 *Fingertip）"
+    },
+    {
+      "name": "⑧ 模型**解析最大伸展**（手臂完全竖直，与夹具无关）也不压顶部面板",
+      "ok": true,
+      "detail": "解析指尖 213.3px > 197.6px"
+    },
+    {
+      "name": "⑧ REACH_UP 是**从模型实测**的（≈0.21），不是那个把腕当指尖的 0.1306",
+      "ok": true,
+      "detail": "REACH_UP=0.2125"
+    },
+    {
+      "name": "⑧ REACH_UP 确实**量出来了**（reachUpMeasured 非 null；退回兜底值时这条会红）",
+      "ok": true,
+      "detail": "reachUpMeasured=0.2125  生效值=0.2125"
+    },
+    {
+      "name": "⑧ 举手过顶时脚底也不沉进控制栏",
+      "ok": true,
+      "detail": "脚底 690.4px < 709.0px"
+    },
+    {
+      "name": "⑧ 举手过顶时**渲染像素**的顶端也让开顶部面板（最直接的一条，不依赖骨骼）",
+      "ok": true,
+      "detail": "像素顶 215px > 面板下沿 197.6px（余量 17.4px）"
+    },
+    {
+      "name": "⑧ 角色最高伸展（脚→指尖）占安全区 85%~100%（既没缩成小不点、也没溢出）",
+      "ok": true,
+      "detail": "过顶占比=93.1%  站姿占比=76.7%"
+    },
+    {
+      "name": "⑨ 双臂**严格水平共线**平举 ⇒ 模型肘弯曲 < 2°（「我伸直它却向下弯折」的正向判据）",
+      "ok": true,
+      "detail": "肘R=0.0° 肘L=0.0° 膝R=0.0° 膝L=0.0°"
+    },
+    {
+      "name": "⑨ 双腿**严格竖直共线** ⇒ 模型膝弯曲 < 2°（「我直着站它腿向外弯」的正向判据）",
+      "ok": true,
+      "detail": "肘R=0.0° 肘L=0.0° 膝R=0.0° 膝L=0.0°"
+    },
+    {
+      "name": "⑨ IDLE 站姿（没识别到人时的姿势）四肢也必须伸直",
+      "ok": true,
+      "detail": "肘R=0.0° 肘L=0.0° 膝R=0.0° 膝L=0.0°"
+    },
+    {
+      "name": "⑨ 反向：深蹲时膝盖**必须真的弯**（防「一律伸直」的过修）",
+      "ok": true,
+      "detail": "肘R=0.1° 肘L=0.1° 膝R=82.7° 膝L=82.7°"
+    },
+    {
+      "name": "⑨ 已知局限（非期望行为）：正面下蹲对 2D 引擎不可见 ⇒ 腿保持伸直、脚会下沉",
+      "ok": true,
+      "detail": "膝R=0.0° 膝L=0.0° 脚下沉 0.0606（正=穿地；这是 2D 传感器的原理性盲区）"
+    },
+    {
+      "name": "全程没有 JS 报错",
+      "ok": true,
+      "detail": "无"
+    }
+  ],
+  "perf": 0.21999999980131785,
+  "fit": {
+    "h": 800,
+    "safeTopPx": 197.59375,
+    "safeBotPx": 709,
+    "maxReach": {
+      "tipWorld": 0.4200551437901424,
+      "screenTop": 213.30882498215894,
+      "chain": {
+        "upperArm": 0.1372,
+        "foreArm": 0.1396,
+        "hand": 0.0942,
+        "tipName": "mixamorigRightHandMiddle4"
+      },
+      "reachUp": 0.2125,
+      "shoulderFrac": 0.7963,
+      "anchorFrac": 0.792019347037485,
+      "modelFrac": 0.7963
+    },
+    "pixTop": 215,
+    "stand": {
+      "worldTop": 0.2288,
+      "worldBot": -0.6534,
+      "screenTop": 298.31111111111113,
+      "screenBot": 690.3999999999999,
+      "tipKey": "(其他)",
+      "wristTop": 500.6666666666667
+    },
+    "spread": {
+      "worldTop": 0.2288,
+      "worldBot": -0.6534,
+      "screenTop": 298.31111111111113,
+      "screenBot": 690.3999999999999,
+      "tipKey": "(其他)",
+      "wristTop": 332.7555555555556
+    },
+    "overhead": {
+      "worldTop": 0.4175,
+      "worldBot": -0.6534,
+      "screenTop": 214.44444444444446,
+      "screenBot": 690.3999999999999,
+      "tipKey": "RightFingertip",
+      "wristTop": 256.0444444444445
+    },
+    "reachUpMeasured": 0.2125
+  }
+}

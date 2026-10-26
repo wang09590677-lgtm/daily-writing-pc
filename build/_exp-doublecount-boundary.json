@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24,
+    "bodyH": 0.65,
+    "winJR": 0.5
+  },
+  "freq": [
+    {
+      "freq": 0.4,
+      "cycles": 12,
+      "repsGateOff": 1,
+      "ratio": 0.08,
+      "winOverPeriod": 0.2,
+      "repsGateOn": 0,
+      "gateEnd": 0.0255,
+      "tag": "正常"
+    },
+    {
+      "freq": 0.5,
+      "cycles": 15,
+      "repsGateOff": 15,
+      "ratio": 1,
+      "winOverPeriod": 0.25,
+      "repsGateOn": 14,
+      "gateEnd": 0.0253,
+      "tag": "正常"
+    },
+    {
+      "freq": 0.6,
+      "cycles": 18,
+      "repsGateOff": 17,
+      "ratio": 0.94,
+      "winOverPeriod": 0.3,
+      "repsGateOn": 17,
+      "gateEnd": 0.0252,
+      "tag": "正常"
+    },
+    {
+      "freq": 0.75,
+      "cycles": 23,
+      "repsGateOff": 25,
+      "ratio": 1.09,
+      "winOverPeriod": 0.38,
+      "repsGateOn": 25,
+      "gateEnd": 0.0252,
+      "tag": "正常"
+    },
+    {
+      "freq": 0.9,
+      "cycles": 27,
+      "repsGateOff": 55,
+      "ratio": 2.04,
+      "winOverPeriod": 0.45,
+      "repsGateOn": 54,
+      "gateEnd": 0.0254,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 1,
+      "cycles": 30,
+      "repsGateOff": 61,
+      "ratio": 2.03,
+      "winOverPeriod": 0.5,
+      "repsGateOn": 59,
+      "gateEnd": 0.0254,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 1.2,
+      "cycles": 36,
+      "repsGateOff": 86,
+      "ratio": 2.39,
+      "winOverPeriod": 0.6,
+      "repsGateOn": 86,
+      "gateEnd": 0.0254,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 1.5,
+      "cycles": 45,
+      "repsGateOff": 90,
+      "ratio": 2,
+      "winOverPeriod": 0.75,
+      "repsGateOn": 90,
+      "gateEnd": 0.0253,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 1.8,
+      "cycles": 53,
+      "repsGateOff": 97,
+      "ratio": 1.83,
+      "winOverPeriod": 0.9,
+      "repsGateOn": 97,
+      "gateEnd": 0.0252,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 2,
+      "cycles": 60,
+      "repsGateOff": 97,
+      "ratio": 1.62,
+      "winOverPeriod": 1,
+      "repsGateOn": 97,
+      "gateEnd": 0.0252,
+      "tag": "★ 2× 区间"
+    },
+    {
+      "freq": 2.5,
+      "cycles": 75,
+      "repsGateOff": 97,
+      "ratio": 1.29,
+      "winOverPeriod": 1.25,
+      "repsGateOn": 97,
+      "gateEnd": 0.0253,
+      "tag": "偏高"
+    },
+    {
+      "freq": 3,
+      "cycles": 90,
+      "repsGateOff": 97,
+      "ratio": 1.08,
+      "winOverPeriod": 1.5,
+      "repsGateOn": 97,
+      "gateEnd": 0.0253,
+      "tag": "正常"
+    }
+  ],
+  "wave": [
+    {
+      "label": "① 纯正弦",
+      "kind": "sine",
+      "h2": 0,
+      "dwell": 0,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 86,
+      "ratio": 2.39,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "② 正弦+二次谐波(h2=0.30)",
+      "kind": "sine2",
+      "h2": 0.3,
+      "dwell": 0,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 87,
+      "ratio": 2.42,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "②b 正弦+二次谐波(h2=0.15)",
+      "kind": "sine2",
+      "h2": 0.15,
+      "dwell": 0,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 73,
+      "ratio": 2.03,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "③ 带平台(停 33%/33%)",
+      "kind": "plateau",
+      "h2": 0,
+      "dwell": 0.34,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "③b 带平台(停 20%/20%)",
+      "kind": "plateau",
+      "h2": 0,
+      "dwell": 0.2,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "④ 纯正弦+实测抖动(j=0.005)",
+      "kind": "sine",
+      "h2": 0,
+      "dwell": 0,
+      "jit": 0.005,
+      "cycles": 36,
+      "reps": 86,
+      "ratio": 2.39,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "④b 纯正弦+抖动(j=0.010)",
+      "kind": "sine",
+      "h2": 0,
+      "dwell": 0,
+      "jit": 0.01,
+      "cycles": 36,
+      "reps": 86,
+      "ratio": 2.39,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "⑤ 平台+谐波+抖动(最真实)",
+      "kind": "plateau",
+      "h2": 0,
+      "dwell": 0.34,
+      "jit": 0.0025,
+      "cycles": 36,
+      "reps": 89,
+      "ratio": 2.47,
+      "tag": "★ 仍 2×"
+    }
+  ],
+  "vis": [
+    {
+      "label": "全部可见(0.95)",
+      "cycles": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "下肢 vis=0.29（低于 VIS_MIN，剔）",
+      "cycles": 36,
+      "reps": 78,
+      "ratio": 2.17,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "下肢 vis=0.5（半可信）",
+      "cycles": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "下肢整点置空(NaN)",
+      "cycles": 36,
+      "reps": 78,
+      "ratio": 2.17,
+      "tag": "★ 仍 2×"
+    }
+  ],
+  "real": [
+    {
+      "cn": "开合跳",
+      "signal": "width",
+      "cycles": 5,
+      "reps": 10,
+      "ratio": 2
+    },
+    {
+      "cn": "徒手深蹲",
+      "signal": "height",
+      "cycles": 4,
+      "reps": 6,
+      "ratio": 1.5
+    },
+    {
+      "cn": "跳绳",
+      "signal": "height",
+      "cycles": 10,
+      "reps": 12,
+      "ratio": 1.2
+    },
+    {
+      "cn": "波比跳",
+      "signal": "height",
+      "cycles": 3,
+      "reps": 4,
+      "ratio": 1.33
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+[ 1/81] room            已存在，跳过
+[ 2/81] crowd           已存在，跳过
+[ 3/81] wind            已存在，跳过
+[ 4/81] bird            已存在，跳过
+[ 5/81] water           已存在，跳过
+[ 6/81] footsteps       已存在，跳过
+[ 7/81] machine         已存在，跳过
+[ 8/81] traffic         已存在，跳过
+[ 9/81] insect          已存在，跳过
+[10/81] children        已存在，跳过
+[11/81] leaves          已存在，跳过
+[12/81] drum            已存在，跳过
+[13/81] rain            已存在，跳过
+[14/81] whistle         已存在，跳过
+[15/81] radio           已存在，跳过
+[16/81] engine          已存在，跳过
+[17/81] bell            已存在，跳过
+[18/81] clock           已存在，跳过
+[19/81] strings         已存在，跳过
+[20/81] kitchen         已存在，跳过
+[21/81] applause        已存在，跳过
+[22/81] market          已存在，跳过
+[23/81] piano           已存在，跳过
+[24/81] thunder         已存在，跳过
+[25/81] flute           已存在，跳过
+[26/81] frog            已存在，跳过
+[27/81] sea             已存在，跳过
+[28/81] horn            已存在，跳过
+[29/81] plane           已存在，跳过
+[30/81] train           已存在，跳过
+[31/81] dog             已存在，跳过
+[32/81] heartbeat       已存在，跳过
+[33/81] door            已存在，跳过
+[34/81] cat             已存在，跳过
+[35/81] rocket          已存在，跳过
+[36/81] schoolbell      已存在，跳过
+[37/81] waterfall       已存在，跳过
+[38/81] sirenPolice     已存在，跳过
+[39/81] sirenAmbulance  已存在，跳过
+[40/81] fire            已存在，跳过
+[41/81] phone           已存在，跳过
+[42/81] bee             已存在，跳过
+[43/81] rooster         ok  源  13.8s -> 34s   139.3KB  Rooster crowing - very close.wav
+[44/81] cicada          ok  源  53.5s -> 34s   399.2KB  SummerNighthawkandInsects19August2014.wav
+[45/81] duck            ok  源   4.8s -> 34s    34.0KB  Toy Ducks Quacking
+[46/81] chicken         ok  源  26.4s -> 34s   286.9KB  R01-57-Chickens Clucking and Shrieking.wav
+[47/81] cow             ok  源  27.1s -> 34s   296.1KB  Metal gate whining and squeaking in a cattle par
+[48/81] horse           ok  源 177.8s -> 34s   399.2KB  R26-18-Foley Horse Hooves Walking.wav
+[49/81] sheep           ok  源  15.5s -> 34s   159.8KB  Sheep bleating
+[50/81] owl             ok  源  36.3s -> 34s   399.2KB  Pople Walk park at night with distant sound of o
+[51/81] seagull         ok  源  15.5s -> 34s   159.5KB  seagulls 3.wav
+[52/81] magpie          ok  源  44.0s -> 34s   399.2KB  Eurasian Magpie Calling
+[53/81] windchime       ok  源  89.1s -> 34s   532.3KB  Wind chimes 1
+[54/81] templebell      ok  源  54.8s -> 34s   532.3KB  Temple Ambience.wav
+[55/81] gong            ok  源  19.4s -> 34s   273.1KB  Tibetan bowl_center hit.wav
+[56/81] guzheng         ok  源 656.0s -> 34s   532.3KB  LOVELY CHINESE GUZHENG BOWED.wav
+[57/81] erhu            ok  源  10.0s -> 34s   127.0KB  001-Erhu D4.wav
+[58/81] dizi            ok  源  16.4s -> 34s   226.6KB  DIZI FLUTE 01.wav
+[59/81] firecracker     ok  源  15.6s -> 34s   161.1KB  Spinning Firecracker
+[60/81] fireworks       ok  源  39.6s -> 34s   399.2KB  fireworks impact25.wav
+[61/81] templefair      ok  源  71.4s -> 34s   399.2KB  Weekend Fair in Chapultepec Park Mexico City
+[62/81] opera           无搜索结果
+[63/81] mahjong         ok  源 155.0s -> 34s   399.2KB  mah_jong_parlor_outside.wav
+[64/81] pingpong        ok  源   3.5s -> 34s    18.1KB  Dropping ping pong ball on table
+[65/81] basketball      ok  源  23.9s -> 34s   258.1KB  basketball ext dribble bounce hard surface.flac
+[66/81] jump_rope       ok  源  68.8s -> 34s   399.2KB  210415 Skipping rope, various speeds, ms.wav
+[67/81] swimming        ok  源  56.3s -> 34s   399.2KB  water movements swimming around various splashes
+[68/81] bicyclebell     ok  源  18.4s -> 34s   193.5KB  Bicycle Bell 2 Sound Effect Free High Quality So
+[69/81] bus             ok  源  71.7s -> 34s   399.2KB  bus_interior_highway.WAV
+[70/81] subway          ok  源  55.9s -> 34s   399.2KB  interior train subway metro standing at quiet su
+[71/81] shiphorn        ok  源  28.0s -> 34s   305.6KB  Cruise Ship Horn, 3x
+[72/81] typing          ok  源  18.7s -> 34s   196.9KB  Keyboard Typing
+[73/81] pageturn        ok  源   9.0s -> 34s    83.3KB  Book Page Turning
+[74/81] kettle          ok  源  32.0s -> 34s   353.0KB  Water boiling in a kettle
+[75/81] frying          ok  源  29.0s -> 34s   316.9KB  Sausage in oily frying pan sizzling.wav
+[76/81] chopping        ok  源  30.8s -> 34s   338.3KB  cutting peppers chopping board knife
+[77/81] dishes          ok  源  18.3s -> 34s   192.3KB  Washing Dishes
+[78/81] washingmachine  ok  源  31.0s -> 34s   341.1KB  washing machine Moderate Spin, Wash .wav
+[79/81] vacuum          ok  源  43.5s -> 34s   399.2KB  Vacuum Cleaner in use.aif
+[80/81] alarmclock      ok  源  28.4s -> 34s   415.1KB  S23-05 Mechanical alarm clock ringing; two diffe
+[81/81] doorbell        ok  源  18.5s -> 34s   260.5KB  doorbell apartment 3 times.flac
+
+完成: 成功 38 / 失败 1

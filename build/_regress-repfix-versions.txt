@@ -1,0 +1,15 @@
+ENGINE_AT_START 168d6829b0e965be95eb9a99865f5890 *motion-engine.js
+[11:42:04] START motion-browser-test.js
+[11:45:45] END motion-browser-test.js EXIT=124 engine=168d6829
+[11:45:53] START accept-motion-autostart.js
+[11:49:34] END accept-motion-autostart.js EXIT=124 engine=168d6829
+[11:49:42] START pose-calib-test.js
+[11:53:23] END pose-calib-test.js EXIT=124 engine=168d6829
+[11:53:31] START accept-pose-vision.js
+[11:57:13] END accept-pose-vision.js EXIT=124 engine=168d6829
+[11:57:20] START cat-avatar-test.js
+[12:01:02] END cat-avatar-test.js EXIT=124 engine=168d6829
+[12:01:09] START fit-voice-prep-test.js
+[12:04:50] END fit-voice-prep-test.js EXIT=124 engine=168d6829
+ENGINE_AT_END 168d6829b0e965be95eb9a99865f5890 *motion-engine.js
+ALL_DONE

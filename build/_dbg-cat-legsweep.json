@@ -1,0 +1,100 @@
+{
+  "geom": {
+    "upperLegWorldY": -0.2448,
+    "footY": -0.8113055555555555,
+    "H": 1.1253888888888888,
+    "winH": 720
+  },
+  "rows": [
+    {
+      "S": 1,
+      "ankleErr": 0.0928,
+      "kneeErr": 0.0431,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.14621084091133596,
+      "kneeAmp": 0.07618004988184242,
+      "legAmpAvg": 0.14621084091133596,
+      "restThigh": 0.1945,
+      "restShin": 0.1787,
+      "topWorld": 0.9098,
+      "botWorld": -0.98,
+      "handAmp": 0
+    },
+    {
+      "S": 1.15,
+      "ankleErr": 0.0368,
+      "kneeErr": 0.0266,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.16803193148922616,
+      "kneeAmp": 0.08763292760144442,
+      "legAmpAvg": 0.16803193148922616,
+      "restThigh": 0.2237,
+      "restShin": 0.2055,
+      "topWorld": 0.9107,
+      "botWorld": -1.07,
+      "handAmp": 0
+    },
+    {
+      "S": 1.18,
+      "ankleErr": 0.0256,
+      "kneeErr": 0.0261,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.17244990576976257,
+      "kneeAmp": 0.08994142538341272,
+      "legAmpAvg": 0.17244990576976257,
+      "restThigh": 0.2295,
+      "restShin": 0.2109,
+      "topWorld": 0.9109,
+      "botWorld": -1.09,
+      "handAmp": 0
+    },
+    {
+      "S": 1.2,
+      "ankleErr": 0.0181,
+      "kneeErr": 0.0265,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.175355467550915,
+      "kneeAmp": 0.09135436497507933,
+      "legAmpAvg": 0.175355467550915,
+      "restThigh": 0.2334,
+      "restShin": 0.2145,
+      "topWorld": 0.9109,
+      "botWorld": -1.09,
+      "handAmp": 0
+    },
+    {
+      "S": 1.22,
+      "ankleErr": 0.0106,
+      "kneeErr": 0.0275,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.17838032402706303,
+      "kneeAmp": 0.09294654377651705,
+      "legAmpAvg": 0.17838032402706303,
+      "restThigh": 0.2373,
+      "restShin": 0.2181,
+      "topWorld": 0.9109,
+      "botWorld": -1.09,
+      "handAmp": 0
+    },
+    {
+      "S": 1.25,
+      "ankleErr": 0.0006,
+      "kneeErr": 0.0298,
+      "wristErr": 0.1346,
+      "elbowErr": 0.1259,
+      "footAmp": 0.18279830414968298,
+      "kneeAmp": 0.09525507860476522,
+      "legAmpAvg": 0.18279830414968298,
+      "restThigh": 0.2431,
+      "restShin": 0.2234,
+      "topWorld": 0.9109,
+      "botWorld": -1.09,
+      "handAmp": 0
+    }
+  ]
+}

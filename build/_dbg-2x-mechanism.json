@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24,
+    "winJRFrame": 30
+  },
+  "validate": [
+    {
+      "freq": 0.75,
+      "cycles": 23,
+      "engineReps": 25,
+      "replicaReps": 26,
+      "winOverPeriod": 0.375
+    },
+    {
+      "freq": 0.875,
+      "cycles": 26,
+      "engineReps": 28,
+      "replicaReps": 29,
+      "winOverPeriod": 0.438
+    },
+    {
+      "freq": 0.9,
+      "cycles": 27,
+      "engineReps": 55,
+      "replicaReps": 55,
+      "winOverPeriod": 0.45
+    },
+    {
+      "freq": 1,
+      "cycles": 30,
+      "engineReps": 61,
+      "replicaReps": 61,
+      "winOverPeriod": 0.5
+    },
+    {
+      "freq": 1.2,
+      "cycles": 36,
+      "engineReps": 86,
+      "replicaReps": 84,
+      "winOverPeriod": 0.6
+    },
+    {
+      "freq": 1.5,
+      "cycles": 45,
+      "engineReps": 90,
+      "replicaReps": 91,
+      "winOverPeriod": 0.75
+    },
+    {
+      "freq": 1.8,
+      "cycles": 53,
+      "engineReps": 97,
+      "replicaReps": 96,
+      "winOverPeriod": 0.9
+    },
+    {
+      "freq": 2,
+      "cycles": 60,
+      "engineReps": 97,
+      "replicaReps": 96,
+      "winOverPeriod": 1
+    },
+    {
+      "freq": 2.5,
+      "cycles": 75,
+      "engineReps": 97,
+      "replicaReps": 96,
+      "winOverPeriod": 1.25
+    },
+    {
+      "freq": 3,
+      "cycles": 90,
+      "engineReps": 97,
+      "replicaReps": 96,
+      "winOverPeriod": 1.5
+    }
+  ],
+  "winSweep": [
+    {
+      "win": 12,
+      "winSec": 0.2,
+      "winOverPeriod": 0.24,
+      "reps": 1,
+      "tag": "1×"
+    },
+    {
+      "win": 18,
+      "winSec": 0.3,
+      "winOverPeriod": 0.36,
+      "reps": 37,
+      "tag": "1×"
+    },
+    {
+      "win": 24,
+      "winSec": 0.4,
+      "winOverPeriod": 0.48,
+      "reps": 72,
+      "tag": "2×"
+    },
+    {
+      "win": 30,
+      "winSec": 0.5,
+      "winOverPeriod": 0.6,
+      "reps": 84,
+      "tag": "2×"
+    },
+    {
+      "win": 36,
+      "winSec": 0.6,
+      "winOverPeriod": 0.72,
+      "reps": 72,
+      "tag": "2×"
+    },
+    {
+      "win": 45,
+      "winSec": 0.75,
+      "winOverPeriod": 0.9,
+      "reps": 72,
+      "tag": "2×"
+    },
+    {
+      "win": 60,
+      "winSec": 1,
+      "winOverPeriod": 1.2,
+      "reps": 72,
+      "tag": "2×"
+    },
+    {
+      "win": 90,
+      "winSec": 1.5,
+      "winOverPeriod": 1.8,
+      "reps": 72,
+      "tag": "2×"
+    }
+  ],
+  "minGapSweep": [
+    {
+      "freq": 1.5,
+      "minGap0": 1570,
+      "minGap03": 91,
+      "minGap05": 60,
+      "cycles": 45
+    },
+    {
+      "freq": 1.8,
+      "minGap0": 1741,
+      "minGap03": 96,
+      "minGap05": 60,
+      "cycles": 53
+    },
+    {
+      "freq": 2,
+      "minGap0": 1850,
+      "minGap03": 96,
+      "minGap05": 60,
+      "cycles": 60
+    },
+    {
+      "freq": 2.5,
+      "minGap0": 1865,
+      "minGap03": 96,
+      "minGap05": 60,
+      "cycles": 75
+    },
+    {
+      "freq": 3,
+      "minGap0": 1879,
+      "minGap03": 96,
+      "minGap05": 60,
+      "cycles": 90
+    }
+  ],
+  "toggle": [
+    {
+      "label": "完整(基线)",
+      "reps": 84,
+      "ratio": 2.33
+    },
+    {
+      "label": "关 detrend(仅减整段均值)",
+      "reps": 0,
+      "ratio": 0
+    },
+    {
+      "label": "关 smooth",
+      "reps": 94,
+      "ratio": 2.61
+    },
+    {
+      "label": "关 detrend + 关 smooth",
+      "reps": 0,
+      "ratio": 0
+    }
+  ],
+  "wave": [
+    {
+      "freq": 0.8,
+      "k": 0.45,
+      "cyclesInWindow": 24,
+      "reps": 25
+    },
+    {
+      "freq": 0.9,
+      "k": 0.45,
+      "cyclesInWindow": 27,
+      "reps": 55
+    }
+  ]
+}

@@ -1,0 +1,3840 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "secs": 20,
+    "note": "signal-level synth (pp=ea), counter replica validated against engine"
+  },
+  "matrix": {
+    "halfSquatWarm": {
+      "cn": "半蹲热身",
+      "signal": "centroidY",
+      "bandBPM": [
+        15,
+        40
+      ],
+      "minRepGap": 0.9,
+      "freqsBPM": [
+        15,
+        21,
+        27,
+        34,
+        40
+      ],
+      "rows": {
+        "现状|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "现状|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "现状|34": {
+          "reps": 18,
+          "truth": 11,
+          "ratio": 1.64
+        },
+        "现状|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A1 k=1.2rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A1 k=1.2rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A1 k=1.2rms|34": {
+          "reps": 10,
+          "truth": 11,
+          "ratio": 0.91
+        },
+        "A1 k=1.2rms|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A2 k=1.8rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|27": {
+          "reps": 7,
+          "truth": 9,
+          "ratio": 0.78
+        },
+        "A2 k=1.8rms|34": {
+          "reps": 0,
+          "truth": 11,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|40": {
+          "reps": 0,
+          "truth": 13,
+          "ratio": 0
+        },
+        "A3 k下限0.8|15": {
+          "reps": 0,
+          "truth": 5,
+          "ratio": 0
+        },
+        "A3 k下限0.8|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A3 k下限0.8|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A3 k下限0.8|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "A3 k下限0.8|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A4 k≥0.35峰|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A4 k≥0.35峰|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A4 k≥0.35峰|34": {
+          "reps": 18,
+          "truth": 11,
+          "ratio": 1.64
+        },
+        "A4 k≥0.35峰|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "B 完整下-上|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "B 完整下-上|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "B 完整下-上|34": {
+          "reps": 17,
+          "truth": 11,
+          "ratio": 1.55
+        },
+        "B 完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "C 自适应minGap(1.3半周)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "C 自适应minGap(1.3半周)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "C 自适应minGap(1.3半周)|34": {
+          "reps": 17,
+          "truth": 11,
+          "ratio": 1.55
+        },
+        "C 自适应minGap(1.3半周)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "D win由band0/上限3s|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "D win由band0/上限3s|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "D win由band0/上限3s|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "E win×3(上限3s)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "E win×3(上限3s)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "E win×3(上限3s)|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F 单样本增量(建议)|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F 单样本增量(建议)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F+B 增量+完整下-上|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F+B 增量+完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        }
+      }
+    },
+    "jumpingJacks": {
+      "cn": "开合跳",
+      "signal": "width",
+      "bandBPM": [
+        40,
+        90
+      ],
+      "minRepGap": 0.45,
+      "freqsBPM": [
+        40,
+        53,
+        65,
+        78,
+        90
+      ],
+      "rows": {
+        "现状|40": {
+          "reps": 15,
+          "truth": 13,
+          "ratio": 1.15
+        },
+        "现状|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "现状|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "现状|78": {
+          "reps": 42,
+          "truth": 26,
+          "ratio": 1.62
+        },
+        "现状|90": {
+          "reps": 41,
+          "truth": 30,
+          "ratio": 1.37
+        },
+        "A1 k=1.2rms|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "A1 k=1.2rms|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "A1 k=1.2rms|78": {
+          "reps": 39,
+          "truth": 26,
+          "ratio": 1.5
+        },
+        "A1 k=1.2rms|90": {
+          "reps": 40,
+          "truth": 30,
+          "ratio": 1.33
+        },
+        "A2 k=1.8rms|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|53": {
+          "reps": 17,
+          "truth": 18,
+          "ratio": 0.94
+        },
+        "A2 k=1.8rms|65": {
+          "reps": 0,
+          "truth": 22,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|78": {
+          "reps": 0,
+          "truth": 26,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|90": {
+          "reps": 0,
+          "truth": 30,
+          "ratio": 0
+        },
+        "A3 k下限0.8|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A3 k下限0.8|53": {
+          "reps": 18,
+          "truth": 18,
+          "ratio": 1
+        },
+        "A3 k下限0.8|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "A3 k下限0.8|78": {
+          "reps": 41,
+          "truth": 26,
+          "ratio": 1.58
+        },
+        "A3 k下限0.8|90": {
+          "reps": 41,
+          "truth": 30,
+          "ratio": 1.37
+        },
+        "A4 k≥0.35峰|40": {
+          "reps": 15,
+          "truth": 13,
+          "ratio": 1.15
+        },
+        "A4 k≥0.35峰|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "A4 k≥0.35峰|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "A4 k≥0.35峰|78": {
+          "reps": 42,
+          "truth": 26,
+          "ratio": 1.62
+        },
+        "A4 k≥0.35峰|90": {
+          "reps": 41,
+          "truth": 30,
+          "ratio": 1.37
+        },
+        "B 完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "B 完整下-上|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "B 完整下-上|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "B 完整下-上|78": {
+          "reps": 42,
+          "truth": 26,
+          "ratio": 1.62
+        },
+        "B 完整下-上|90": {
+          "reps": 41,
+          "truth": 30,
+          "ratio": 1.37
+        },
+        "C 自适应minGap(1.3半周)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "C 自适应minGap(1.3半周)|53": {
+          "reps": 28,
+          "truth": 18,
+          "ratio": 1.56
+        },
+        "C 自适应minGap(1.3半周)|65": {
+          "reps": 33,
+          "truth": 22,
+          "ratio": 1.5
+        },
+        "C 自适应minGap(1.3半周)|78": {
+          "reps": 37,
+          "truth": 26,
+          "ratio": 1.42
+        },
+        "C 自适应minGap(1.3半周)|90": {
+          "reps": 45,
+          "truth": 30,
+          "ratio": 1.5
+        },
+        "D win由band0/上限3s|40": {
+          "reps": 27,
+          "truth": 13,
+          "ratio": 2.08
+        },
+        "D win由band0/上限3s|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "D win由band0/上限3s|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "D win由band0/上限3s|78": {
+          "reps": 39,
+          "truth": 26,
+          "ratio": 1.5
+        },
+        "D win由band0/上限3s|90": {
+          "reps": 40,
+          "truth": 30,
+          "ratio": 1.33
+        },
+        "E win×3(上限3s)|40": {
+          "reps": 27,
+          "truth": 13,
+          "ratio": 2.08
+        },
+        "E win×3(上限3s)|53": {
+          "reps": 35,
+          "truth": 18,
+          "ratio": 1.94
+        },
+        "E win×3(上限3s)|65": {
+          "reps": 43,
+          "truth": 22,
+          "ratio": 1.95
+        },
+        "E win×3(上限3s)|78": {
+          "reps": 39,
+          "truth": 26,
+          "ratio": 1.5
+        },
+        "E win×3(上限3s)|90": {
+          "reps": 40,
+          "truth": 30,
+          "ratio": 1.33
+        },
+        "F 单样本增量(建议)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F 单样本增量(建议)|53": {
+          "reps": 18,
+          "truth": 18,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|65": {
+          "reps": 22,
+          "truth": 22,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|78": {
+          "reps": 26,
+          "truth": 26,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|90": {
+          "reps": 30,
+          "truth": 30,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F+B 增量+完整下-上|53": {
+          "reps": 18,
+          "truth": 18,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|65": {
+          "reps": 22,
+          "truth": 22,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|78": {
+          "reps": 26,
+          "truth": 26,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|90": {
+          "reps": 30,
+          "truth": 30,
+          "ratio": 1
+        }
+      }
+    },
+    "jumpRope": {
+      "cn": "跳绳",
+      "signal": "height",
+      "bandBPM": [
+        60,
+        120
+      ],
+      "minRepGap": 0.3,
+      "freqsBPM": [
+        60,
+        75,
+        90,
+        105,
+        120
+      ],
+      "rows": {
+        "现状|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "现状|75": {
+          "reps": 57,
+          "truth": 25,
+          "ratio": 2.28
+        },
+        "现状|90": {
+          "reps": 61,
+          "truth": 30,
+          "ratio": 2.03
+        },
+        "现状|105": {
+          "reps": 64,
+          "truth": 35,
+          "ratio": 1.83
+        },
+        "现状|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "A1 k=1.2rms|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "A1 k=1.2rms|75": {
+          "reps": 50,
+          "truth": 25,
+          "ratio": 2
+        },
+        "A1 k=1.2rms|90": {
+          "reps": 60,
+          "truth": 30,
+          "ratio": 2
+        },
+        "A1 k=1.2rms|105": {
+          "reps": 62,
+          "truth": 35,
+          "ratio": 1.77
+        },
+        "A1 k=1.2rms|120": {
+          "reps": 60,
+          "truth": 40,
+          "ratio": 1.5
+        },
+        "A2 k=1.8rms|60": {
+          "reps": 19,
+          "truth": 20,
+          "ratio": 0.95
+        },
+        "A2 k=1.8rms|75": {
+          "reps": 23,
+          "truth": 25,
+          "ratio": 0.92
+        },
+        "A2 k=1.8rms|90": {
+          "reps": 0,
+          "truth": 30,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|105": {
+          "reps": 0,
+          "truth": 35,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|120": {
+          "reps": 0,
+          "truth": 40,
+          "ratio": 0
+        },
+        "A3 k下限0.8|60": {
+          "reps": 20,
+          "truth": 20,
+          "ratio": 1
+        },
+        "A3 k下限0.8|75": {
+          "reps": 26,
+          "truth": 25,
+          "ratio": 1.04
+        },
+        "A3 k下限0.8|90": {
+          "reps": 60,
+          "truth": 30,
+          "ratio": 2
+        },
+        "A3 k下限0.8|105": {
+          "reps": 64,
+          "truth": 35,
+          "ratio": 1.83
+        },
+        "A3 k下限0.8|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "A4 k≥0.35峰|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "A4 k≥0.35峰|75": {
+          "reps": 57,
+          "truth": 25,
+          "ratio": 2.28
+        },
+        "A4 k≥0.35峰|90": {
+          "reps": 61,
+          "truth": 30,
+          "ratio": 2.03
+        },
+        "A4 k≥0.35峰|105": {
+          "reps": 64,
+          "truth": 35,
+          "ratio": 1.83
+        },
+        "A4 k≥0.35峰|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "B 完整下-上|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "B 完整下-上|75": {
+          "reps": 57,
+          "truth": 25,
+          "ratio": 2.28
+        },
+        "B 完整下-上|90": {
+          "reps": 60,
+          "truth": 30,
+          "ratio": 2
+        },
+        "B 完整下-上|105": {
+          "reps": 64,
+          "truth": 35,
+          "ratio": 1.83
+        },
+        "B 完整下-上|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "C 自适应minGap(1.3半周)|60": {
+          "reps": 30,
+          "truth": 20,
+          "ratio": 1.5
+        },
+        "C 自适应minGap(1.3半周)|75": {
+          "reps": 38,
+          "truth": 25,
+          "ratio": 1.52
+        },
+        "C 自适应minGap(1.3半周)|90": {
+          "reps": 48,
+          "truth": 30,
+          "ratio": 1.6
+        },
+        "C 自适应minGap(1.3半周)|105": {
+          "reps": 53,
+          "truth": 35,
+          "ratio": 1.51
+        },
+        "C 自适应minGap(1.3半周)|120": {
+          "reps": 60,
+          "truth": 40,
+          "ratio": 1.5
+        },
+        "D win由band0/上限3s|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "D win由band0/上限3s|75": {
+          "reps": 50,
+          "truth": 25,
+          "ratio": 2
+        },
+        "D win由band0/上限3s|90": {
+          "reps": 60,
+          "truth": 30,
+          "ratio": 2
+        },
+        "D win由band0/上限3s|105": {
+          "reps": 63,
+          "truth": 35,
+          "ratio": 1.8
+        },
+        "D win由band0/上限3s|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "E win×3(上限3s)|60": {
+          "reps": 40,
+          "truth": 20,
+          "ratio": 2
+        },
+        "E win×3(上限3s)|75": {
+          "reps": 50,
+          "truth": 25,
+          "ratio": 2
+        },
+        "E win×3(上限3s)|90": {
+          "reps": 60,
+          "truth": 30,
+          "ratio": 2
+        },
+        "E win×3(上限3s)|105": {
+          "reps": 63,
+          "truth": 35,
+          "ratio": 1.8
+        },
+        "E win×3(上限3s)|120": {
+          "reps": 64,
+          "truth": 40,
+          "ratio": 1.6
+        },
+        "F 单样本增量(建议)|60": {
+          "reps": 20,
+          "truth": 20,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|75": {
+          "reps": 25,
+          "truth": 25,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|90": {
+          "reps": 30,
+          "truth": 30,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|105": {
+          "reps": 35,
+          "truth": 35,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|120": {
+          "reps": 40,
+          "truth": 40,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|60": {
+          "reps": 20,
+          "truth": 20,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|75": {
+          "reps": 25,
+          "truth": 25,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|90": {
+          "reps": 30,
+          "truth": 30,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|105": {
+          "reps": 35,
+          "truth": 35,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|120": {
+          "reps": 40,
+          "truth": 40,
+          "ratio": 1
+        }
+      }
+    },
+    "squat": {
+      "cn": "徒手深蹲",
+      "signal": "height",
+      "bandBPM": [
+        15,
+        45
+      ],
+      "minRepGap": 0.9,
+      "freqsBPM": [
+        15,
+        23,
+        30,
+        38,
+        45
+      ],
+      "rows": {
+        "现状|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "现状|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "现状|30": {
+          "reps": 19,
+          "truth": 10,
+          "ratio": 1.9
+        },
+        "现状|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "现状|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A1 k=1.2rms|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A1 k=1.2rms|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A1 k=1.2rms|38": {
+          "reps": 12,
+          "truth": 13,
+          "ratio": 0.92
+        },
+        "A1 k=1.2rms|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A2 k=1.8rms|30": {
+          "reps": 8,
+          "truth": 10,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|38": {
+          "reps": 10,
+          "truth": 13,
+          "ratio": 0.77
+        },
+        "A2 k=1.8rms|45": {
+          "reps": 0,
+          "truth": 15,
+          "ratio": 0
+        },
+        "A3 k下限0.8|15": {
+          "reps": 0,
+          "truth": 5,
+          "ratio": 0
+        },
+        "A3 k下限0.8|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A3 k下限0.8|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A3 k下限0.8|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A3 k下限0.8|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A4 k≥0.35峰|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A4 k≥0.35峰|30": {
+          "reps": 19,
+          "truth": 10,
+          "ratio": 1.9
+        },
+        "A4 k≥0.35峰|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "B 完整下-上|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "B 完整下-上|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "B 完整下-上|30": {
+          "reps": 19,
+          "truth": 10,
+          "ratio": 1.9
+        },
+        "B 完整下-上|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "B 完整下-上|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "C 自适应minGap(1.3半周)|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "C 自适应minGap(1.3半周)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|45": {
+          "reps": 20,
+          "truth": 15,
+          "ratio": 1.33
+        },
+        "D win由band0/上限3s|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "D win由band0/上限3s|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "D win由band0/上限3s|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "D win由band0/上限3s|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "E win×3(上限3s)|23": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "E win×3(上限3s)|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "E win×3(上限3s)|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|23": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|23": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|45": {
+          "reps": 15,
+          "truth": 15,
+          "ratio": 1
+        }
+      }
+    },
+    "lunge": {
+      "cn": "弓步蹲",
+      "signal": "height",
+      "bandBPM": [
+        12,
+        36
+      ],
+      "minRepGap": 1.1,
+      "freqsBPM": [
+        12,
+        18,
+        24,
+        30,
+        36
+      ],
+      "rows": {
+        "现状|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "现状|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "现状|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "现状|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "现状|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A1 k=1.2rms|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A1 k=1.2rms|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A1 k=1.2rms|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A1 k=1.2rms|36": {
+          "reps": 11,
+          "truth": 12,
+          "ratio": 0.92
+        },
+        "A2 k=1.8rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A2 k=1.8rms|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A2 k=1.8rms|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A2 k=1.8rms|30": {
+          "reps": 8,
+          "truth": 10,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|36": {
+          "reps": 0,
+          "truth": 12,
+          "ratio": 0
+        },
+        "A3 k下限0.8|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A3 k下限0.8|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A3 k下限0.8|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A3 k下限0.8|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A3 k下限0.8|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A4 k≥0.35峰|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A4 k≥0.35峰|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A4 k≥0.35峰|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "B 完整下-上|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "B 完整下-上|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "B 完整下-上|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "B 完整下-上|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "B 完整下-上|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "C 自适应minGap(1.3半周)|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "C 自适应minGap(1.3半周)|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "C 自适应minGap(1.3半周)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|36": {
+          "reps": 13,
+          "truth": 12,
+          "ratio": 1.08
+        },
+        "D win由band0/上限3s|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "D win由band0/上限3s|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "D win由band0/上限3s|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "D win由band0/上限3s|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "D win由band0/上限3s|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "E win×3(上限3s)|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "E win×3(上限3s)|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "E win×3(上限3s)|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "E win×3(上限3s)|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|18": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|24": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|18": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|24": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|36": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        }
+      }
+    },
+    "calfRaise": {
+      "cn": "提踵",
+      "signal": "height",
+      "bandBPM": [
+        20,
+        55
+      ],
+      "minRepGap": 0.7,
+      "freqsBPM": [
+        20,
+        29,
+        38,
+        46,
+        55
+      ],
+      "rows": {
+        "现状|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "现状|38": {
+          "reps": 25,
+          "truth": 13,
+          "ratio": 1.92
+        },
+        "现状|46": {
+          "reps": 24,
+          "truth": 15,
+          "ratio": 1.6
+        },
+        "现状|55": {
+          "reps": 23,
+          "truth": 18,
+          "ratio": 1.28
+        },
+        "A1 k=1.2rms|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A1 k=1.2rms|38": {
+          "reps": 12,
+          "truth": 13,
+          "ratio": 0.92
+        },
+        "A1 k=1.2rms|46": {
+          "reps": 16,
+          "truth": 15,
+          "ratio": 1.07
+        },
+        "A1 k=1.2rms|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "A2 k=1.8rms|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A2 k=1.8rms|38": {
+          "reps": 11,
+          "truth": 13,
+          "ratio": 0.85
+        },
+        "A2 k=1.8rms|46": {
+          "reps": 0,
+          "truth": 15,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|55": {
+          "reps": 0,
+          "truth": 18,
+          "ratio": 0
+        },
+        "A3 k下限0.8|20": {
+          "reps": 0,
+          "truth": 7,
+          "ratio": 0
+        },
+        "A3 k下限0.8|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A3 k下限0.8|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A3 k下限0.8|46": {
+          "reps": 21,
+          "truth": 15,
+          "ratio": 1.4
+        },
+        "A3 k下限0.8|55": {
+          "reps": 23,
+          "truth": 18,
+          "ratio": 1.28
+        },
+        "A4 k≥0.35峰|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A4 k≥0.35峰|38": {
+          "reps": 25,
+          "truth": 13,
+          "ratio": 1.92
+        },
+        "A4 k≥0.35峰|46": {
+          "reps": 24,
+          "truth": 15,
+          "ratio": 1.6
+        },
+        "A4 k≥0.35峰|55": {
+          "reps": 23,
+          "truth": 18,
+          "ratio": 1.28
+        },
+        "B 完整下-上|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "B 完整下-上|38": {
+          "reps": 25,
+          "truth": 13,
+          "ratio": 1.92
+        },
+        "B 完整下-上|46": {
+          "reps": 24,
+          "truth": 15,
+          "ratio": 1.6
+        },
+        "B 完整下-上|55": {
+          "reps": 22,
+          "truth": 18,
+          "ratio": 1.22
+        },
+        "C 自适应minGap(1.3半周)|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "C 自适应minGap(1.3半周)|38": {
+          "reps": 17,
+          "truth": 13,
+          "ratio": 1.31
+        },
+        "C 自适应minGap(1.3半周)|46": {
+          "reps": 21,
+          "truth": 15,
+          "ratio": 1.4
+        },
+        "C 自适应minGap(1.3半周)|55": {
+          "reps": 25,
+          "truth": 18,
+          "ratio": 1.39
+        },
+        "D win由band0/上限3s|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "D win由band0/上限3s|38": {
+          "reps": 23,
+          "truth": 13,
+          "ratio": 1.77
+        },
+        "D win由band0/上限3s|46": {
+          "reps": 19,
+          "truth": 15,
+          "ratio": 1.27
+        },
+        "D win由band0/上限3s|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "E win×3(上限3s)|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "E win×3(上限3s)|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|46": {
+          "reps": 19,
+          "truth": 15,
+          "ratio": 1.27
+        },
+        "E win×3(上限3s)|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "F 单样本增量(建议)|20": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|46": {
+          "reps": 16,
+          "truth": 15,
+          "ratio": 1.07
+        },
+        "F 单样本增量(建议)|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "F+B 增量+完整下-上|20": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|38": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|46": {
+          "reps": 16,
+          "truth": 15,
+          "ratio": 1.07
+        },
+        "F+B 增量+完整下-上|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        }
+      }
+    },
+    "gluteBridge": {
+      "cn": "臀桥",
+      "signal": "height",
+      "bandBPM": [
+        15,
+        40
+      ],
+      "minRepGap": 1,
+      "freqsBPM": [
+        15,
+        21,
+        27,
+        34,
+        40
+      ],
+      "rows": {
+        "现状|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "现状|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "现状|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "现状|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A1 k=1.2rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A1 k=1.2rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A1 k=1.2rms|34": {
+          "reps": 10,
+          "truth": 11,
+          "ratio": 0.91
+        },
+        "A1 k=1.2rms|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A2 k=1.8rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|27": {
+          "reps": 7,
+          "truth": 9,
+          "ratio": 0.78
+        },
+        "A2 k=1.8rms|34": {
+          "reps": 0,
+          "truth": 11,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|40": {
+          "reps": 0,
+          "truth": 13,
+          "ratio": 0
+        },
+        "A3 k下限0.8|15": {
+          "reps": 0,
+          "truth": 5,
+          "ratio": 0
+        },
+        "A3 k下限0.8|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A3 k下限0.8|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A3 k下限0.8|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "A3 k下限0.8|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A4 k≥0.35峰|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A4 k≥0.35峰|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A4 k≥0.35峰|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "A4 k≥0.35峰|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "B 完整下-上|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "B 完整下-上|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "B 完整下-上|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "B 完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "C 自适应minGap(1.3半周)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "C 自适应minGap(1.3半周)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "C 自适应minGap(1.3半周)|34": {
+          "reps": 17,
+          "truth": 11,
+          "ratio": 1.55
+        },
+        "C 自适应minGap(1.3半周)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "D win由band0/上限3s|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "D win由band0/上限3s|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "D win由band0/上限3s|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "E win×3(上限3s)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "E win×3(上限3s)|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F 单样本增量(建议)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F+B 增量+完整下-上|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F+B 增量+完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        }
+      }
+    },
+    "stepUp": {
+      "cn": "台阶踏步",
+      "signal": "centroidY",
+      "bandBPM": [
+        15,
+        40
+      ],
+      "minRepGap": 1.1,
+      "freqsBPM": [
+        15,
+        21,
+        27,
+        34,
+        40
+      ],
+      "rows": {
+        "现状|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "现状|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "现状|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "现状|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A1 k=1.2rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A1 k=1.2rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A1 k=1.2rms|34": {
+          "reps": 10,
+          "truth": 11,
+          "ratio": 0.91
+        },
+        "A1 k=1.2rms|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A2 k=1.8rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|27": {
+          "reps": 7,
+          "truth": 9,
+          "ratio": 0.78
+        },
+        "A2 k=1.8rms|34": {
+          "reps": 0,
+          "truth": 11,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|40": {
+          "reps": 0,
+          "truth": 13,
+          "ratio": 0
+        },
+        "A3 k下限0.8|15": {
+          "reps": 0,
+          "truth": 5,
+          "ratio": 0
+        },
+        "A3 k下限0.8|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A3 k下限0.8|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A3 k下限0.8|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "A3 k下限0.8|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A4 k≥0.35峰|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A4 k≥0.35峰|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "A4 k≥0.35峰|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "A4 k≥0.35峰|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "B 完整下-上|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "B 完整下-上|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "B 完整下-上|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "B 完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "C 自适应minGap(1.3半周)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "C 自适应minGap(1.3半周)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "C 自适应minGap(1.3半周)|34": {
+          "reps": 17,
+          "truth": 11,
+          "ratio": 1.55
+        },
+        "C 自适应minGap(1.3半周)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "D win由band0/上限3s|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "D win由band0/上限3s|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "D win由band0/上限3s|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "E win×3(上限3s)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|27": {
+          "reps": 8,
+          "truth": 9,
+          "ratio": 0.89
+        },
+        "E win×3(上限3s)|34": {
+          "reps": 11,
+          "truth": 11,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F 单样本增量(建议)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F+B 增量+完整下-上|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|27": {
+          "reps": 9,
+          "truth": 9,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|34": {
+          "reps": 12,
+          "truth": 11,
+          "ratio": 1.09
+        },
+        "F+B 增量+完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        }
+      }
+    },
+    "abWheel": {
+      "cn": "跪姿健腹轮",
+      "signal": "centroidY",
+      "bandBPM": [
+        8,
+        25
+      ],
+      "minRepGap": 1.2,
+      "freqsBPM": [
+        8,
+        12,
+        17,
+        21,
+        25
+      ],
+      "rows": {
+        "现状|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "现状|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "现状|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "现状|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|25": {
+          "reps": 10,
+          "truth": 8,
+          "ratio": 1.25
+        },
+        "A1 k=1.2rms|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "A1 k=1.2rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A1 k=1.2rms|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A1 k=1.2rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "A2 k=1.8rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A2 k=1.8rms|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A2 k=1.8rms|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A3 k下限0.8|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "A3 k下限0.8|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A3 k下限0.8|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A3 k下限0.8|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A3 k下限0.8|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "A4 k≥0.35峰|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A4 k≥0.35峰|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A4 k≥0.35峰|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|25": {
+          "reps": 10,
+          "truth": 8,
+          "ratio": 1.25
+        },
+        "B 完整下-上|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "B 完整下-上|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "B 完整下-上|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "B 完整下-上|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "C 自适应minGap(1.3半周)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "C 自适应minGap(1.3半周)|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "C 自适应minGap(1.3半周)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|25": {
+          "reps": 15,
+          "truth": 8,
+          "ratio": 1.88
+        },
+        "D win由band0/上限3s|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "D win由band0/上限3s|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "D win由band0/上限3s|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "D win由band0/上限3s|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "E win×3(上限3s)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "E win×3(上限3s)|17": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "E win×3(上限3s)|21": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "F 单样本增量(建议)|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|17": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|25": {
+          "reps": 9,
+          "truth": 8,
+          "ratio": 1.13
+        },
+        "F+B 增量+完整下-上|8": {
+          "reps": 2,
+          "truth": 3,
+          "ratio": 0.67
+        },
+        "F+B 增量+完整下-上|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|17": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|21": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|25": {
+          "reps": 9,
+          "truth": 8,
+          "ratio": 1.13
+        }
+      }
+    },
+    "deadBug": {
+      "cn": "死虫式",
+      "signal": "height",
+      "bandBPM": [
+        10,
+        30
+      ],
+      "minRepGap": 1.2,
+      "freqsBPM": [
+        10,
+        15,
+        20,
+        25,
+        30
+      ],
+      "rows": {
+        "现状|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "现状|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "现状|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "现状|25": {
+          "reps": 10,
+          "truth": 8,
+          "ratio": 1.25
+        },
+        "现状|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A1 k=1.2rms|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A1 k=1.2rms|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A2 k=1.8rms|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A2 k=1.8rms|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|30": {
+          "reps": 8,
+          "truth": 10,
+          "ratio": 0.8
+        },
+        "A3 k下限0.8|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "A3 k下限0.8|15": {
+          "reps": 0,
+          "truth": 5,
+          "ratio": 0
+        },
+        "A3 k下限0.8|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A3 k下限0.8|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "A3 k下限0.8|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A4 k≥0.35峰|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "A4 k≥0.35峰|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "A4 k≥0.35峰|25": {
+          "reps": 10,
+          "truth": 8,
+          "ratio": 1.25
+        },
+        "A4 k≥0.35峰|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "B 完整下-上|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "B 完整下-上|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "B 完整下-上|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "B 完整下-上|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "B 完整下-上|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "C 自适应minGap(1.3半周)|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "C 自适应minGap(1.3半周)|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "C 自适应minGap(1.3半周)|25": {
+          "reps": 15,
+          "truth": 8,
+          "ratio": 1.88
+        },
+        "C 自适应minGap(1.3半周)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "D win由band0/上限3s|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "D win由band0/上限3s|25": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "E win×3(上限3s)|10": {
+          "reps": 3,
+          "truth": 3,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|15": {
+          "reps": 4,
+          "truth": 5,
+          "ratio": 0.8
+        },
+        "E win×3(上限3s)|20": {
+          "reps": 6,
+          "truth": 7,
+          "ratio": 0.86
+        },
+        "E win×3(上限3s)|25": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "E win×3(上限3s)|30": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "F 单样本增量(建议)|10": {
+          "reps": 4,
+          "truth": 3,
+          "ratio": 1.33
+        },
+        "F 单样本增量(建议)|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|20": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|25": {
+          "reps": 9,
+          "truth": 8,
+          "ratio": 1.13
+        },
+        "F 单样本增量(建议)|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|10": {
+          "reps": 4,
+          "truth": 3,
+          "ratio": 1.33
+        },
+        "F+B 增量+完整下-上|15": {
+          "reps": 5,
+          "truth": 5,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|20": {
+          "reps": 7,
+          "truth": 7,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|25": {
+          "reps": 9,
+          "truth": 8,
+          "ratio": 1.13
+        },
+        "F+B 增量+完整下-上|30": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        }
+      }
+    },
+    "burpee": {
+      "cn": "波比跳",
+      "signal": "height",
+      "bandBPM": [
+        12,
+        35
+      ],
+      "minRepGap": 1.4,
+      "freqsBPM": [
+        12,
+        18,
+        24,
+        29,
+        35
+      ],
+      "rows": {
+        "现状|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "现状|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "现状|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "现状|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "现状|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A1 k=1.2rms|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A1 k=1.2rms|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A1 k=1.2rms|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A1 k=1.2rms|35": {
+          "reps": 11,
+          "truth": 12,
+          "ratio": 0.92
+        },
+        "A2 k=1.8rms|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A2 k=1.8rms|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A2 k=1.8rms|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A2 k=1.8rms|29": {
+          "reps": 8,
+          "truth": 10,
+          "ratio": 0.8
+        },
+        "A2 k=1.8rms|35": {
+          "reps": 0,
+          "truth": 12,
+          "ratio": 0
+        },
+        "A3 k下限0.8|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A3 k下限0.8|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A3 k下限0.8|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A3 k下限0.8|29": {
+          "reps": 9,
+          "truth": 10,
+          "ratio": 0.9
+        },
+        "A3 k下限0.8|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "A4 k≥0.35峰|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "A4 k≥0.35峰|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "A4 k≥0.35峰|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "A4 k≥0.35峰|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "B 完整下-上|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "B 完整下-上|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "B 完整下-上|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "B 完整下-上|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "B 完整下-上|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "C 自适应minGap(1.3半周)|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "C 自适应minGap(1.3半周)|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "C 自适应minGap(1.3半周)|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "C 自适应minGap(1.3半周)|35": {
+          "reps": 14,
+          "truth": 12,
+          "ratio": 1.17
+        },
+        "D win由band0/上限3s|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "D win由band0/上限3s|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "D win由band0/上限3s|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "D win由band0/上限3s|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "D win由band0/上限3s|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|12": {
+          "reps": 3,
+          "truth": 4,
+          "ratio": 0.75
+        },
+        "E win×3(上限3s)|18": {
+          "reps": 5,
+          "truth": 6,
+          "ratio": 0.83
+        },
+        "E win×3(上限3s)|24": {
+          "reps": 7,
+          "truth": 8,
+          "ratio": 0.88
+        },
+        "E win×3(上限3s)|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "E win×3(上限3s)|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|18": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|24": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F 单样本增量(建议)|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|12": {
+          "reps": 4,
+          "truth": 4,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|18": {
+          "reps": 6,
+          "truth": 6,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|24": {
+          "reps": 8,
+          "truth": 8,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|29": {
+          "reps": 10,
+          "truth": 10,
+          "ratio": 1
+        },
+        "F+B 增量+完整下-上|35": {
+          "reps": 12,
+          "truth": 12,
+          "ratio": 1
+        }
+      }
+    },
+    "lateralHop": {
+      "cn": "侧向跳",
+      "signal": "width",
+      "bandBPM": [
+        40,
+        100
+      ],
+      "minRepGap": 0.45,
+      "freqsBPM": [
+        40,
+        55,
+        70,
+        85,
+        100
+      ],
+      "rows": {
+        "现状|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "现状|55": {
+          "reps": 37,
+          "truth": 18,
+          "ratio": 2.06
+        },
+        "现状|70": {
+          "reps": 42,
+          "truth": 23,
+          "ratio": 1.83
+        },
+        "现状|85": {
+          "reps": 43,
+          "truth": 28,
+          "ratio": 1.54
+        },
+        "现状|100": {
+          "reps": 43,
+          "truth": 33,
+          "ratio": 1.3
+        },
+        "A1 k=1.2rms|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A1 k=1.2rms|55": {
+          "reps": 37,
+          "truth": 18,
+          "ratio": 2.06
+        },
+        "A1 k=1.2rms|70": {
+          "reps": 40,
+          "truth": 23,
+          "ratio": 1.74
+        },
+        "A1 k=1.2rms|85": {
+          "reps": 39,
+          "truth": 28,
+          "ratio": 1.39
+        },
+        "A1 k=1.2rms|100": {
+          "reps": 41,
+          "truth": 33,
+          "ratio": 1.24
+        },
+        "A2 k=1.8rms|40": {
+          "reps": 13,
+          "truth": 13,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|55": {
+          "reps": 18,
+          "truth": 18,
+          "ratio": 1
+        },
+        "A2 k=1.8rms|70": {
+          "reps": 19,
+          "truth": 23,
+          "ratio": 0.83
+        },
+        "A2 k=1.8rms|85": {
+          "reps": 0,
+          "truth": 28,
+          "ratio": 0
+        },
+        "A2 k=1.8rms|100": {
+          "reps": 0,
+          "truth": 33,
+          "ratio": 0
+        },
+        "A3 k下限0.8|40": {
+          "reps": 2,
+          "truth": 13,
+          "ratio": 0.15
+        },
+        "A3 k下限0.8|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "A3 k下限0.8|70": {
+          "reps": 40,
+          "truth": 23,
+          "ratio": 1.74
+        },
+        "A3 k下限0.8|85": {
+          "reps": 43,
+          "truth": 28,
+          "ratio": 1.54
+        },
+        "A3 k下限0.8|100": {
+          "reps": 43,
+          "truth": 33,
+          "ratio": 1.3
+        },
+        "A4 k≥0.35峰|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "A4 k≥0.35峰|55": {
+          "reps": 37,
+          "truth": 18,
+          "ratio": 2.06
+        },
+        "A4 k≥0.35峰|70": {
+          "reps": 42,
+          "truth": 23,
+          "ratio": 1.83
+        },
+        "A4 k≥0.35峰|85": {
+          "reps": 43,
+          "truth": 28,
+          "ratio": 1.54
+        },
+        "A4 k≥0.35峰|100": {
+          "reps": 43,
+          "truth": 33,
+          "ratio": 1.3
+        },
+        "B 完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "B 完整下-上|55": {
+          "reps": 37,
+          "truth": 18,
+          "ratio": 2.06
+        },
+        "B 完整下-上|70": {
+          "reps": 42,
+          "truth": 23,
+          "ratio": 1.83
+        },
+        "B 完整下-上|85": {
+          "reps": 43,
+          "truth": 28,
+          "ratio": 1.54
+        },
+        "B 完整下-上|100": {
+          "reps": 43,
+          "truth": 33,
+          "ratio": 1.3
+        },
+        "C 自适应minGap(1.3半周)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "C 自适应minGap(1.3半周)|55": {
+          "reps": 28,
+          "truth": 18,
+          "ratio": 1.56
+        },
+        "C 自适应minGap(1.3半周)|70": {
+          "reps": 35,
+          "truth": 23,
+          "ratio": 1.52
+        },
+        "C 自适应minGap(1.3半周)|85": {
+          "reps": 43,
+          "truth": 28,
+          "ratio": 1.54
+        },
+        "C 自适应minGap(1.3半周)|100": {
+          "reps": 50,
+          "truth": 33,
+          "ratio": 1.52
+        },
+        "D win由band0/上限3s|40": {
+          "reps": 27,
+          "truth": 13,
+          "ratio": 2.08
+        },
+        "D win由band0/上限3s|55": {
+          "reps": 36,
+          "truth": 18,
+          "ratio": 2
+        },
+        "D win由band0/上限3s|70": {
+          "reps": 40,
+          "truth": 23,
+          "ratio": 1.74
+        },
+        "D win由band0/上限3s|85": {
+          "reps": 38,
+          "truth": 28,
+          "ratio": 1.36
+        },
+        "D win由band0/上限3s|100": {
+          "reps": 43,
+          "truth": 33,
+          "ratio": 1.3
+        },
+        "E win×3(上限3s)|40": {
+          "reps": 27,
+          "truth": 13,
+          "ratio": 2.08
+        },
+        "E win×3(上限3s)|55": {
+          "reps": 36,
+          "truth": 18,
+          "ratio": 2
+        },
+        "E win×3(上限3s)|70": {
+          "reps": 40,
+          "truth": 23,
+          "ratio": 1.74
+        },
+        "E win×3(上限3s)|85": {
+          "reps": 39,
+          "truth": 28,
+          "ratio": 1.39
+        },
+        "E win×3(上限3s)|100": {
+          "reps": 42,
+          "truth": 33,
+          "ratio": 1.27
+        },
+        "F 单样本增量(建议)|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F 单样本增量(建议)|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "F 单样本增量(建议)|70": {
+          "reps": 24,
+          "truth": 23,
+          "ratio": 1.04
+        },
+        "F 单样本增量(建议)|85": {
+          "reps": 29,
+          "truth": 28,
+          "ratio": 1.04
+        },
+        "F 单样本增量(建议)|100": {
+          "reps": 34,
+          "truth": 33,
+          "ratio": 1.03
+        },
+        "F+B 增量+完整下-上|40": {
+          "reps": 14,
+          "truth": 13,
+          "ratio": 1.08
+        },
+        "F+B 增量+完整下-上|55": {
+          "reps": 19,
+          "truth": 18,
+          "ratio": 1.06
+        },
+        "F+B 增量+完整下-上|70": {
+          "reps": 24,
+          "truth": 23,
+          "ratio": 1.04
+        },
+        "F+B 增量+完整下-上|85": {
+          "reps": 29,
+          "truth": 28,
+          "ratio": 1.04
+        },
+        "F+B 增量+完整下-上|100": {
+          "reps": 34,
+          "truth": 33,
+          "ratio": 1.03
+        }
+      }
+    }
+  },
+  "falseCount": {
+    "rows": {
+      "完全静止@2m": {
+        "现状": 0,
+        "A1 k=1.2rms": 0,
+        "A2 k=1.8rms": 0,
+        "A3 k下限0.8": 0,
+        "A4 k≥0.35峰": 0,
+        "B 完整下-上": 0,
+        "C 自适应minGap(1.3半周)": 0,
+        "D win由band0/上限3s": 0,
+        "E win×3(上限3s)": 0,
+        "F 单样本增量(建议)": 0,
+        "F+B 增量+完整下-上": 0
+      },
+      "静止+噪0.6px@2m": {
+        "现状": 0,
+        "A1 k=1.2rms": 0,
+        "A2 k=1.8rms": 0,
+        "A3 k下限0.8": 0,
+        "A4 k≥0.35峰": 0,
+        "B 完整下-上": 0,
+        "C 自适应minGap(1.3半周)": 0,
+        "D win由band0/上限3s": 0,
+        "E win×3(上限3s)": 0,
+        "F 单样本增量(建议)": 0,
+        "F+B 增量+完整下-上": 0
+      },
+      "静止+噪1.2px@2m": {
+        "现状": 0,
+        "A1 k=1.2rms": 0,
+        "A2 k=1.8rms": 0,
+        "A3 k下限0.8": 0,
+        "A4 k≥0.35峰": 0,
+        "B 完整下-上": 0,
+        "C 自适应minGap(1.3半周)": 0,
+        "D win由band0/上限3s": 0,
+        "E win×3(上限3s)": 0,
+        "F 单样本增量(建议)": 0,
+        "F+B 增量+完整下-上": 0
+      },
+      "静止+噪2.0px@2m": {
+        "现状": 0,
+        "A1 k=1.2rms": 0,
+        "A2 k=1.8rms": 0,
+        "A3 k下限0.8": 0,
+        "A4 k≥0.35峰": 0,
+        "B 完整下-上": 0,
+        "C 自适应minGap(1.3半周)": 0,
+        "D win由band0/上限3s": 0,
+        "E win×3(上限3s)": 0,
+        "F 单样本增量(建议)": 0,
+        "F+B 增量+完整下-上": 0
+      },
+      "静止+噪1.2px@4m": {
+        "现状": 0,
+        "A1 k=1.2rms": 0,
+        "A2 k=1.8rms": 0,
+        "A3 k下限0.8": 0,
+        "A4 k≥0.35峰": 0,
+        "B 完整下-上": 0,
+        "C 自适应minGap(1.3半周)": 0,
+        "D win由band0/上限3s": 0,
+        "E win×3(上限3s)": 0,
+        "F 单样本增量(建议)": 0,
+        "F+B 增量+完整下-上": 0
+      }
+    }
+  },
+  "realVideo": {
+    "rows": {
+      "开合跳": {
+        "现状": {
+          "reps": 10,
+          "ref": 10,
+          "dev": 0
+        },
+        "A1 k=1.2rms": {
+          "reps": 3,
+          "ref": 10,
+          "dev": -7
+        },
+        "A2 k=1.8rms": {
+          "reps": 0,
+          "ref": 10,
+          "dev": -10
+        },
+        "A3 k下限0.8": {
+          "reps": 10,
+          "ref": 10,
+          "dev": 0
+        },
+        "A4 k≥0.35峰": {
+          "reps": 9,
+          "ref": 10,
+          "dev": -1
+        },
+        "B 完整下-上": {
+          "reps": 10,
+          "ref": 10,
+          "dev": 0
+        },
+        "C 自适应minGap(1.3半周)": {
+          "reps": 15,
+          "ref": 10,
+          "dev": 5
+        },
+        "D win由band0/上限3s": {
+          "reps": 10,
+          "ref": 10,
+          "dev": 0
+        },
+        "E win×3(上限3s)": {
+          "reps": 9,
+          "ref": 10,
+          "dev": -1
+        },
+        "F 单样本增量(建议)": {
+          "reps": 5,
+          "ref": 10,
+          "dev": -5
+        },
+        "F+B 增量+完整下-上": {
+          "reps": 5,
+          "ref": 10,
+          "dev": -5
+        }
+      },
+      "徒手深蹲": {
+        "现状": {
+          "reps": 6,
+          "ref": 6,
+          "dev": 0
+        },
+        "A1 k=1.2rms": {
+          "reps": 5,
+          "ref": 6,
+          "dev": -1
+        },
+        "A2 k=1.8rms": {
+          "reps": 3,
+          "ref": 6,
+          "dev": -3
+        },
+        "A3 k下限0.8": {
+          "reps": 5,
+          "ref": 6,
+          "dev": -1
+        },
+        "A4 k≥0.35峰": {
+          "reps": 6,
+          "ref": 6,
+          "dev": 0
+        },
+        "B 完整下-上": {
+          "reps": 6,
+          "ref": 6,
+          "dev": 0
+        },
+        "C 自适应minGap(1.3半周)": {
+          "reps": 6,
+          "ref": 6,
+          "dev": 0
+        },
+        "D win由band0/上限3s": {
+          "reps": 5,
+          "ref": 6,
+          "dev": -1
+        },
+        "E win×3(上限3s)": {
+          "reps": 5,
+          "ref": 6,
+          "dev": -1
+        },
+        "F 单样本增量(建议)": {
+          "reps": 4,
+          "ref": 6,
+          "dev": -2
+        },
+        "F+B 增量+完整下-上": {
+          "reps": 4,
+          "ref": 6,
+          "dev": -2
+        }
+      },
+      "跳绳": {
+        "现状": {
+          "reps": 12,
+          "ref": 12,
+          "dev": 0
+        },
+        "A1 k=1.2rms": {
+          "reps": 9,
+          "ref": 12,
+          "dev": -3
+        },
+        "A2 k=1.8rms": {
+          "reps": 4,
+          "ref": 12,
+          "dev": -8
+        },
+        "A3 k下限0.8": {
+          "reps": 12,
+          "ref": 12,
+          "dev": 0
+        },
+        "A4 k≥0.35峰": {
+          "reps": 12,
+          "ref": 12,
+          "dev": 0
+        },
+        "B 完整下-上": {
+          "reps": 12,
+          "ref": 12,
+          "dev": 0
+        },
+        "C 自适应minGap(1.3半周)": {
+          "reps": 13,
+          "ref": 12,
+          "dev": 1
+        },
+        "D win由band0/上限3s": {
+          "reps": 13,
+          "ref": 12,
+          "dev": 1
+        },
+        "E win×3(上限3s)": {
+          "reps": 11,
+          "ref": 12,
+          "dev": -1
+        },
+        "F 单样本增量(建议)": {
+          "reps": 6,
+          "ref": 12,
+          "dev": -6
+        },
+        "F+B 增量+完整下-上": {
+          "reps": 6,
+          "ref": 12,
+          "dev": -6
+        }
+      },
+      "波比跳": {
+        "现状": {
+          "reps": 4,
+          "ref": 4,
+          "dev": 0
+        },
+        "A1 k=1.2rms": {
+          "reps": 3,
+          "ref": 4,
+          "dev": -1
+        },
+        "A2 k=1.8rms": {
+          "reps": 2,
+          "ref": 4,
+          "dev": -2
+        },
+        "A3 k下限0.8": {
+          "reps": 3,
+          "ref": 4,
+          "dev": -1
+        },
+        "A4 k≥0.35峰": {
+          "reps": 4,
+          "ref": 4,
+          "dev": 0
+        },
+        "B 完整下-上": {
+          "reps": 4,
+          "ref": 4,
+          "dev": 0
+        },
+        "C 自适应minGap(1.3半周)": {
+          "reps": 6,
+          "ref": 4,
+          "dev": 2
+        },
+        "D win由band0/上限3s": {
+          "reps": 2,
+          "ref": 4,
+          "dev": -2
+        },
+        "E win×3(上限3s)": {
+          "reps": 2,
+          "ref": 4,
+          "dev": -2
+        },
+        "F 单样本增量(建议)": {
+          "reps": 2,
+          "ref": 4,
+          "dev": -2
+        },
+        "F+B 增量+完整下-上": {
+          "reps": 2,
+          "ref": 4,
+          "dev": -2
+        }
+      }
+    }
+  },
+  "starCount": {
+    "现状": 15,
+    "A1 k=1.2rms": 8,
+    "A2 k=1.8rms": 0,
+    "A3 k下限0.8": 7,
+    "A4 k≥0.35峰": 15,
+    "B 完整下-上": 15,
+    "C 自适应minGap(1.3半周)": 13,
+    "D win由band0/上限3s": 12,
+    "E win×3(上限3s)": 11,
+    "F 单样本增量(建议)": 0,
+    "F+B 增量+完整下-上": 0
+  }
+}

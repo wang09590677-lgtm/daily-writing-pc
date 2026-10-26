@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "actions": [
+    {
+      "cn": "跳绳",
+      "key": "height",
+      "winSec": 0.5,
+      "minRepGap": 0.3,
+      "window": {
+        "lo": 0.88,
+        "hi": 1.67
+      },
+      "rows": [
+        {
+          "speed": 0.3,
+          "freq": 0.536,
+          "winOverPeriod": 0.268,
+          "truth": 16.1,
+          "reps": 46,
+          "ratio": 2.86,
+          "inWindow": false,
+          "tag": "★ 2×"
+        },
+        {
+          "speed": 0.4,
+          "freq": 0.714,
+          "winOverPeriod": 0.357,
+          "truth": 21.4,
+          "reps": 59,
+          "ratio": 2.75,
+          "inWindow": false,
+          "tag": "★ 2×"
+        },
+        {
+          "speed": 0.5,
+          "freq": 0.857,
+          "winOverPeriod": 0.429,
+          "truth": 25.7,
+          "reps": 75,
+          "ratio": 2.92,
+          "inWindow": false,
+          "tag": "★ 2×"
+        },
+        {
+          "speed": 0.6,
+          "freq": 1.071,
+          "winOverPeriod": 0.536,
+          "truth": 32.1,
+          "reps": 76,
+          "ratio": 2.36,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 0.7,
+          "freq": 1.071,
+          "winOverPeriod": 0.536,
+          "truth": 32.1,
+          "reps": 76,
+          "ratio": 2.36,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 0.85,
+          "freq": 1.429,
+          "winOverPeriod": 0.714,
+          "truth": 42.9,
+          "reps": 70,
+          "ratio": 1.63,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 1,
+          "freq": 1.429,
+          "winOverPeriod": 0.714,
+          "truth": 42.9,
+          "reps": 70,
+          "ratio": 1.63,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 1.2,
+          "freq": 2.143,
+          "winOverPeriod": 1.071,
+          "truth": 64.3,
+          "reps": 87,
+          "ratio": 1.35,
+          "inWindow": false,
+          "tag": "偏高"
+        },
+        {
+          "speed": 1.5,
+          "freq": 2.143,
+          "winOverPeriod": 1.071,
+          "truth": 64.3,
+          "reps": 87,
+          "ratio": 1.35,
+          "inWindow": false,
+          "tag": "偏高"
+        }
+      ]
+    },
+    {
+      "cn": "开合跳",
+      "key": "width",
+      "winSec": 0.667,
+      "minRepGap": 0.45,
+      "window": {
+        "lo": 0.66,
+        "hi": 1.11
+      },
+      "rows": [
+        {
+          "speed": 0.3,
+          "freq": 0.682,
+          "winOverPeriod": 0.455,
+          "truth": 20.5,
+          "reps": 29,
+          "ratio": 1.42,
+          "inWindow": true,
+          "tag": "偏高 [窗内]"
+        },
+        {
+          "speed": 0.4,
+          "freq": 0.909,
+          "winOverPeriod": 0.606,
+          "truth": 27.3,
+          "reps": 47,
+          "ratio": 1.72,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 0.5,
+          "freq": 1.091,
+          "winOverPeriod": 0.727,
+          "truth": 32.7,
+          "reps": 55,
+          "ratio": 1.68,
+          "inWindow": true,
+          "tag": "★ 2× [窗内]"
+        },
+        {
+          "speed": 0.6,
+          "freq": 1.364,
+          "winOverPeriod": 0.909,
+          "truth": 40.9,
+          "reps": 56,
+          "ratio": 1.37,
+          "inWindow": false,
+          "tag": "偏高"
+        },
+        {
+          "speed": 0.7,
+          "freq": 1.364,
+          "winOverPeriod": 0.909,
+          "truth": 40.9,
+          "reps": 56,
+          "ratio": 1.37,
+          "inWindow": false,
+          "tag": "偏高"
+        },
+        {
+          "speed": 0.85,
+          "freq": 1.818,
+          "winOverPeriod": 1.212,
+          "truth": 54.5,
+          "reps": 58,
+          "ratio": 1.06,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1,
+          "freq": 1.818,
+          "winOverPeriod": 1.212,
+          "truth": 54.5,
+          "reps": 58,
+          "ratio": 1.06,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1.2,
+          "freq": 2.727,
+          "winOverPeriod": 1.818,
+          "truth": 81.8,
+          "reps": 62,
+          "ratio": 0.76,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1.5,
+          "freq": 2.727,
+          "winOverPeriod": 1.818,
+          "truth": 81.8,
+          "reps": 62,
+          "ratio": 0.76,
+          "inWindow": false,
+          "tag": "1×"
+        }
+      ]
+    },
+    {
+      "cn": "徒手深蹲",
+      "key": "height",
+      "winSec": 1.333,
+      "minRepGap": 0.9,
+      "window": {
+        "lo": 0.33,
+        "hi": 0.56
+      },
+      "rows": [
+        {
+          "speed": 0.3,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 3,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.4,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 6,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.5,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 6,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.6,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 7,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.7,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 7,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.85,
+          "freq": 0.294,
+          "winOverPeriod": 0.392,
+          "truth": 8.8,
+          "reps": 11,
+          "ratio": 1.25,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1,
+          "freq": 0.294,
+          "winOverPeriod": 0.392,
+          "truth": 8.8,
+          "reps": 11,
+          "ratio": 1.25,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1.2,
+          "freq": 0.448,
+          "winOverPeriod": 0.597,
+          "truth": 13.4,
+          "reps": 16,
+          "ratio": 1.19,
+          "inWindow": true,
+          "tag": "1× [窗内]"
+        },
+        {
+          "speed": 1.5,
+          "freq": 0.448,
+          "winOverPeriod": 0.597,
+          "truth": 13.4,
+          "reps": 16,
+          "ratio": 1.19,
+          "inWindow": true,
+          "tag": "1× [窗内]"
+        }
+      ]
+    },
+    {
+      "cn": "波比跳",
+      "key": "height",
+      "winSec": 1.5,
+      "minRepGap": 1.4,
+      "window": {
+        "lo": 0.29,
+        "hi": 0.36
+      },
+      "rows": [
+        {
+          "speed": 0.3,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 12,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.4,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 9,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.5,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 10,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.6,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 12,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.7,
+          "freq": null,
+          "winOverPeriod": null,
+          "truth": 0,
+          "reps": 12,
+          "ratio": 0,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 0.85,
+          "freq": 0.278,
+          "winOverPeriod": 0.417,
+          "truth": 8.3,
+          "reps": 17,
+          "ratio": 2.04,
+          "inWindow": false,
+          "tag": "★ 2×"
+        },
+        {
+          "speed": 1,
+          "freq": 0.278,
+          "winOverPeriod": 0.417,
+          "truth": 8.3,
+          "reps": 17,
+          "ratio": 2.04,
+          "inWindow": false,
+          "tag": "★ 2×"
+        },
+        {
+          "speed": 1.2,
+          "freq": 0.417,
+          "winOverPeriod": 0.625,
+          "truth": 12.5,
+          "reps": 13,
+          "ratio": 1.04,
+          "inWindow": false,
+          "tag": "1×"
+        },
+        {
+          "speed": 1.5,
+          "freq": 0.417,
+          "winOverPeriod": 0.625,
+          "truth": 12.5,
+          "reps": 13,
+          "ratio": 1.04,
+          "inWindow": false,
+          "tag": "1×"
+        }
+      ]
+    }
+  ]
+}

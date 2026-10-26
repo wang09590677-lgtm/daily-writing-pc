@@ -1,0 +1,73 @@
+==============================================================
+ 一、包内不该出现的东西
+==============================================================
+  [PASS] 没有 build/ 等开发目录
+  [PASS] 没有 .md / 开发用 .py（tools 下的运行时 .py 除外）
+  [PASS] 不含开发文件：make-release.py
+  [PASS] 不含开发文件：gen-release-bat.py
+  [PASS] 不含开发文件：_final-regress.sh
+  [PASS] 不含开发文件：start-app.bat
+  [PASS] 不含开发文件：start-app-depthz.bat
+
+==============================================================
+ 二、拷到全新目录，模拟「另一台电脑」
+==============================================================
+  拷到：C:\Users\lixue\AppData\Local\Temp\pkgtest-u47oyke1\AI学习训练助手
+  [PASS] 整目录拷贝成功
+
+==============================================================
+ 三、真的点一次「启动.bat」
+==============================================================
+  [PASS] 启动.bat 里有必需开关 --allow-file-access-from-files
+  [PASS] 启动.bat 里有必需开关 --use-fake-ui-for-media-stream
+  [PASS] 启动.bat 里有必需开关 --autoplay-policy=no-user-gesture-required
+  [PASS] 启动.bat 里有必需开关 --user-data-dir=
+  [PASS] 启动.bat 用的是相对路径 %%~dp0（可整个搬走）
+  [PASS] 启动.bat 里没有硬编码老李的电脑路径
+  [PASS] 启动.bat 是 GBK 且无 BOM（cmd 能读）
+  [PASS] 浏览器进程被拉起
+
+==============================================================
+ 四、页面里点名检查（脚本 / 素材 / 入口）
+==============================================================
+[PASS] 脚本已加载：ai
+[PASS] 脚本已加载：voice
+[PASS] 脚本已加载：motion
+[PASS] 脚本已加载：engine
+[PASS] 脚本已加载：pose
+[PASS] 脚本已加载：store
+[PASS] 脚本已加载：link
+[PASS] 脚本已加载：audio
+[PASS] 脚本已加载：three
+[PASS] 脚本已加载：gltf
+[PASS] 脚本已加载：tasks
+[PASS] 脚本已加载：fit
+[PASS] 脚本已加载：scenes
+[PASS] 脚本已加载：models
+[PASS] 脚本已加载：modelsAuthored
+[PASS] 写作模块：输入框在
+[PASS] 写作模块：提交按钮在
+[PASS] 写作模块：AI 范文按钮在
+[PASS] 导航项渲染出来了
+[PASS] 视图容器渲染出来了
+[PASS] 素材可读：assets/pictures/pic001.jpg
+[PASS] 素材可读：assets/pictures/pic210.jpg
+[PASS] 素材可读：assets/img/cat-study.jpg
+[PASS] 素材可读：assets/coach/count-go.mp3
+[PASS] 素材可读：assets/audio/dog.mp3
+[PASS] 素材可读：assets/vendor/three.min.js
+[PASS] 素材可读：vendor/mediapipe/pose_landmark_lite.tflite
+[PASS] 素材可读：data/tasks.js
+[PASS] 素材可读：中场休息.mp4
+[PASS] 素材可读：开合跳.mp4
+[PASS] 素材可读：深蹲.mp4
+[PASS] 素材可读：体感跟练模型.glb
+[PASS] 能切到体感跟练页
+[PASS] 浏览器提供摄像头 API
+[PASS] 全程没有资源加载失败（file://）
+[PASS] 全程没有 JS 报错
+
+
+==============================================================
+ 合计 52/52
+==============================================================

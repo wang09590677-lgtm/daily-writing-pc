@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>_diag-cat-lab（骨骼拉伸 / 平滑 A-B 专用沙盒）</title>
+<style>
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #0d1420; }
+  #motionAvatar { position: fixed; inset: 0; }
+  #motionAvatar canvas { display: block; }
+</style>
+</head>
+<body>
+<!-- 只用于诊断：与产品同一份 three.min.js / GLTFLoader.js，外加一份**改过的**
+     motion-avatar 副本（build/_diag-cat-lab-mod.js，多了 __setBoneScaleY / __rescaleRest
+     等钩子）。产品文件 motion-avatar.js 未被改动。 -->
+<script src="../assets/vendor/three.min.js?v=20261005a"></script>
+<script src="../assets/vendor/GLTFLoader.js?v=20261006catglb"></script>
+<script src="_diag-cat-lab-mod.js"></script>
+</body>
+</html>

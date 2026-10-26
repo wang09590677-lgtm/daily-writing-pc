@@ -1,0 +1,232 @@
+{
+ "jumpingJacks": {
+  "total": 145,
+  "width": {
+   "min": 0.3542,
+   "max": 0.8646,
+   "mean": 0.6386,
+   "std": 0.139,
+   "range": 0.5104
+  },
+  "height": {
+   "min": 0.8611,
+   "max": 0.9444,
+   "mean": 0.92,
+   "std": 0.0182,
+   "range": 0.0833
+  },
+  "centroidY": {
+   "min": 0.4455,
+   "max": 0.6041,
+   "mean": 0.5278,
+   "std": 0.0413,
+   "range": 0.1587
+  },
+  "area": {
+   "min": 0.0479,
+   "max": 0.0806,
+   "mean": 0.0628,
+   "std": 0.0072,
+   "range": 0.0327
+  },
+  "widthWin": {
+   "min": 0.3021,
+   "med": 0.4063,
+   "max": 0.5
+  },
+  "heightWin": {
+   "min": 0.0694,
+   "med": 0.0833,
+   "max": 0.0833
+  },
+  "centroidYWin": {
+   "min": 0.1507,
+   "med": 0.1587,
+   "max": 0.1587
+  }
+ },
+ "squat": {
+  "total": 361,
+  "width": {
+   "min": 0.9375,
+   "max": 1.0,
+   "mean": 0.9884,
+   "std": 0.0189,
+   "range": 0.0625
+  },
+  "height": {
+   "min": 0.9167,
+   "max": 1.0,
+   "mean": 0.9721,
+   "std": 0.0273,
+   "range": 0.0833
+  },
+  "centroidY": {
+   "min": 0.4621,
+   "max": 0.6137,
+   "mean": 0.5374,
+   "std": 0.0292,
+   "range": 0.1516
+  },
+  "area": {
+   "min": 0.0632,
+   "max": 0.2759,
+   "mean": 0.148,
+   "std": 0.0609,
+   "range": 0.2127
+  },
+  "widthWin": {
+   "min": 0.0521,
+   "med": 0.0625,
+   "max": 0.0625
+  },
+  "heightWin": {
+   "min": 0.0139,
+   "med": 0.0694,
+   "max": 0.0833
+  },
+  "centroidYWin": {
+   "min": 0.0445,
+   "med": 0.1209,
+   "max": 0.1516
+  }
+ },
+ "jumpRope": {
+  "total": 145,
+  "width": {
+   "min": 0.2917,
+   "max": 0.9896,
+   "mean": 0.7322,
+   "std": 0.2143,
+   "range": 0.6979
+  },
+  "height": {
+   "min": 0.7778,
+   "max": 0.9722,
+   "mean": 0.8823,
+   "std": 0.0533,
+   "range": 0.1944
+  },
+  "centroidY": {
+   "min": 0.3873,
+   "max": 0.5514,
+   "mean": 0.4836,
+   "std": 0.036,
+   "range": 0.1641
+  },
+  "area": {
+   "min": 0.0197,
+   "max": 0.0684,
+   "mean": 0.0442,
+   "std": 0.0107,
+   "range": 0.0488
+  },
+  "widthWin": {
+   "min": 0.5938,
+   "med": 0.6562,
+   "max": 0.6979
+  },
+  "heightWin": {
+   "min": 0.1806,
+   "med": 0.1806,
+   "max": 0.1944
+  },
+  "centroidYWin": {
+   "min": 0.0896,
+   "med": 0.16,
+   "max": 0.1641
+  }
+ },
+ "highKnees": {
+  "total": 145,
+  "width": {
+   "min": 0.2917,
+   "max": 0.5625,
+   "mean": 0.4676,
+   "std": 0.0889,
+   "range": 0.2708
+  },
+  "height": {
+   "min": 0.9722,
+   "max": 1.0,
+   "mean": 0.9993,
+   "std": 0.0038,
+   "range": 0.0278
+  },
+  "centroidY": {
+   "min": 0.3839,
+   "max": 0.5661,
+   "mean": 0.486,
+   "std": 0.0318,
+   "range": 0.1822
+  },
+  "area": {
+   "min": 0.0509,
+   "max": 0.1325,
+   "mean": 0.0898,
+   "std": 0.0215,
+   "range": 0.0816
+  },
+  "widthWin": {
+   "min": 0.2604,
+   "med": 0.2708,
+   "max": 0.2708
+  },
+  "heightWin": {
+   "min": 0.0278,
+   "med": 0.0278,
+   "max": 0.0278
+  },
+  "centroidYWin": {
+   "min": 0.1345,
+   "med": 0.1622,
+   "max": 0.1793
+  }
+ },
+ "burpee": {
+  "total": 145,
+  "width": {
+   "min": 0.3542,
+   "max": 0.9062,
+   "mean": 0.6433,
+   "std": 0.1651,
+   "range": 0.5521
+  },
+  "height": {
+   "min": 0.4722,
+   "max": 0.9861,
+   "mean": 0.6993,
+   "std": 0.2009,
+   "range": 0.5139
+  },
+  "centroidY": {
+   "min": 0.5573,
+   "max": 0.7421,
+   "mean": 0.6782,
+   "std": 0.0607,
+   "range": 0.1848
+  },
+  "area": {
+   "min": 0.0505,
+   "max": 0.148,
+   "mean": 0.0923,
+   "std": 0.0223,
+   "range": 0.0975
+  },
+  "widthWin": {
+   "min": 0.3125,
+   "med": 0.5104,
+   "max": 0.5521
+  },
+  "heightWin": {
+   "min": 0.5139,
+   "med": 0.5139,
+   "max": 0.5139
+  },
+  "centroidYWin": {
+   "min": 0.1806,
+   "med": 0.1812,
+   "max": 0.1842
+  }
+ }
+}

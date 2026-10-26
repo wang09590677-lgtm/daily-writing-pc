@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Astra Pro 深度预览</title>
+<style>
+  :root { --bg:#f5f6f8; --card:#fff; --line:#e3e6ea; --ink:#1f2430; --sub:#6b7280; --ok:#12805c; --bad:#b3261e; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:18px; background:var(--bg); color:var(--ink);
+         font:14px/1.6 "Microsoft YaHei","PingFang SC",system-ui,sans-serif; }
+  h1 { font-size:18px; margin:0 0 4px; }
+  .sub { color:var(--sub); font-size:12px; margin-bottom:14px; }
+  .wrap { display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; }
+  canvas { display:block; background:#000; border-radius:6px; width:640px; height:480px; }
+  .panel { min-width:250px; }
+  .row { display:flex; justify-content:space-between; gap:10px; padding:4px 0; border-bottom:1px dashed var(--line); }
+  .row:last-child { border-bottom:0; }
+  .row b { font-weight:600; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:99px; font-size:12px; }
+  .tag.ok { background:#e6f6ef; color:var(--ok); }
+  .tag.bad { background:#fdecea; color:var(--bad); }
+  .hint { margin-top:12px; font-size:12px; color:var(--sub); }
+  code { background:#eef0f3; padding:1px 5px; border-radius:4px; }
+</style>
+</head>
+<body>
+  <h1>Astra Pro 深度预览</h1>
+  <div class="sub">用来确认深度桥接服务有没有把每像素距离推过来。先跑 <code>python openni-bridge.py</code> 再打开本页。</div>
+
+  <div class="wrap">
+    <div class="card">
+      <canvas id="cv" width="640" height="480"></canvas>
+      <div class="hint">近=红 → 黄 → 绿 → 青 → 远=蓝，黑色=该像素没深度数据。鼠标悬停可看该点距离。</div>
+    </div>
+
+    <div class="card panel">
+      <div class="row"><span>连接状态</span><b id="stConn"><span class="tag bad">未连接</span></b></div>
+      <div class="row"><span>设备</span><b id="stDev">—</b></div>
+      <div class="row"><span>序列号</span><b id="stSn">—</b></div>
+      <div class="row"><span>分辨率</span><b id="stRes">—</b></div>
+      <div class="row"><span>帧率</span><b id="stFps">—</b></div>
+      <div class="row"><span>有效像素</span><b id="stValid">—</b></div>
+      <div class="row"><span>最近 / 最远</span><b id="stRange">—</b></div>
+      <div class="row"><span>鼠标位置距离</span><b id="stHover">—</b></div>
+      <div class="row"><span>最近一团的位置</span><b id="stBody">—</b></div>
+      <div class="hint" id="stNote"></div>
+    </div>
+  </div>
+
+<script>
+(function () {
+  var URL_WS = "ws://127.0.0.1:8765";
+  var cv = document.getElementById("cv");
+  var ctx = cv.getContext("2d");
+  var img = ctx.createImageData(640, 480);
+
+  var el = {
+    conn: document.getElementById("stConn"), dev: document.getElementById("stDev"),
+    sn: document.getElementById("stSn"), res: document.getElementById("stRes"),
+    fps: document.getElementById("stFps"), valid: document.getElementById("stValid"),
+    range: document.getElementById("stRange"), hover: document.getElementById("stHover"),
+    body: document.getElementById("stBody"), note: document.getElementById("stNote")
+  };
+
+  var last = null;      // {w,h,depth:Uint16Array,valid,minMM,maxMM}
+  var frames = 0, tMark = performance.now(), fps = 0;
+
+  function tag(cls, text) { return '<span class="tag ' + cls + '">' + text + "</span>"; }
+
+  function connect() {
+    var ws = new WebSocket(URL_WS);
+    ws.binaryType = "arraybuffer";
+    el.conn.innerHTML = tag("bad", "连接中…");
+
+    ws.onopen = function () { el.conn.innerHTML = tag("ok", "已连接"); };
+
+    ws.onmessage = function (ev) {
+      if (typeof ev.data === "string") {
+        try {
+          var m = JSON.parse(ev.data);
+          if (m.type === "hello") {
+            el.dev.textContent = m.device || "—";
+            el.sn.textContent = m.serial || "—";
+            el.res.textContent = m.width + "×" + m.height;
+            el.note.textContent = m.note || "";
+          } else if (m.type === "reopen") {
+            el.note.textContent = "设备重开：" + m.reason;
+          }
+        } catch (e) { /* ignore */ }
+        return;
+      }
+      var buf = ev.data;
+      if (buf.byteLength < 24) return;
+      var dv = new DataView(buf);
+      var w = dv.getUint32(0, true), h = dv.getUint32(4, true);
+      var index = dv.getUint32(8, true), valid = dv.getUint32(12, true);
+      var mn = dv.getUint32(16, true), mx = dv.getUint32(20, true);
+      var depth = new Uint16Array(buf, 24, w * h);
+      last = { w: w, h: h, depth: depth, valid: valid, minMM: mn, maxMM: mx };
+
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+      if (img.width !== w || img.height !== h) { img = ctx.createImageData(w, h); }
+
+      draw(w, h, depth, mn, mx);
+
+      frames++;
+      var now = performance.now();
+      if (now - tMark >= 500) {
+        fps = Math.round(frames * 1000 / (now - tMark));
+        frames = 0; tMark = now;
+        el.fps.textContent = fps + " fps";
+        el.valid.textContent = (100 * valid / (w * h)).toFixed(1) + "%  (" + valid + " 点)";
+        el.range.textContent = mn + " mm / " + mx + " mm";
+        var b = nearestBlob(w, h, depth, mn);
+        el.body.textContent = b ? (Math.round(b.cx / w * 100) + "%, " + Math.round(b.cy / h * 100) + "% 处，约 " + b.dist + " mm") : "没有";
+      }
+    };
+
+    ws.onclose = function () {
+      el.conn.innerHTML = tag("bad", "已断开，3 秒后重连");
+      el.fps.textContent = "—";
+      setTimeout(connect, 3000);
+    };
+    ws.onerror = function () { /* onclose 会接着触发 */ };
+  }
+
+  function draw(w, h, depth, mn, mx) {
+    var d = img.data;
+    var span = Math.max(1, Math.min(5000, mx || 5000));
+    for (var i = 0, p = 0; i < w * h; i++, p += 4) {
+      var v = depth[i];
+      if (!v) { d[p] = 0; d[p + 1] = 0; d[p + 2] = 0; d[p + 3] = 255; continue; }
+      var t = Math.min(1, v / span);              // 0 近 → 1 远
+      d[p] = 255 * (1 - t);
+      d[p + 1] = 255 * (1 - Math.abs(2 * t - 1));
+      d[p + 2] = 255 * t;
+      d[p + 3] = 255;
+    }
+    ctx.putImageData(img, 0, 0);
+
+    // 把"最近的一团"框出来 —— 体感识别人体就靠这个思路
+    var b = nearestBlob(w, h, depth, mn);
+    if (b) {
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0);
+      ctx.fillStyle = "#fff";
+      ctx.beginPath();
+      ctx.arc(b.cx, b.cy, 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // 找出"比最近距离还近 700mm 以内"的那一片像素：通常就是离相机最近的人
+  function nearestBlob(w, h, depth, mn) {
+    if (!mn) return null;
+    var hi = mn + 700;
+    var x0 = w, y0 = h, x1 = -1, y1 = -1, n = 0, sx = 0, sy = 0, sd = 0;
+    for (var y = 0; y < h; y += 2) {
+      for (var x = 0; x < w; x += 2) {
+        var v = depth[y * w + x];
+        if (v > 0 && v <= hi) {
+          n++; sx += x; sy += y; sd += v;
+          if (x < x0) x0 = x; if (x > x1) x1 = x;
+          if (y < y0) y0 = y; if (y > y1) y1 = y;
+        }
+      }
+    }
+    if (n < 30 || x1 < 0) return null;
+    return { x0: x0, y0: y0, x1: x1, y1: y1, cx: sx / n, cy: sy / n, dist: Math.round(sd / n), count: n };
+  }
+
+  cv.addEventListener("mousemove", function (e) {
+    if (!last) return;
+    var r = cv.getBoundingClientRect();
+    var x = Math.round((e.clientX - r.left) / r.width * last.w);
+    var y = Math.round((e.clientY - r.top) / r.height * last.h);
+    if (x < 0 || y < 0 || x >= last.w || y >= last.h) return;
+    el.hover.textContent = last.depth[y * last.w + x] + " mm";
+  });
+
+  connect();
+})();
+</script>
+</body>
+</html>

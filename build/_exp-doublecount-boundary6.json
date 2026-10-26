@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24,
+    "realHz": 1.714
+  },
+  "rows": [
+    {
+      "freq": 0.9,
+      "truePeriods": 27,
+      "repsMg03": 82,
+      "repsMg0": 53,
+      "ratio": 3.04,
+      "halfPeriod": 0.556,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1,
+      "truePeriods": 30,
+      "repsMg03": 80,
+      "repsMg0": 52,
+      "ratio": 2.67,
+      "halfPeriod": 0.5,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.1,
+      "truePeriods": 33,
+      "repsMg03": 78,
+      "repsMg0": 47,
+      "ratio": 2.36,
+      "halfPeriod": 0.455,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.2,
+      "truePeriods": 36,
+      "repsMg03": 80,
+      "repsMg0": 49,
+      "ratio": 2.22,
+      "halfPeriod": 0.417,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.3,
+      "truePeriods": 39,
+      "repsMg03": 80,
+      "repsMg0": 48,
+      "ratio": 2.05,
+      "halfPeriod": 0.385,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.4,
+      "truePeriods": 42,
+      "repsMg03": 79,
+      "repsMg0": 50,
+      "ratio": 1.88,
+      "halfPeriod": 0.357,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.5,
+      "truePeriods": 45,
+      "repsMg03": 77,
+      "repsMg0": 51,
+      "ratio": 1.71,
+      "halfPeriod": 0.333,
+      "suppressed": false,
+      "tag": "★ 2×"
+    },
+    {
+      "freq": 1.6,
+      "truePeriods": 48,
+      "repsMg03": 71,
+      "repsMg0": 49,
+      "ratio": 1.48,
+      "halfPeriod": 0.313,
+      "suppressed": false,
+      "tag": "偏高"
+    },
+    {
+      "freq": 1.71,
+      "truePeriods": 51.3,
+      "repsMg03": 68,
+      "repsMg0": 49,
+      "ratio": 1.33,
+      "halfPeriod": 0.292,
+      "suppressed": true,
+      "tag": "偏高"
+    },
+    {
+      "freq": 1.8,
+      "truePeriods": 54,
+      "repsMg03": 69,
+      "repsMg0": 49,
+      "ratio": 1.28,
+      "halfPeriod": 0.278,
+      "suppressed": true,
+      "tag": "偏高"
+    },
+    {
+      "freq": 2,
+      "truePeriods": 60,
+      "repsMg03": 64,
+      "repsMg0": 46,
+      "ratio": 1.07,
+      "halfPeriod": 0.25,
+      "suppressed": true,
+      "tag": "✔ 1×"
+    },
+    {
+      "freq": 2.2,
+      "truePeriods": 66,
+      "repsMg03": 68,
+      "repsMg0": 48,
+      "ratio": 1.03,
+      "halfPeriod": 0.227,
+      "suppressed": true,
+      "tag": "✔ 1×"
+    }
+  ]
+}

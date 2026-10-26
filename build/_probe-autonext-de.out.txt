@@ -1,0 +1,22 @@
+[E/start] {"name":"开合跳","current":1,"target":20,"unit":"次","percent":5,"done":false,"resting":false,"restLeft":0,"seqIndex":3,"seqTotal":22}
+[E/naturalHit] true
+[E/atHit] {"setDone":"jumpingJacks","restLeft":10,"autoNextPending":false,"choice":"jumpingJacks","running":true,"previewing":true}
+[E/rest+0.5s] {"restLeft":10,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+1.5s] {"restLeft":9,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+2.5s] {"restLeft":8,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+3.5s] {"restLeft":7,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+4.5s] {"restLeft":6,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+5.5s] {"restLeft":5,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+6.5s] {"restLeft":4,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+7.5s] {"restLeft":3,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+8.5s] {"restLeft":2,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+9.5s] {"restLeft":0,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+10.5s] {"restLeft":-1,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+11.5s] {"restLeft":-2,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+12.5s] {"restLeft":-3,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+13.5s] {"restLeft":-4,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/rest+14.5s] {"restLeft":-5,"restTimerId":36,"gpNum":"休息 10 秒","apNum":"休息 10 秒","avatarHidden":true,"gpVis":true,"apVis":false,"choice":"jumpingJacks"}
+[E/verdict] {"restLeftSeries":"10,9,9,8,8,7,7,6,6,5,5,4,4,3,3,2,2,1,0,0,-1,-1,-2,-2,-3,-3,-4,-4,-5,-5","pageProgressTextUnique":["休息 10 秒"],"avatarProgressTextUnique":["休息 10 秒"],"pageProgressVisibleToChild":true,"avatarProgressVisibleToChild":false,"avatarHidden":true,"advancedTo":"jumpingJacks","finalRunning":true}
+[=== D. 口令层 vs 全屏猫层 层级 ===] undefined
+[D/verdict] {"avatarZ":"100","avatarDisplay":"block","prepZ":"96","prepDisplay":"flex","prepCountText":"3","topElementAtCenter":"CANVAS","centerHitsAvatar":true,"centerHitsPrep":false,"prepCountHit":"CANVAS"}
+[控制台错误] 无

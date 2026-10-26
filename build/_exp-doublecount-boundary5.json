@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "engMd5": "168d6829b0e965be95eb9a99865f5890",
+    "engFps": 60,
+    "srcFps": 24
+  },
+  "rows": [
+    {
+      "label": "A 真实波形 原速(≈1.71Hz)",
+      "truePeriods": 51.4,
+      "reps": 71,
+      "ratio": 1.38,
+      "tag": "偏高"
+    },
+    {
+      "label": "A2 真实波形 原速直拼",
+      "truePeriods": 51.4,
+      "reps": 68,
+      "ratio": 1.32,
+      "tag": "偏高"
+    },
+    {
+      "label": "B 真实波形 伸缩→1.2Hz(深区)",
+      "truePeriods": 36,
+      "reps": 80,
+      "ratio": 2.22,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "B2 真实波形 伸缩→1.67Hz",
+      "truePeriods": 50.1,
+      "reps": 70,
+      "ratio": 1.4,
+      "tag": "偏高"
+    },
+    {
+      "label": "C 纯合成单音 1.2Hz(校验台)",
+      "truePeriods": 36,
+      "reps": 87,
+      "ratio": 2.42,
+      "tag": "★ 仍 2×"
+    },
+    {
+      "label": "C2 纯合成单音 1.71Hz(校验台)",
+      "truePeriods": 51.3,
+      "reps": 97,
+      "ratio": 1.89,
+      "tag": "★ 仍 2×"
+    }
+  ]
+}
