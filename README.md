@@ -7,8 +7,12 @@
 写给 10–12 岁孩子用的。目标是让「每天写一篇、每天练一会」这件事变得有反馈、
 有奖励、能坚持 —— 而不是又一份没人看的练习册。
 
-<!-- 建议：把下面这张图换成你自己的截图，放到 docs/screenshot-home.png -->
-<!-- ![首页](docs/screenshot-home.png) -->
+<!-- 建议换成你自己孩子用了一段时间后的真实截图，更有说服力 -->
+![首页：写作 / 体能两个模块](docs/screenshot-home.jpg)
+
+<p align="center">
+  <img src="docs/screenshot-rewards.jpg" width="620" alt="游戏卡与金币奖金池" />
+</p>
 
 ---
 
